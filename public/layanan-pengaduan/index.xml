@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Layanan Pengaduan on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</title>
+    <link>//localhost:1313/layanan-pengaduan/</link>
+    <description>Recent content in Layanan Pengaduan on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</description>
+    <generator>Hugo</generator>
+    <language>id</language>
+    <lastBuildDate>Thu, 01 Aug 2024 04:42:38 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/layanan-pengaduan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Layanan Pengaduan Masyarakat</title>
+      <link>//localhost:1313/layanan-pengaduan/layanan-pengaduan-masyarakat/</link>
+      <pubDate>Thu, 01 Aug 2024 04:42:38 +0000</pubDate>
+      <guid>//localhost:1313/layanan-pengaduan/layanan-pengaduan-masyarakat/</guid>
+      <description>&lt;p&gt;https://satpolpp.kalbarprov.go.id/Layanan%20Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
