@@ -1,5 +1,3 @@
-
-
 baseurl = ""
 metaDataFormat = "yaml"
 title = "Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat"
@@ -17,7 +15,13 @@ logo = "/logo.png"
 name = "Top Post"
 url = "/en/blog/emoji-support/"
 weight = 4
+[outputs]
+home = ["HTML"]
 [params]
+appLinks = [
+  { title = "Tata Cara Permintaan Informasi", url = "https://example.com/informasi" },
+  { title = "Satu Data Kalbar", url = "https://example.com/data" }
+]
 domain = 'satpolpp.kalbarprov.go.id'
 phone = "081255375931"
 address = "Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124  https://maps.app.goo.gl/PhGLko55rjCTm94M8"
@@ -1062,15 +1066,6 @@ url = "https://www.instagram.com/satpolpp.kalbar?igsh=MXRzdjk3eHpiNmlqcw=="
 [[params.homepage.social.icons]]
 website = "facebook"
 url = "https://www.facebook.com/satpolpp.provkalbar/"
-
-
-[[params.agenda]]
-lokasi = "Halaman Parkir Depan Kantor Satpol PP Prov. Kalbar"
-jamMulai = "07:15"
-jamSelesai = "07:45"
-judul = "Apel Senin Pagi"
-tanggal = "29/07/2024"
-hari = "Senin"
 
 
 [[params.running_text]]

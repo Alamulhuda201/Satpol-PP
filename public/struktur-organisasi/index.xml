@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Struktur Organisasi on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</title>
-    <link>//localhost:51394/struktur-organisasi/</link>
+    <link>//localhost:1313/struktur-organisasi/</link>
     <description>Recent content in Struktur Organisasi on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</description>
     <generator>Hugo</generator>
     <language>id</language>
     <lastBuildDate>Thu, 01 Aug 2024 04:11:10 +0000</lastBuildDate>
-    <atom:link href="//localhost:51394/struktur-organisasi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/struktur-organisasi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>struktur</title>
-      <link>//localhost:51394/struktur-organisasi/struktur/</link>
+      <link>//localhost:1313/struktur-organisasi/struktur/</link>
       <pubDate>Thu, 01 Aug 2024 04:11:10 +0000</pubDate>
-      <guid>//localhost:51394/struktur-organisasi/struktur/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;//localhost:51394/file/tll1ebeI0CWGPw09v61g.pdf&#34;&gt;/file/tll1ebeI0CWGPw09v61g.pdf&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>//localhost:1313/struktur-organisasi/struktur/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;//localhost:1313/file/tll1ebeI0CWGPw09v61g.pdf&#34;&gt;/file/tll1ebeI0CWGPw09v61g.pdf&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

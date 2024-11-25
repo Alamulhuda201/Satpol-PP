@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maklumat Pelayanan on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</title>
-    <link>//localhost:51394/maklumat-pelayanan/</link>
+    <link>//localhost:1313/maklumat-pelayanan/</link>
     <description>Recent content in Maklumat Pelayanan on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</description>
     <generator>Hugo</generator>
     <language>id</language>
     <lastBuildDate>Wed, 11 Sep 2024 07:43:17 +0000</lastBuildDate>
-    <atom:link href="//localhost:51394/maklumat-pelayanan/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/maklumat-pelayanan/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Motto Satpol PP Provinsi Kalimantan Barat</title>
-      <link>//localhost:51394/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat/</link>
+      <link>//localhost:1313/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat/</link>
       <pubDate>Wed, 11 Sep 2024 07:43:17 +0000</pubDate>
-      <guid>//localhost:51394/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;//localhost:51394/images/8n1i9xWIpLvBYdYR1YxU.jpg&#34; width=&#34;1350&#34; height=&#34;1350&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
+      <guid>//localhost:1313/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/images/8n1i9xWIpLvBYdYR1YxU.jpg&#34; width=&#34;1350&#34; height=&#34;1350&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
