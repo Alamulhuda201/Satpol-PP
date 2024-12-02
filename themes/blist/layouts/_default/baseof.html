@@ -48,10 +48,18 @@
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
     </div>
     {{- partial "header.html" . -}}
-    <main class="flex-1 main-content " style="background-color:white; min-height: 61vh;">
+    <main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
     {{- block "main" . }}{{- end }}
     </main>
-    {{- partial "footer.html" . -}}
+    <div style="overflow-x: hidden;">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+      </style>
+      {{- partial "footer.html" . -}}
+    </div>
   </body>
   <script src='{{"js/loadmodaldisabilitas.js" | relURL}}'></script>
 </html>

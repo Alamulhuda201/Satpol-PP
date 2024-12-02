@@ -18,10 +18,7 @@ weight = 4
 [outputs]
 home = ["HTML"]
 [params]
-appLinks = [
-  { title = "Tata Cara Permintaan Informasi", url = "https://example.com/informasi" },
-  { title = "Satu Data Kalbar", url = "https://example.com/data" }
-]
+section = "Tautan Aplikasi lainnya"
 domain = 'satpolpp.kalbarprov.go.id'
 phone = "081255375931"
 address = "Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124  https://maps.app.goo.gl/PhGLko55rjCTm94M8"
@@ -1077,11 +1074,6 @@ text = "*Visi: Terwujudnya Pelayanan Penegakan Perda dan Perkada, Ketertiban Umu
 [[params.sliders.images]]
 url = "DI WEBSITE SATUAN POLISI PAMONG PRAJA PROVINSI KALIMANTAN BARAT.png"
 extension = "png"
-
-
-[[params.sliders.images]]
-url = "HARI SUMPAH PEMUDA.jpeg"
-extension = "jpeg"
 
 
 [[params.sliders.images]]

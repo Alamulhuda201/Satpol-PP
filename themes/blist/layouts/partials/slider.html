@@ -1,0 +1,192 @@
+{{ $sliderImages := .Site.Params.sliders.images }}
+
+<!-- Background Image -->
+<div class="background-container">
+    <img src="{{ "images/Gedung Malam.jpg" | relURL }}" alt="Background Image" class="background-image">
+  </div>
+  
+  <!-- Search Bar -->
+  <div class="search-bar-container">
+    <input type="text" placeholder="Cari di sini..." class="search-bar-input">
+    <button type="submit" class="search-bar-button">Cari</button>
+  </div>
+  
+  {{ if len $sliderImages }}
+   <!-- Swiper Slider -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {{ range $sliderImages }}
+        <div class="swiper-slide">
+          <img src="sliders/{{ .url }}" alt="Slider Image">
+        </div>
+      {{ end }}
+    </div>
+    <!-- Navigation & Pagination -->
+    <div class="swiper-button-next" style="z-index: 3; "></div>
+    <div class="swiper-button-prev" style="z-index: 3; "></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  {{ end }}
+  
+  <!-- Initialize Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        loop: true,
+      });
+    });
+  </script>
+  
+  <!-- Styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      background: #f4f4f4;
+      font-size: 14px;
+      color: #333;
+    }
+  
+    /* Background Image Styles */
+    .background-container {
+      position: absolute;
+      padding-bottom: 100px;
+      width: 100%;
+      height: 800px; /* Memperbesar tinggi background */
+      overflow: hidden;
+      background-color: #eaeaea;
+    }
+  
+    .background-container .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .search-bar-container {
+      position: relative;
+      top: 24px; /* Berikan jarak dari atas */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .search-bar-input {
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+  
+    .search-bar-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #15803d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    .search-bar-button:hover {
+      background-color: #095725;
+    }
+  
+    /* Swiper Styles */
+    .swiper {
+      position: relative;
+      top: 48px; /* Naikkan posisi carousel */
+      width: 100%;
+      max-width: 1800px;
+      height: 700px;
+      margin: 0 auto;
+      margin-bottom: 10px; /* Tambahkan jarak antar carousel dengan konten bawah */
+      border: 3px solid black;
+      border-radius: 10px;
+      z-index: 2;
+    }
+  
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+  
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    /* Navigation Buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #000000;
+      border-radius: 50%;
+      background-color: #cdefc9;
+      width: 50px !important;
+      height: 50px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* Pagination Bullets */
+    .swiper-pagination-bullet {
+      background-color: #fff;
+      opacity: 0.7;
+    }
+  
+    .swiper-pagination-bullet-active {
+      background-color: #007bff;
+    }
+  
+    @media (max-width: 768px) {
+      .background-container {
+        height: 500px; /* Tinggi background untuk tablet */
+      }
+  
+      .swiper {
+        height: 400px; /* Tinggi slider untuk tablet */
+        top: -180px; /* Sesuaikan posisi carousel di tablet */
+      }
+    }
+    @media (max-width: 480px) {
+      .background-container {
+        height: 400px; /* Tinggi background untuk ponsel */
+      }
+  
+      .swiper {
+        height: 350px; /* Tinggi slider untuk ponsel */
+        top: -120px; /* Sesuaikan posisi carousel di ponsel */
+      }
+  
+      .search-bar-input {
+        width: 250px;
+      }
+    }
+  </style>
