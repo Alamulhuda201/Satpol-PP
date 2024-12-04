@@ -272,8 +272,13 @@ weight = 2
 identifier = "struktur organisasi"
 name = "Struktur Organisasi"
 parent = "profil"
+<<<<<<< HEAD
 url = "/file/tll1ebeI0CWGPw09v61g.pdf"
 weight = 1
+=======
+url = "/Struktur Organisasi/struktur/"
+weight = 2
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
 
 [[languages.id.menu.main]]
 identifier = "visi dan misi"

@@ -21,6 +21,7 @@
       "h6",
       "head",
       "header",
+      "hr",
       "html",
       "i",
       "iframe",
@@ -39,6 +40,7 @@
       "ol",
       "p",
       "path",
+      "pre",
       "script",
       "section",
       "span",
@@ -106,6 +108,14 @@
       "border-t-4",
       "bottom-0",
       "bottom-44",
+<<<<<<< HEAD
+=======
+      "break-words",
+      "btn-download",
+      "btn-view",
+      "card",
+      "card-content",
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "close-search",
       "col-span-1",
       "col-span-2",
@@ -170,8 +180,13 @@
       "h-36",
       "h-4/5",
       "h-5",
+<<<<<<< HEAD
       "h-6",
       "h-64",
+=======
+      "h-52",
+      "h-6",
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "h-72",
       "h-[400px]",
       "h-full",
@@ -244,7 +259,11 @@
       "md:text-left",
       "md:w-52",
       "md:w-auto",
+<<<<<<< HEAD
       "ml-2",
+=======
+      "ml-3",
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "mobile-menu",
       "mobile-menu-button",
       "mr-1",
@@ -282,6 +301,7 @@
       "p-6",
       "pb-4",
       "pb-6",
+      "pejabat-structural",
       "pl-6",
       "place-content-end",
       "place-items-center",
@@ -321,7 +341,10 @@
       "rounded-r-md",
       "rounded-t-2xl",
       "rounded-t-lg",
+<<<<<<< HEAD
       "rounded-xl",
+=======
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "search-list",
       "search-results",
       "search-ui",
@@ -340,6 +363,13 @@
       "space-y-3",
       "sr-only",
       "sticky",
+<<<<<<< HEAD
+=======
+      "struktur-buttons",
+      "struktur-container",
+      "struktur-frame",
+      "style=\"width:",
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "swiper",
       "swiper-button-next",
       "swiper-button-prev",
@@ -394,7 +424,10 @@
       "w-44",
       "w-5",
       "w-6",
+<<<<<<< HEAD
       "w-72",
+=======
+>>>>>>> 71492a83e119fd5793a85a06b9f1aeeda1873b72
       "w-full",
       "w-screen",
       "xl66",
@@ -409,6 +442,8 @@
       "Picture_x0020_1",
       "_x0000_t75",
       "a",
+      "date-2024-08-01",
+      "date-2024-08-01-041110",
       "loading-screen",
       "loadmodaldisabilitas",
       "mobile-menu",

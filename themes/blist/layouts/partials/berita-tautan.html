@@ -1,0 +1,133 @@
+<div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-32 relative z-10">
+    <!-- Section Berita (2/3 lebar) -->
+    <div class="col-span-2">
+        <h2 class="text-center font-bold text-2xl bg-green-600 text-white py-2 rounded">BERITA</h2>
+        <div class="relative bg-gray-300 rounded-lg shadow-md mt-4 p-4">
+
+            <!-- Swiper Container dengan tinggi tetap -->
+            <swiper-container class="mySwiper" navigation="true" loop="true" style="height: 500px;">
+                <!-- Loop each article in a swiper-slide -->
+                {{ $berita := first 3 (where .Site.RegularPages "Section" "berita") }}
+                {{ range $berita }}
+                <swiper-slide>
+                    <div class="overflow-hidden rounded-lg relative h-full">
+                        <img class="w-full h-full object-cover rounded-lg mb-4" src="{{ .Params.thumbnail }}" alt="Gambar Berita">
+                        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                        <h3 class="absolute bottom-12 left-0 text-white font-bold text-lg p-2 ml-3 mb-3 rounded">{{ .Title }}</h3>
+                        <!-- Tombol Berita Lainnya -->
+                        <div class="absolute bottom-4 left-4 flex justify-left">
+                            <a href="/berita" class="bg-white text-green-600 py-2 px-4 rounded-lg text-sm flex items-center border border-2 border-green-600 hover:bg-green-700 hover:text-white transition duration-300">
+                                <!-- Ikon External Link -->
+                                <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                                Berita Lainnya
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm mt-2 mb-4">{{ .Params.content | markdownify | truncate 100 }}</p>
+                </swiper-slide>
+                {{ end }}
+            </swiper-container>
+
+        </div>
+    </div>
+
+    <!-- Section Tautan Aplikasi (1/3 lebar) -->
+    <div class="col-span-1">
+        <h2 class="text-center font-bold text-2xl bg-green-600 text-white py-2 rounded">TAUTAN APLIKASI</h2>
+        
+        <!-- Slider Container Atas (Ganjil) -->
+        <div class="manual-slider" id="sliderAtas">
+            {{ $tautan := where .Site.RegularPages "Section" "tautan-aplikasi-lainnya" }}
+            {{ range $index, $element := $tautan }}
+            {{ if eq (mod $index 2) 0 }}
+            <div class="slide h-72 hidden">
+                <div class="relative bg-gray-300 rounded-lg shadow-md border border-green-600 h-full">
+                    <img class="w-full h-2/3 object-cover rounded-t-lg" data-src="{{ $element.Params.thumbnail | relURL }}" alt="Gambar Tautan" class="lazyload">
+                    <div class="flex items-center justify-center py-4 h-1/3 w-full bg-white rounded-b-lg">
+                        <p class="text-center text-black font-bold">{{ $element.Title }}</p>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        <!-- Tombol Navigasi -->
+        <div class="flex justify-between mt-4 relative z-10">
+            <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full mr-2 hover:bg-green-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="manual-slider absolute top-96" id="sliderBawah" style="margin-top: 16px;">
+            {{ range $index, $element := $tautan }}
+            {{ if eq (mod $index 2) 1 }}
+            <div class="slide h-72 hidden" style="width: 616px;">
+                <div class="relative bg-gray-300 rounded-lg shadow-md border border-green-600 h-full">
+                    <img class="w-full h-2/3 object-cover rounded-t-lg" data-src="{{ $element.Params.thumbnail | relURL }}" alt="Gambar Tautan" class="lazyload">
+                    <div class="flex items-center justify-center py-4 h-1/3 w-full bg-white rounded-b-lg">
+                        <p class="text-center text-black font-bold">{{ $element.Title }}</p>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+
+       
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                function setupManualSlider(sliderId) {
+                    const slides = document.querySelectorAll(`#${sliderId} .slide`);
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.style.display = i === index ? 'block' : 'none';
+                        });
+                    }
+
+                    function nextSlide() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    }
+
+                    function prevSlide() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    }
+
+                    showSlide(currentIndex);
+
+                    return { nextSlide, prevSlide };
+                }
+
+                const sliderAtas = setupManualSlider('sliderAtas');
+                const sliderBawah = setupManualSlider('sliderBawah');
+
+                document.getElementById('nextButton').addEventListener('click', function () {
+                    sliderAtas.nextSlide();
+                    sliderBawah.nextSlide();
+                });
+
+                document.getElementById('prevButton').addEventListener('click', function () {
+                    sliderAtas.prevSlide();
+                    sliderBawah.prevSlide();
+                });
+            });
+        </script>
+</div>
+
+<!-- Tambahkan script untuk Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+</div>
