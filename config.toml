@@ -713,18 +713,11 @@ weight = 2
 
 
 
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
 identifier = 'struktur organisasi'
 name = "Struktur Organisasi"
 parent = "profil"
-url = "/Struktur Organisasi/struktur/"
+url = "/profil"
 weight = 2
 
 
