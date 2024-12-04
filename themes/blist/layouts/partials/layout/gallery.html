@@ -1,0 +1,37 @@
+<section class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-green-700 mb-8">Galeri Kegiatan</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {{ range first 6 (where .Site.RegularPages "Section" "galeri") }}
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+        {{ if .Params.thumbnail }}
+        <div class="relative h-64">
+          <img src="{{ .Params.thumbnail | absURL }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <a href="{{ .RelPermalink }}" class="text-white text-lg font-semibold hover:underline">Lihat Detail</a>
+          </div>
+        </div>
+        {{ end }}
+        
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-2">{{ .Title }}</h3>
+          <div class="flex items-center text-gray-600 text-sm">
+            <i class="far fa-calendar-alt mr-2"></i>
+            <span>{{ .Date.Format "02 January 2006" }}</span>
+          </div>
+          {{ if .Summary }}
+          <p class="text-gray-600 mt-2 text-sm">{{ .Summary | truncate 100 }}</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    
+    <div class="text-center mt-8">
+      <a href="/galeri" class="inline-block bg-green-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-800 transition duration-300">
+        Lihat Semua Galeri
+      </a>
+    </div>
+  </div>
+</section>

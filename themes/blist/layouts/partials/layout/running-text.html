@@ -1,0 +1,35 @@
+<!-- Running Text -->
+{{ $runningText := .Site.Params.running_text }}
+{{ if $runningText }}
+<div class="w-full bg-white p-4 border border-gray-300 shadow rounded mb-0">
+    <div class="marquee">
+        <div class="marquee-text">
+            <p class="text-lg font-semibold text-black" style="font-size: 0.9rem;">
+                {{ range $runningText }}{{ .text }}&nbsp;&nbsp;&nbsp;&nbsp;{{ end }}
+            </p>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<!-- Menambahkan CSS untuk Running Text -->
+<style>
+    .marquee {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    .marquee-text {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>

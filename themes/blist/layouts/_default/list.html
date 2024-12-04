@@ -1,8 +1,8 @@
 {{ define "main" }}
 
-  <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-black">{{ .Title }}</h1>
+  <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-blac text-green-700">{{ upper .Title }}</h1>
   {{ $type := .Type }}
-  {{ $paginator := .Paginate .Pages.ByDate.Reverse 12 }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
   <div class="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
     {{ range $paginator.Pages }}
 
