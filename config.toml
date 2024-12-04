@@ -4,9 +4,14 @@ title = "Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat"
 theme = "blist"
 DefaultContentLanguage = "id"
 DefaultContentLanguageInSubdir = false
-contentDir = "content" #English"
+contentDir = "content"
 weight = 1
 languageName = "Indonesia"
+
+[mediaTypes]
+  [mediaTypes."image/*"]
+    preserveFileName = true
+
 [languages.id.params]
 introTitle = "Satuan Polisi Pamong Praja Provinsi Kalimantan Barat"
 introSubtitle = "Website Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat"
@@ -15,11 +20,13 @@ logo = "/logo.png"
 name = "Top Post"
 url = "/en/blog/emoji-support/"
 weight = 4
+
 [outputs]
 home = ["HTML"]
+
 [params]
 section = "Tautan Aplikasi lainnya"
-domain = 'satpolpp.kalbarprov.go.id'
+domain = "satpolpp.kalbarprov.go.id"
 phone = "081255375931"
 address = "Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124  https://maps.app.goo.gl/PhGLko55rjCTm94M8"
 email = "satpolpp@kalbarprov.go.id"
@@ -37,6 +44,7 @@ toc = true
 hidePageThumbnail = false
 introTitle = "Dinas Komunikasi dan Informatika"
 introSubtitle = "Website resmi Dinas Komunikasi dan Informatika provinsi Kalimantan Barat"
+
 [params.comments]
 system = "giscus"
 repo = ""
@@ -49,1000 +57,405 @@ reactionsenabled = ""
 emitmetadata = ""
 inputposition = ""
 theme = ""
+
 [params.homepage.social]
 title = "Follow me"
 description = "I work on everything coding and tweet developer memes"
+
 [build]
 writeStats = true
+
 [markup]
 [markup.highlight]
 style = "dracula"
+
 [markup.goldmark.renderer]
 unsafe = true
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'pelayanan'
+identifier = "pelayanan"
 name = "Pelayanan"
 url = ""
 weight = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'link terkait'
+identifier = "link terkait"
 name = "Link Terkait"
 url = "/link terkait"
 weight = 7
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'penilai pelayananan'
+identifier = "penilai pelayananan"
 name = "Penilai Pelayananan"
 parent = "pelayanan"
 url = "https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0"
 weight = 1
 
-
-
 [[languages.id.menu.main]]
-identifier = 'pemerintah provinsi kalimantan barat'
+identifier = "pemerintah provinsi kalimantan barat"
 name = "PEMERINTAH PROVINSI KALIMANTAN BARAT"
 parent = "link terkait"
 url = "https://kalbarprov.go.id/"
 weight = 1
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'sikedip'
+identifier = "sikedip"
 name = "SIKEDIP"
 parent = "link terkait"
 url = "https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar"
 weight = 2
 
-
-
 [[languages.id.menu.main]]
-identifier = 'ppid prov. kalbar'
+identifier = "ppid prov. kalbar"
 name = "PPID PROV. KALBAR"
 parent = "link terkait"
 url = "https://ppid.kalbarprov.go.id/"
 weight = 3
 
-
-
 [[languages.id.menu.main]]
-identifier = 'si renovpolpp'
+identifier = "si renovpolpp"
 name = "SI RENOVPOLPP"
 parent = "link terkait"
 url = "https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208"
 weight = 4
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'lapor'
+identifier = "lapor"
 name = "LAPOR"
 parent = "link terkait"
 url = "https://www.lapor.go.id/"
 weight = 5
 
-
-
 [[languages.id.menu.main]]
-identifier = 'satu data prov. kalbar'
+identifier = "satu data prov. kalbar"
 name = "SATU DATA PROV. KALBAR"
 parent = "link terkait"
 url = "https://data.kalbarprov.go.id/"
 weight = 6
 
-
-
 [[languages.id.menu.main]]
-identifier = 'sim satpol pp'
+identifier = "sim satpol pp"
 name = "SIM SATPOL PP"
 parent = "link terkait"
 url = "https://satpolpp.kemendagri.go.id/"
 weight = 7
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'sekampadi'
+identifier = "sekampadi"
 name = "SEKAMPADI"
 parent = "link terkait"
 url = "https://sekampadi.kalbarprov.go.id/login"
 weight = 8
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'sop pelayanan'
+identifier = "sop pelayanan"
 name = "Sop Pelayanan"
 parent = "Sop"
 url = "/sop pelayanan"
 weight = 6
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'tentang satpol pp'
+identifier = "tentang satpol pp"
 name = "Tentang Satpol PP"
 parent = "profil"
 url = "/tentang satpol pp"
 weight = 3
 
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'dokumen'
+identifier = "dokumen"
 name = "Dokumen"
 url = "/dokumen"
 weight = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'profil'
+identifier = "profil"
 name = "Profil"
 url = ""
 weight = 1
 
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'renja monev'
+identifier = "renja monev"
 name = "Renja Monev"
 parent = "dokumen"
-url = "https://satpolpp.kalbarprov.go.id/renja-monev/renja-monev"
+url = "/renja-monev/renja-monev"
 weight = 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'aparatur'
+identifier = "aparatur"
 name = "Aparatur"
 parent = "dokumen"
-url = "https://satpolpp.kalbarprov.go.id/umum-aparatur/aparatur/"
+url = "/umum-aparatur/aparatur/"
 weight = 3
 
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'bidang penegakan peraturan daerah dan peraturan kepala daerah'
+identifier = "bidang penegakan peraturan daerah dan peraturan kepala daerah"
 name = "Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah"
 parent = "dokumen"
 url = "/bidang penegakan peraturan daerah dan peraturan kepala daerah"
 weight = 4
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'bidang ketertiban umum dan ketenteraman'
+identifier = "bidang ketertiban umum dan ketenteraman"
 name = "Bidang Ketertiban Umum Dan Ketenteraman"
 parent = "dokumen"
 url = "/bidang ketertiban umum dan ketentraman"
 weight = 5
 
-
-
 [[languages.id.menu.main]]
-identifier = 'bidang perlindungan masyarakat'
+identifier = "bidang perlindungan masyarakat"
 name = "Bidang Perlindungan Masyarakat"
 parent = "dokumen"
 url = "/bidang perlindungan masyarakat"
 weight = 6
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'ppid'
+identifier = "ppid"
 name = "PPID"
 url = ""
 weight = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'informasi'
+identifier = "informasi"
 name = "Informasi"
 url = ""
 weight = 2
 
-
-
 [[languages.id.menu.main]]
-identifier = 'informasi'
+identifier = "informasi"
 name = "Informasi"
 url = ""
 weight = 2
 
-
-
 [[languages.id.menu.main]]
-identifier = 'galeri'
+identifier = "galeri"
 name = "Galeri"
 parent = "informasi"
 url = "/galeri"
 weight = 1
 
-
-
 [[languages.id.menu.main]]
-identifier = 'berita'
+identifier = "berita"
 name = "Berita"
 parent = "informasi"
 url = "/berita"
 weight = 2
 
-
-
 [[languages.id.menu.main]]
-identifier = 'flyers'
+identifier = "flyers"
 name = "Flyers"
 parent = "informasi"
 url = "/flyers"
 weight = 3
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'vidio'
+identifier = "vidio"
 name = "Vidio"
 parent = "informasi"
-url = "https://satpolpp.kalbarprov.app/vidio/video-kegiatan/"
+url = "/vidio"
 weight = 4
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'laporan ppid'
+identifier = "laporan ppid"
 name = "Laporan PPID"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/laporan-ppid/laporan-ppid"
+url = "/laporan-ppid/laporan-ppid"
 weight = 7
 
-
-
 [[languages.id.menu.main]]
-identifier = 'standar pelayanan'
+identifier = "standar pelayanan"
 name = "Standar Pelayanan"
 parent = "pelayanan"
-url = "https://satpolpp.kalbarprov.go.id/standar-layanan/standar-pelayanan"
+url = "/standar-layanan/standar-pelayanan"
 weight = 2
 
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'struktur organisasi'
+identifier = "struktur organisasi"
 name = "Struktur Organisasi"
 parent = "profil"
-url = "https://satpolpp.kalbarprov.go.id/file/tll1ebeI0CWGPw09v61g.pdf"
+url = "/file/tll1ebeI0CWGPw09v61g.pdf"
 weight = 1
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'visi dan misi'
+identifier = "visi dan misi"
 name = "Visi Dan Misi"
 parent = "profil"
-url = "https://satpolpp.kalbarprov.go.id/visi-dan-misi/visi-dan-misi"
+url = "/visi-dan-misi/visi-dan-misi"
 weight = 4
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'kontak pengaduan'
+identifier = "kontak pengaduan"
 name = "Kontak Pengaduan"
 parent = "pelayanan"
-url = "https://satpolpp.kalbarprov.go.id/Layanan%20Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png"
+url = "/Layanan%20Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png"
 weight = 4
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'daftar informasi'
+identifier = "daftar informasi"
 name = "Daftar Informasi"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/daftar-informasi-publik/daftar-informasi"
+url = "/daftar-informasi-publik/daftar-informasi"
 weight = 5
 
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'sop ppid'
+identifier = "sop ppid"
 name = "SOP PPID"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/sop-ppid/sop-pelayanan-publik"
+url = "/sop-ppid/sop-pelayanan-publik"
 weight = 3
 
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'formulir ppid'
+identifier = "formulir ppid"
 name = "Formulir PPID"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/formulir-ppid/formulir-ppid"
+url = "/formulir-ppid/formulir-ppid"
 weight = 8
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'pelita perda'
+identifier = "pelita perda"
 name = "PELITA PERDA"
 parent = "pelayanan"
 url = "/pelita perda"
 weight = 5
 
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'tata cara'
+identifier = "tata cara"
 name = "Tata Cara"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/jadwal-pelayanan-informasi-publik/tata-cara"
+url = "/jadwal-pelayanan-informasi-publik/tata-cara"
 weight = 4
 
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'lhkpn'
+identifier = "lhkpn"
 name = "LHKPN"
 parent = "dokumen"
-url = "https://satpolpp.kalbarprov.go.id/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara"
+url = "/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara"
 weight = 8
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'permohonan online'
+identifier = "permohonan online"
 name = "Permohonan Online"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/permohonan-online-ppid/permohonan-online-ppid"
+url = "/permohonan-online-ppid/permohonan-online-ppid"
 weight = 6
 
-
-
 [[languages.id.menu.main]]
-identifier = 'jalur evakuasi'
+identifier = "jalur evakuasi"
 name = "Jalur Evakuasi"
 parent = "informasi"
 url = "https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf"
 weight = 5
 
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'jumlah permohonan informasi'
+identifier = "jumlah permohonan informasi"
 name = "Jumlah Permohonan Informasi"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/jumlah-permohonan-informasi/jumlah-permohonan-informasi"
+url = "/jumlah-permohonan-informasi/jumlah-permohonan-informasi"
 weight = 9
 
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'keuangan dan aset'
+identifier = "keuangan dan aset"
 name = "Keuangan Dan Aset"
 parent = "dokumen"
-url = "https://satpolpp.kalbarprov.go.id/keuangan-dan-aset/laporan-keuangan"
+url = "/keuangan-dan-aset/laporan-keuangan"
 weight = 2
 
-
-
 [[languages.id.menu.main]]
-identifier = 'antenna pol pp'
+identifier = "antenna pol pp"
 name = "ANTENNA POL PP"
 parent = "link terkait"
 url = "https://linmaskalbar.my.id/"
 weight = 9
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'profil pimpinan'
+identifier = "profil pimpinan"
 name = "Profil Pimpinan"
 parent = "profil"
-url = "https://satpolpp.kalbarprov.go.id/profil-pimpinan/pejabat-struktural"
+url = "/profil-pimpinan/pejabat-struktural"
 weight = 2
 
-
-
-
-
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'profil ppid'
+identifier = "profil ppid"
 name = "Profil PPID"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat"
+url = "/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat"
 weight = 1
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'buku tamu'
+identifier = "buku tamu"
 name = "BUKU TAMU"
 parent = "link terkait"
 url = "https://bukutamu.kalbarprov.go.id/visitor/check-in"
 weight = 10
 
-
-
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'srikandi'
+identifier = "srikandi"
 name = "SRIKANDI"
 parent = "link terkait"
 url = "https://srikandi.arsip.go.id/"
 weight = 11
 
-
-
 [[languages.id.menu.main]]
-identifier = 'lpse'
+identifier = "lpse"
 name = "LPSE"
 parent = "link terkait"
 url = "https://lpse.kalbarprov.go.id/eproc4"
 weight = 12
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'bidang pembinaan masyarakat'
+identifier = "bidang pembinaan masyarakat"
 name = "Bidang Pembinaan Masyarakat"
 parent = "dokumen"
-url = "https://satpolpp.kalbarprov.go.id/bidang-pembinaan-masyarakat/"
+url = "/bidang-pembinaan-masyarakat/"
 weight = 7
 
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'regulasi ppid'
+identifier = "regulasi ppid"
 name = "Regulasi PPID"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/regulasi-ppid/regulasi-ppid"
+url = "/regulasi-ppid/regulasi-ppid"
 weight = 10
 
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'formulir ppid utama'
+identifier = "formulir ppid utama"
 name = "Formulir PPID Utama"
 parent = "ppid"
-url = "https://satpolpp.kalbarprov.go.id/permohonan-online-ppid/form-ppid-utama"
+url = "/permohonan-online-ppid/form-ppid-utama"
 weight = 2
 
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'maklumat pelayanan ppid'
+identifier = "maklumat pelayanan ppid"
 name = "Maklumat Pelayanan PPID"
 parent = "ppid"
 url = "https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf"
 weight = 11
 
-
-
-
-
-
-
 [[languages.id.menu.main]]
-identifier = 'motto satpol pp'
+identifier = "motto satpol pp"
 name = "Motto Satpol PP"
 parent = "profil ppid"
-url = "https://satpolpp.kalbarprov.go.id/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
+url = "/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
 weight = 3
 
-
-
 [[languages.id.menu.main]]
-identifier = 'motto satpol pp'
+identifier = "motto satpol pp"
 name = "Motto Satpol PP"
 parent = "profil"
-url = "https://satpolpp.kalbarprov.go.id/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
+url = "/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
 weight = 3
 
-
-
 [[languages.id.menu.main]]
-identifier = 'rka dan dpa tahun 2023'
+identifier = "rka dan dpa tahun 2023"
 name = "RKA DAN DPA TAHUN 2023"
 parent = "renja monev"
-url = "https://satpolpp.kalbarprov.go.id/keuangan-dan-aset/rka-dan-dpa-2023"
+url = "/keuangan-dan-aset/rka-dan-dpa-2023"
 weight = 9
-
-
 
 [[languages.id.menu.main]]
-identifier = 'rka dan dpa tahun 2023'
+identifier = "rka dan dpa tahun 2023"
 name = "RKA DAN DPA TAHUN 2023"
 parent = "renja monev"
-url = "https://satpolpp.kalbarprov.go.id/keuangan-dan-aset/rka-dan-dpa-2023"
+url = "/keuangan-dan-aset/rka-dan-dpa-2023"
 weight = 9
-
 
 [[params.homepage.social.icons]]
 website = "whatsapp"
@@ -1064,27 +477,23 @@ url = "https://www.instagram.com/satpolpp.kalbar?igsh=MXRzdjk3eHpiNmlqcw=="
 website = "facebook"
 url = "https://www.facebook.com/satpolpp.provkalbar/"
 
-
 [[params.running_text]]
 text = "*Satuan Polisi Pamong Praja Provinsi Kalimantan Tegas, Ramah dan Berwibawa*"
+
 [[params.running_text]]
 text = "*Visi: Terwujudnya Pelayanan Penegakan Perda dan Perkada, Ketertiban Umum, Ketentraman. dan Perlindungan Masyarakat yang Profesional di Kalimantan Barat*"
-
 
 [[params.sliders.images]]
 url = "DI WEBSITE SATUAN POLISI PAMONG PRAJA PROVINSI KALIMANTAN BARAT.png"
 extension = "png"
 
-
 [[params.sliders.images]]
 url = "Untitled design (5).png"
 extension = "png"
 
-
 [[params.sliders.images]]
 url = "WhatsApp Image 2024-08-15 at 15.07.32.jpeg"
 extension = "jpeg"
-
 
 [[params.sliders.images]]
 url = "satpolpp.provkalbar (1).png"

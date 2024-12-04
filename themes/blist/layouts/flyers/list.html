@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-black uppercase text-green-800">{{ .Title }}</h1>
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+  <div class="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+    {{ range $paginator.Pages }}
+      <div class="transform hover:scale-105 transition duration-300">
+        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+          {{ if .Params.thumbnail }}
+          <a href="{{ .Params.thumbnail }}" target="_blank">
+            <div class="relative">
+              <img src="{{ .Params.thumbnail }}" 
+                   alt="{{ .Params.title }}" 
+                   class="w-full h-72 object-cover hover:opacity-90 transition duration-300"/>
+              
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                <h3 class="text-white text-lg font-bold mb-2">{{ .Params.title }}</h3>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-2">
+                    <span class="bg-white text-green-500 ring-green-900 ring-1 ring-offset-1 text-xs px-2 py-1 rounded-full"><i class="fa-solid fa-eye"></i> Lihat</span>
+                    <span class="bg-green-700 rounded-full text-white text-xs px-2 py-1"><ion-icon name="cloud-download-outline"></ion-icon>  Unduh</span>
+                  </div>
+                  <span class="text-gray-300 text-xs">
+                    {{ partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "short") }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  {{ partial "pagination.html" . }}
+
+{{ end }}

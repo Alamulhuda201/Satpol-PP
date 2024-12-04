@@ -97,51 +97,251 @@
 
 </head>
 <body class="dark:text-black">
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=przYp5x6"></script>
-    <style type="text/css">
-        .greyscaleall{filter:grayscale(100%)}
-        .btn-container{margin-bottom:10px;text-align:center}
-        .mycheckbox{font-size:12px;color:#000;font-weight:500}
-        .btn-color-mode-switch{display:inline-block;margin:0;position:relative}
-        .btn-color-mode-switch>label.btn-color-mode-switch-inner{margin:0;width:170px;height:26px;background:#e0e0e0;border-radius:26px;overflow:hidden;position:relative;transition:.3s;display:block}
-        .btn-color-mode-switch>label.btn-color-mode-switch-inner:before{content:attr(data-on);cursor:pointer;position:absolute;font-size:12px;font-weight:700;top:2px;right:25px;margin-bottom:5px}
-        .btn-color-mode-switch>label.btn-color-mode-switch-inner:after{content:attr(data-off);cursor:pointer;width:85px;height:22px;font-size:12px;background:#fff;border-radius:26px;position:absolute;left:2px;top:2px;font-weight:700;text-align:center;transition:.3s;box-shadow:0 0 6px -2px #111;padding:2px 0;margin-bottom:10px}
-        .btn-color-mode-switch input[type=checkbox]{cursor:pointer;width:70px;height:25px;opacity:0;position:absolute;top:0;z-index:1;padding:2px 0;margin:0}
-        .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner{background:#e0e0e0;color:#000;font-weight:700;font-size:12px}
-        .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:after{content:attr(data-on);left:83px;background:#fff;font-weight:700;font-size:12px}
-        .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:before{content:attr(data-off);right:auto;left:15px;color:#000;font-weight:700;font-size:12px}
-        .btn-color-mode-switch input[type=checkbox]:checked~.alert{display:block}
-        .toolbar-disabilitas{position:fixed;top:35%;left:0;z-index:999;height:1px;width:-180px;text-align:center;background:0 0!important}
-        .open-toolbar{margin-top:10%;padding:8px 5px 3px;height:50px;border:none;width:50px}
-        .toolbar-disabilitas .open-toolbar{background:#00aa48}
-        .toolbar-disabilitas .groupcontenttoolbar{transform:translateX(-180px);transition:transform .6s}
-        .toolbar-disabilitas.show-toolbar .groupcontenttoolbar{transform:translateX(0)}
-        .contenttoolbar_disabilitas{margin-top:10%;padding-top:15px;display:flex;flex-direction:column;height:max-content;border:1px solid #000;box-shadow:0 10px 10px rgb(0 0 0 / .2);background-color:#fff;width:180px;word-break:break-all;overflow:hidden}
-        .groupcontenttoolbar{display:flex;flex-direction:row;height:1px;background-color:transparent!important}
-        .titletools{font-size:13px!important;font-weight:700;margin-bottom:10px;padding-left:5px;padding-right:5px;color:#000}.bodytools{left:0;height:max-content;width:100%;margin-bottom:10px}
-        .subtitletools,.subtitletoolsactive{font-size:12px!important;margin-bottom:5px;cursor:pointer;left:0;text-align:left;padding-left:10px}
-        .subtitletools{font-family:Arial,Helvetica,sans-serif;color:#000}
-        .subtitletoolsactive{background-color:#000!important;padding-top:5px;padding-bottom:5px;color:#fff;font-weight:700}
-        .subtitletools:active,.subtitletools:focus,.subtitletools:hover{background-color:#000;color:#fff;font-weight:700;font-size:12;max-width:100%;padding-top:5px;padding-left:10px;padding-bottom:5px}
-        .flexrowdata{display:flex;flex-direction:row;height:auto;width:auto}
-        body .uwy.userway_p1 .userway_buttons_wrapper{
-          top: 11%;
-          left: calc(100vw - 30px);
-        }
-        body .uwy.userway_p7 .userway_buttons_wrapper {
-          top: 11%;
-          left: 15px;
-        }
-        @media only screen and (max-width:900px){
-            .toolbar-disabilitas{top:60%;left:0;z-index:999;height:1px;width:-180px;text-align:center;background:0 0!important}
-        }
-    </style>
-    <span id="loadmodaldisabilitas"></span>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=przYp5x6"></script>
+  <style type="text/css">
+    .greyscaleall {
+      filter: grayscale(100%)
+    }
 
-    
-    <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
-      <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    .btn-container {
+      margin-bottom: 10px;
+      text-align: center
+    }
+
+    .mycheckbox {
+      font-size: 12px;
+      color: #000;
+      font-weight: 500
+    }
+
+    .btn-color-mode-switch {
+      display: inline-block;
+      margin: 0;
+      position: relative
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+      margin: 0;
+      width: 170px;
+      height: 26px;
+      background: #e0e0e0;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      transition: .3s;
+      display: block
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+      content: attr(data-on);
+      cursor: pointer;
+      position: absolute;
+      font-size: 12px;
+      font-weight: 700;
+      top: 2px;
+      right: 25px;
+      margin-bottom: 5px
+    }
+
+    .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+      content: attr(data-off);
+      cursor: pointer;
+      width: 85px;
+      height: 22px;
+      font-size: 12px;
+      background: #fff;
+      border-radius: 26px;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      font-weight: 700;
+      text-align: center;
+      transition: .3s;
+      box-shadow: 0 0 6px -2px #111;
+      padding: 2px 0;
+      margin-bottom: 10px
+    }
+
+    .btn-color-mode-switch input[type=checkbox] {
+      cursor: pointer;
+      width: 70px;
+      height: 25px;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      padding: 2px 0;
+      margin: 0
+    }
+
+    .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner {
+      background: #e0e0e0;
+      color: #000;
+      font-weight: 700;
+      font-size: 12px
+    }
+
+    .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:after {
+      content: attr(data-on);
+      left: 83px;
+      background: #fff;
+      font-weight: 700;
+      font-size: 12px
+    }
+
+    .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:before {
+      content: attr(data-off);
+      right: auto;
+      left: 15px;
+      color: #000;
+      font-weight: 700;
+      font-size: 12px
+    }
+
+    .btn-color-mode-switch input[type=checkbox]:checked~.alert {
+      display: block
+    }
+
+    .toolbar-disabilitas {
+      position: fixed;
+      top: 35%;
+      left: 0;
+      z-index: 999;
+      height: 1px;
+      width: -180px;
+      text-align: center;
+      background: 0 0 !important
+    }
+
+    .open-toolbar {
+      margin-top: 10%;
+      padding: 8px 5px 3px;
+      height: 50px;
+      border: none;
+      width: 50px
+    }
+
+    .toolbar-disabilitas .open-toolbar {
+      background: #00aa48
+    }
+
+    .toolbar-disabilitas .groupcontenttoolbar {
+      transform: translateX(-180px);
+      transition: transform .6s
+    }
+
+    .toolbar-disabilitas.show-toolbar .groupcontenttoolbar {
+      transform: translateX(0)
+    }
+
+    .contenttoolbar_disabilitas {
+      margin-top: 10%;
+      padding-top: 15px;
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      border: 1px solid #000;
+      box-shadow: 0 10px 10px rgb(0 0 0 / .2);
+      background-color: #fff;
+      width: 180px;
+      word-break: break-all;
+      overflow: hidden
+    }
+
+    .groupcontenttoolbar {
+      display: flex;
+      flex-direction: row;
+      height: 1px;
+      background-color: transparent !important
+    }
+
+    .titletools {
+      font-size: 13px !important;
+      font-weight: 700;
+      margin-bottom: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      color: #000
+    }
+
+    .bodytools {
+      left: 0;
+      height: max-content;
+      width: 100%;
+      margin-bottom: 10px
+    }
+
+    .subtitletools,
+    .subtitletoolsactive {
+      font-size: 12px !important;
+      margin-bottom: 5px;
+      cursor: pointer;
+      left: 0;
+      text-align: left;
+      padding-left: 10px
+    }
+
+    .subtitletools {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000
+    }
+
+    .subtitletoolsactive {
+      background-color: #000 !important;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #fff;
+      font-weight: 700
+    }
+
+    .subtitletools:active,
+    .subtitletools:focus,
+    .subtitletools:hover {
+      background-color: #000;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12;
+      max-width: 100%;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-bottom: 5px
+    }
+
+    .flexrowdata {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      width: auto
+    }
+
+    body .uwy.userway_p1 .userway_buttons_wrapper {
+      top: 11%;
+      left: calc(100vw - 30px);
+    }
+
+    body .uwy.userway_p7 .userway_buttons_wrapper {
+      top: 11%;
+      left: 15px;
+    }
+
+    @media only screen and (max-width:900px) {
+      .toolbar-disabilitas {
+        top: 60%;
+        left: 0;
+        z-index: 999;
+        height: 1px;
+        width: -180px;
+        text-align: center;
+        background: 0 0 !important
+      }
+    }
+  </style>
+  <span id="loadmodaldisabilitas"></span>
+
+  
+  <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
+    <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+  </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -234,15 +434,15 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/file/tll1ebeI0CWGPw09v61g.pdf">Struktur Organisasi</a>
+              <a class="px-5 py-4 md:py-2" href="/file/tll1ebei0cwgpw09v61g.pdf">Struktur Organisasi</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
             
               <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
             
           </div>
         </li>
@@ -265,7 +465,7 @@ ul.mobile-menu li a:hover {
             
               <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.app/vidio/video-kegiatan/">Vidio</a>
+              <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
             
               <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
             
@@ -323,11 +523,11 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/renja-monev/renja-monev">Renja Monev</a>
+              <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
+              <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/umum-aparatur/aparatur/">Aparatur</a>
+              <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
             
               <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
             
@@ -335,9 +535,9 @@ ul.mobile-menu li a:hover {
             
               <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
+              <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
+              <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
             
           </div>
         </li>
@@ -356,9 +556,9 @@ ul.mobile-menu li a:hover {
             
               <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
+              <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/Layanan%20Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png">Kontak Pengaduan</a>
+              <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
             
               <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
             
@@ -377,25 +577,25 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
+              <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
+              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
+              <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
+              <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
+              <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
+              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/laporan-ppid/laporan-ppid">Laporan PPID</a>
+              <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/formulir-ppid/formulir-ppid">Formulir PPID</a>
+              <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
+              <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
             
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kalbarprov.go.id/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
+              <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
             
               <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
             
@@ -458,9 +658,121 @@ ul.mobile-menu li a:hover {
 </script>
 
 </header>
-<main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
+<div class="fixed-social-media">
+    <div class="social-icons">
+        
+        <a href="#" class="social-icon facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+            <span class="tooltip">Facebook</span>
+        </a>
 
-  <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-black">Bidang Perlindungan Masyarakat</h1>
+        
+        <a href="#" class="social-icon instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Instagram</span>
+        </a>
+
+        
+        <a href="#" class="social-icon twitter" target="_blank">
+            <i class="fab fa-twitter"></i>
+            <span class="tooltip">Twitter</span>
+        </a>
+
+        
+        <a href="#" class="social-icon youtube" target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span class="tooltip">YouTube</span>
+        </a>
+    </div>
+</div>
+
+<style>
+.fixed-social-media {
+    position: fixed;
+    right: 0;  
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    border-radius: 10px 0 0 10px;  
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);  
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    width: 60px;
+    transform: translateX(-5px);  
+}
+
+.social-icon .tooltip {
+    position: absolute;
+    right: 120%;  
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-icon:hover .tooltip {
+    opacity: 1;
+    right: 110%;  
+}
+
+ 
+.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.youtube {
+    background: #FF0000;
+    color: white;
+}
+
+ 
+@media (max-width: 768px) {
+    .fixed-social-media {
+        display: none;
+    }
+}
+</style>
+
+  <main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
+
+  <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-blac text-green-700">BIDANG PERLINDUNGAN MASYARAKAT</h1>
   
   
   <div class="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
@@ -468,82 +780,133 @@ ul.mobile-menu li a:hover {
 
       
         
-  <div class='grid-item h-full p-2 rounded-lg shadow-md hover:bg-green-700 dark:hover:bg-gray-800 ease-in-out px-4 py-2 m-0' style="width: auto;">
-    
-    <a href="/bidang-perlindungan-masyarakat/daftar-sop-bidang-perlindungan-masyarakat/">
-    
-    
-    <div class="my-2 text-l font-normal overflow-ellipsis overflow-hidden hover:text-gray-100 dark:hover:text-gray-100 dark:text-black" style="font-size: 0.9rem;">Daftar SOP Bidang Perlindungan Masyarakat</div>
-    
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+  
+  <a href="/bidang-perlindungan-masyarakat/daftar-sop-bidang-perlindungan-masyarakat/" class="block relative">
+  
+  
   </a>
   
     
   
-  </div>
+</div>
+
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
-
-
-  
 
       
     
   </div>
 
-  <div class="">
-  
+  <div class="flex justify-center items-center my-8">
+  <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+    
+
+    
+    <a href="/bidang-perlindungan-masyarakat/" class="z-10 bg-green-50 border-green-500 text-green-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium transition duration-300">
+      1
+    </a>
+    
+
+    
+  </nav>
 </div>
 
 
 
-    </main>
-    <div style="overflow-x: hidden;">
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        body {
-          font-family: 'Poppins', sans-serif;
-        }
-      </style>
-<footer class=" p-4 mx-auto items-center justify-between w-full bg-green-700 text-white px-10">
-  <div class="w-full flex justify-between mb-4">
-    <div class="w-1/2 text-left flex flex-col justify-center items-center">
-      <h1 class="font-bold text-2xl text-center mb-14">SATUAN POLISI PAMONG PRAJA PROVINSI <br>KALIMANTAN BARAT</h1>
-      <p class="font-bold text-center text-xl">Web Resmi Polisi Pamong Praja <br>Provinsi Kalimantan Barat</p>
-    </div>
-    <span class="bg-black  w-0.5 -mt-4 h-96 relative mx-4"></span>    
-    <div class="w-1/2 text-left flex flex-col justify-center items-center relative left-20">
-      <div class="flex flex-col justify-center items-start w-full">
-        <div class="flex items-start my-4 mx-1">
-          <i class="fas fa-phone-alt mr-2 text-2xl"></i>
-          <span class="text-2xl break-words mx-5">081225197681</span>
-        </div>
-        <div class="flex items-center my-4">
-          <i class="fas fa-map-marker-alt mr-2 text-2xl"></i>
-          <span class="text-2xl break-words mx-7">Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124</span>
-        </div>
-        <div class="flex items-center my-4">
-          <i class="fas fa-envelope mr-2 text-2xl"></i>
-          <span class="text-2xl break-words mx-5">satpolpp@kalbarprov.go.id</span>
-        </div>
-        <div class="flex items-center my-4">
-          <i class="fas fa-sitemap mr-2 text-2xl"></i>
-          <a href="//localhost:1313/sitemap" class="underline text-2xl break-words mx-4">Sitemap</a>
+  </main>
+  <div style="overflow-x: hidden;">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style><footer class="p-1 mx-auto w-full bg-gradient-to-b from-green-700 to-green-800 text-white">
+  <div class="container mx-auto px-1">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6">
+      <div class="text-center md:text-left transform hover:scale-105 transition duration-300">
+        <h1 class="font-bold text-xl mb-2 text-green-100">SATUAN POLISI PAMONG PRAJA PROVINSI KALIMANTAN BARAT</h1>
+        <p class="text-base font-medium text-green-200">Web Resmi Polisi Pamong Praja Provinsi Kalimantan Barat</p>
+        
+        
+        <div class="mt-4 px-4">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.2259474347772!2d109.35257842670621!3d-0.06174539999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59a102965473%3A0x9ef363f0cf41c6b2!2sGedung%20Pelayanan%20Terpadu%20Prov.%20Kalbar!5e0!3m2!1sid!2sid!4v1708745123456!5m2!1sid!2sid"
+            width="90%" 
+            height="150" 
+            style="border:0; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
         </div>
       </div>
-      <div class="flex gap-10 justify-center items-center mt-14">
-        <a href="#" class="my-1 text-white bg-white w-10 h-10 flex justify-center items-center rounded-full" style="color: #000000!important"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="my-1 text-white bg-white w-10 h-10 flex justify-center items-center rounded-full" style="color: #000000!important"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="my-1 text-white bg-white w-10 h-10 flex justify-center items-center rounded-full" style="color: #000000!important"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="my-1 text-white bg-white w-10 h-10 flex justify-center items-center rounded-full" style="color: #000000!important"><i class="fab fa-youtube"></i></a>
+      
+      <div class="flex flex-col space-y-3">
+        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
+          <i class="fas fa-phone-alt text-xl text-green-100"></i>
+          <a href="tel:081225197681" class="ml-2 text-sm font-semibold">081225197681</a>
+        </div>
+        
+        <div class="flex items-start bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
+          <i class="fas fa-map-marker-alt text-xl text-green-100 mt-1"></i>
+          <a href="https://goo.gl/maps/YOUR-MAPS-LINK" target="_blank" class="ml-2 text-sm">
+            Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124
+          </a>
+        </div>
+        
+        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
+          <i class="fas fa-envelope text-xl text-green-100"></i>
+          <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 text-sm font-semibold">satpolpp@kalbarprov.go.id</a>
+        </div>
+        
+        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
+          <i class="fas fa-sitemap text-xl text-green-100"></i>
+          <a href="//localhost:1313/sitemap" class="ml-2 text-sm font-semibold">Sitemap</a>
+        </div>
+
+        <div class="flex items-center justify-center space-x-3 mt-3">
+          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
+            <i class="fab fa-facebook text-lg"></i>
+          </a>
+          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
+            <i class="fab fa-twitter text-lg"></i>
+          </a>
+          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
+            <i class="fab fa-youtube text-lg"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
-<div class="w-full text-center p-4 bg-green-900 text-xl text-white">
-  <span>Copyright © 2024</span>
+
+<div class="w-full text-center p-3 bg-green-900 text-white border-t-2 border-green-600">
+  <p class="text-sm font-medium">&copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.</p>
 </div>
-
-
 
 <div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
   <div class="container max-w-3xl mx-auto p-12">
@@ -611,67 +974,52 @@ ul.mobile-menu li a:hover {
   }
 </script>
 
+
 <script>
-  
   function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.classList.add('hidden'); 
-
+    loadingScreen.classList.add('hidden');
     const mainContent = document.querySelector('main');
-    mainContent.classList.add('fade-in'); 
+    mainContent.classList.add('fade-in');
   }
-
-  
   setTimeout(hideLoadingScreen, 300);
 </script>
+
 <script>
   document.getElementById('mobile-menu-button').addEventListener('click', function() {
     var menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
   });
-  
-  
-  
-    
-    
-  
-  
-    
-  
 </script>
 
 <script>
-    function scrollToTop() {
-        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        if (currentScroll > 0) {
-            window.requestAnimationFrame(scrollToTop);
-            window.scrollTo(0, currentScroll - currentScroll / 40);
-        }
+  function scrollToTop() {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScroll > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, currentScroll - currentScroll / 40);
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > 20) {
+      scrollToTopBtn.classList.remove('hidden');
+    } else {
+      scrollToTopBtn.classList.add('hidden');
     }
 
-    window.addEventListener('scroll', function() {
-        var scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        var scrollY = window.scrollY || window.pageYOffset;
-
-        if (scrollY > 20) {
-            scrollToTopBtn.classList.remove('hidden');
-        } else {
-            scrollToTopBtn.classList.add('hidden');
-        }
-
-        if (scrollY === 0) {
-            scrollToTopBtn.style.display = 'none';
-        } else {
-            scrollToTopBtn.style.display = 'block';
-        }
-    });
+    if (scrollY === 0) {
+      scrollToTopBtn.style.display = 'none';
+    } else {
+      scrollToTopBtn.style.display = 'block';
+    }
+  });
 </script>
-
-
-
-
-
 </div>
-  </body>
-  <script src='/js/loadmodaldisabilitas.js'></script>
+</body>
+<script src='/js/loadmodaldisabilitas.js'></script>
+
 </html>

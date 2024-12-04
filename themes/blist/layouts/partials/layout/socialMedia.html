@@ -1,0 +1,111 @@
+<div class="fixed-social-media">
+    <div class="social-icons">
+        <!-- Facebook -->
+        <a href="#" class="social-icon facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+            <span class="tooltip">Facebook</span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="#" class="social-icon instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Instagram</span>
+        </a>
+
+        <!-- Twitter -->
+        <a href="#" class="social-icon twitter" target="_blank">
+            <i class="fab fa-twitter"></i>
+            <span class="tooltip">Twitter</span>
+        </a>
+
+        <!-- YouTube -->
+        <a href="#" class="social-icon youtube" target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span class="tooltip">YouTube</span>
+        </a>
+    </div>
+</div>
+
+<style>
+.fixed-social-media {
+    position: fixed;
+    right: 0; /* Diubah dari left ke right */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    border-radius: 10px 0 0 10px; /* Diubah untuk sisi kiri */
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2); /* Diubah bayangan ke sisi kiri */
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    width: 60px;
+    transform: translateX(-5px); /* Diubah arah gerak ke kiri */
+}
+
+.social-icon .tooltip {
+    position: absolute;
+    right: 120%; /* Diubah dari left ke right */
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-icon:hover .tooltip {
+    opacity: 1;
+    right: 110%; /* Diubah dari left ke right */
+}
+
+/* Warna khusus untuk tiap platform */
+.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.youtube {
+    background: #FF0000;
+    color: white;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .fixed-social-media {
+        display: none;
+    }
+}
+</style>
