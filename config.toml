@@ -724,8 +724,8 @@ weight = 2
 identifier = 'struktur organisasi'
 name = "Struktur Organisasi"
 parent = "profil"
-url = "https://satpolpp.kalbarprov.go.id/file/tll1ebeI0CWGPw09v61g.pdf"
-weight = 1
+url = "/Struktur Organisasi/struktur/"
+weight = 2
 
 
 
