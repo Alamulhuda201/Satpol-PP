@@ -1,34 +1,185 @@
-<div class="transform hover:scale-105 transition duration-300">
-  <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="margin: 8px;">
-    <a href="{{ .Params.thumbnail }}" target="_blank">
-      {{ if .Params.thumbnail }}
-      <div class="relative">
-        <img src="{{ .Params.thumbnail }}" 
-             alt="{{ .Params.title }}" 
-             class="w-full object-cover hover:opacity-90 transition duration-300"
-             style="height: 150px;" />
-        
-        {{ if not (or (or .Site.Params.hideMeta .Params.hideMeta) false) }}
-        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1">
-          <h3 class="text-center text-xs font-medium truncate">
-            {{ .Params.title }}
-          </h3>
+<div class="container mx-auto py-8">
+  <div class="w-full mx-auto px-4">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {{ range .Params.gallery }}
+        <div class="swiper-slide">
+          <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+            <a href="{{ .thumbnail }}" class="gallery-link" data-fancybox="gallery" onclick="handleSlideClick(this)">
+              {{ if .thumbnail }}
+              <div class="relative">
+                <img src="{{ .thumbnail }}" 
+                     alt="{{ .title }}" 
+                     class="w-full object-cover gallery-image"
+                     style="width: 100%; height: 650px; object-fit: cover;" />
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4">
+                  <h3 class="text-white text-xl font-semibold text-center">
+                    {{ .title }}
+                  </h3>
+                </div>
+              </div>
+              {{ end }}
+            </a>
+          </div>
         </div>
         {{ end }}
       </div>
-      {{ end }}
-    </a>
 
-    {{ if not (or (or .Site.Params.hideOtherLanguages .Params.hideOtherLanguages) false) }}
-      {{ if .IsTranslated -}}
-        <div class="px-2 py-1 text-xs text-gray-600 italic">
-          {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
-          {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
-          {{- $cleanLinks := apply $links "chomp" "." -}}
-          {{- $linksOutput := delimit $cleanLinks (i18n "translationsSeparator") -}}
-          {{ i18n "translationsLabel" }}{{ $linksOutput }}
-        </div>
-      {{- end }}
-    {{ end }}
+      <!-- Navigation -->
+      <div class="swiper-button-next " style="right: 20px;"></div>
+      <div class="swiper-button-prev " style="left: 20px;"></div>
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
   </div>
 </div>
+
+<style>
+  .swiper-container {
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin-top: -60px;
+  }
+
+  .swiper-slide {
+    transition: all 0.5s ease;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .gallery-image {
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-link:hover .gallery-image {
+    transform: scale(1.05);
+  }
+
+  /* Animasi saat gambar diklik */
+  .gallery-link:active .gallery-image {
+    transform: scale(0.95);
+  }
+
+  /* Animasi untuk Fancybox */
+  .fancybox__backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .fancybox__content {
+    animation: zoomIn 0.3s ease-out;
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 35
+      }
+    }
+  });
+
+  // Fungsi untuk menangani klik pada slide
+  function handleSlideClick(element) {
+    const clickedSlide = element.closest('.swiper-slide');
+    if (!clickedSlide.classList.contains('swiper-slide-active')) {
+      event.preventDefault(); // Mencegah Fancybox terbuka
+      const slideIndex = Array.from(clickedSlide.parentElement.children).indexOf(clickedSlide);
+      swiper.slideTo(slideIndex);
+    }
+  }
+
+  // Inisialisasi Fancybox
+  Fancybox.bind("[data-fancybox]", {
+    animated: true,
+    showClass: "fancybox-fadeIn",
+    hideClass: "fancybox-fadeOut",
+    dragToClose: false,
+    Image: {
+      zoom: true,
+    },
+    on: {
+      reveal: (fancybox, slide) => {
+        slide.$content.style.animation = "zoomIn 0.3s ease-out";
+      }
+    }
+  });
+</script>
