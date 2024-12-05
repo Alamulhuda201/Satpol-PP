@@ -12,8 +12,10 @@
                     {{ $berita := first 3 (where .Site.RegularPages "Section" "berita") }}
                     {{ range $berita }}
                     <swiper-slide>
-                        <div class=" h-full">
-                            <img class="w-full h-4/5 object-cover" src="{{ .Params.thumbnail }}" alt="Gambar Berita">
+                        <div class="h-full">
+                            <a href="{{ .RelPermalink }}">
+                                <img class="w-full h-4/5 object-cover cursor-pointer hover:opacity-90 transition-opacity duration-300" src="{{ .Params.thumbnail }}" alt="Gambar Berita">
+                            </a>
                             <div class="p-4">
                                 <h3 class="font-bold text-xl mb-4">{{ .Title }}</h3>
                                 <div class="flex p-2">

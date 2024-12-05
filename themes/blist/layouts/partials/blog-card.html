@@ -7,7 +7,8 @@
   {{ end }}
   {{ if .Params.thumbnail }}
   <div class="relative">
-    <img src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}" class="w-full h-72 object-cover hover:opacity-90 transition duration-300" />
+    <img src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}" class="w-full h-96 object-cover " />
+    <div class="absolute inset-0 bg-black opacity-50 hover:opacity-5 transition duration-300"></div>
     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
       <div class="flex items-center justify-between">
         <p class="text-white text-xs font-bold w-72 uppercase">{{ .Params.title }}</p>
@@ -35,7 +36,7 @@
 <style>
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 1.5rem;
   padding: 1.5rem;
 }
@@ -52,5 +53,3 @@
   }
 }
 </style>
-
-
