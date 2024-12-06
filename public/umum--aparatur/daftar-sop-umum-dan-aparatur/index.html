@@ -49,7 +49,28 @@ SOP PERMINTAAN PENOMORAN SURAT
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -57,7 +78,7 @@ SOP PERMINTAAN PENOMORAN SURAT
   <meta property="og:url" content="//localhost:1313/umum--aparatur/daftar-sop-umum-dan-aparatur/">
   <meta property="og:site_name" content="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat">
   <meta property="og:title" content="DAFTAR SOP UMUM DAN APARATUR">
-  <meta property="og:description" content="SOP IJIN TUGAS BELAJAR SOP PENERBITAN SURAT KETERANGAN SOP PENGUSULAN KENAIKAN GAJI BERKALA SOP PENERBITAN SURAT PERINTAH TUGAS SOP CUTI PNS SOP FASILITASI NARASUMBER SOP PELAYANAN KONSULTASI SOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBAR SOP PELAYANAN TAMU SOP PELAYANAN USULAN TASPEN SOP PEMBINAAN PNS SOP PENANGANAN RUMAH TANGGA KANTOR SOP PENERBITAN PENGAJUAN ANGKA KREDIT SOP PENGAGENDAAN SURAT SOP PENGAJUAN PENSIUN SOP PENGAMANAN KANTOR SOP PENGUMPULAN SKP SOP PENGUSULAN DIKLAT SOP PENGUSULAN KENAIKAN PANGKAT SOP PENGUSULAN PERUBAHAN JFT SOP PENGUSULAN PERBH STATUS CPNS SOP PENJATUHAN HUKUMAN DISIPLIN SOP PENYEWAAN TEMPAT SOP PENYUSUNAN BUKU DUK SOP PERSIAPAN PELAKSANAAN RAPAT SOP REKAP KINERJA PNS SOP PENGUSULAN SLKS SOP PENGURUSAN SURAT KELUAR SOP PENGURUSAN SURAT MASUK SOP USULAN ASN TELADAN SOP PENERBITAN SK KEPALA PD SOP PENGUSULAN UJIAN DINAS SOP PENGHAPUSAN ARSIP SOP PEMINJAMAN KENDARAAN DINAS SOP PERMINTAAN PENOMORAN SURAT">
+  <meta property="og:description" content="SOP IJIN TUGAS BELAJARSOP PENERBITAN SURAT KETERANGANSOP PENGUSULAN KENAIKAN GAJI BERKALASOP PENERBITAN SURAT PERINTAH TUGASSOP CUTI PNSSOP FASILITASI NARASUMBERSOP PELAYANAN KONSULTASISOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBARSOP PELAYANAN TAMUSOP PELAYANAN USULAN TASPENSOP PEMBINAAN PNSSOP PENANGANAN RUMAH TANGGA KANTORSOP PENERBITAN PENGAJUAN ANGKA KREDITSOP PENGAGENDAAN SURATSOP PENGAJUAN PENSIUNSOP PENGAMANAN KANTORSOP PENGUMPULAN SKPSOP PENGUSULAN DIKLATSOP PENGUSULAN KENAIKAN PANGKATSOP PENGUSULAN PERUBAHAN JFTSOP PENGUSULAN PERBH STATUS CPNSSOP PENJATUHAN HUKUMAN DISIPLINSOP PENYEWAAN TEMPATSOP PENYUSUNAN BUKU DUKSOP PERSIAPAN PELAKSANAAN RAPATSOP REKAP KINERJA PNSSOP PENGUSULAN SLKSSOP PENGURUSAN SURAT KELUARSOP PENGURUSAN SURAT MASUKSOP USULAN ASN TELADANSOP PENERBITAN SK KEPALA PDSOP PENGUSULAN UJIAN DINASSOP PENGHAPUSAN ARSIPSOP PEMINJAMAN KENDARAAN DINASSOP PERMINTAAN PENOMORAN SURAT">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="umum-&amp;-aparatur">
@@ -67,11 +88,11 @@ SOP PERMINTAAN PENOMORAN SURAT
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="DAFTAR SOP UMUM DAN APARATUR">
-  <meta name="twitter:description" content="SOP IJIN TUGAS BELAJAR SOP PENERBITAN SURAT KETERANGAN SOP PENGUSULAN KENAIKAN GAJI BERKALA SOP PENERBITAN SURAT PERINTAH TUGAS SOP CUTI PNS SOP FASILITASI NARASUMBER SOP PELAYANAN KONSULTASI SOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBAR SOP PELAYANAN TAMU SOP PELAYANAN USULAN TASPEN SOP PEMBINAAN PNS SOP PENANGANAN RUMAH TANGGA KANTOR SOP PENERBITAN PENGAJUAN ANGKA KREDIT SOP PENGAGENDAAN SURAT SOP PENGAJUAN PENSIUN SOP PENGAMANAN KANTOR SOP PENGUMPULAN SKP SOP PENGUSULAN DIKLAT SOP PENGUSULAN KENAIKAN PANGKAT SOP PENGUSULAN PERUBAHAN JFT SOP PENGUSULAN PERBH STATUS CPNS SOP PENJATUHAN HUKUMAN DISIPLIN SOP PENYEWAAN TEMPAT SOP PENYUSUNAN BUKU DUK SOP PERSIAPAN PELAKSANAAN RAPAT SOP REKAP KINERJA PNS SOP PENGUSULAN SLKS SOP PENGURUSAN SURAT KELUAR SOP PENGURUSAN SURAT MASUK SOP USULAN ASN TELADAN SOP PENERBITAN SK KEPALA PD SOP PENGUSULAN UJIAN DINAS SOP PENGHAPUSAN ARSIP SOP PEMINJAMAN KENDARAAN DINAS SOP PERMINTAAN PENOMORAN SURAT">
+  <meta name="twitter:description" content="SOP IJIN TUGAS BELAJARSOP PENERBITAN SURAT KETERANGANSOP PENGUSULAN KENAIKAN GAJI BERKALASOP PENERBITAN SURAT PERINTAH TUGASSOP CUTI PNSSOP FASILITASI NARASUMBERSOP PELAYANAN KONSULTASISOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBARSOP PELAYANAN TAMUSOP PELAYANAN USULAN TASPENSOP PEMBINAAN PNSSOP PENANGANAN RUMAH TANGGA KANTORSOP PENERBITAN PENGAJUAN ANGKA KREDITSOP PENGAGENDAAN SURATSOP PENGAJUAN PENSIUNSOP PENGAMANAN KANTORSOP PENGUMPULAN SKPSOP PENGUSULAN DIKLATSOP PENGUSULAN KENAIKAN PANGKATSOP PENGUSULAN PERUBAHAN JFTSOP PENGUSULAN PERBH STATUS CPNSSOP PENJATUHAN HUKUMAN DISIPLINSOP PENYEWAAN TEMPATSOP PENYUSUNAN BUKU DUKSOP PERSIAPAN PELAKSANAAN RAPATSOP REKAP KINERJA PNSSOP PENGUSULAN SLKSSOP PENGURUSAN SURAT KELUARSOP PENGURUSAN SURAT MASUKSOP USULAN ASN TELADANSOP PENERBITAN SK KEPALA PDSOP PENGUSULAN UJIAN DINASSOP PENGHAPUSAN ARSIPSOP PEMINJAMAN KENDARAAN DINASSOP PERMINTAAN PENOMORAN SURAT">
 
   
   <meta itemprop="name" content="DAFTAR SOP UMUM DAN APARATUR">
-  <meta itemprop="description" content="SOP IJIN TUGAS BELAJAR SOP PENERBITAN SURAT KETERANGAN SOP PENGUSULAN KENAIKAN GAJI BERKALA SOP PENERBITAN SURAT PERINTAH TUGAS SOP CUTI PNS SOP FASILITASI NARASUMBER SOP PELAYANAN KONSULTASI SOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBAR SOP PELAYANAN TAMU SOP PELAYANAN USULAN TASPEN SOP PEMBINAAN PNS SOP PENANGANAN RUMAH TANGGA KANTOR SOP PENERBITAN PENGAJUAN ANGKA KREDIT SOP PENGAGENDAAN SURAT SOP PENGAJUAN PENSIUN SOP PENGAMANAN KANTOR SOP PENGUMPULAN SKP SOP PENGUSULAN DIKLAT SOP PENGUSULAN KENAIKAN PANGKAT SOP PENGUSULAN PERUBAHAN JFT SOP PENGUSULAN PERBH STATUS CPNS SOP PENJATUHAN HUKUMAN DISIPLIN SOP PENYEWAAN TEMPAT SOP PENYUSUNAN BUKU DUK SOP PERSIAPAN PELAKSANAAN RAPAT SOP REKAP KINERJA PNS SOP PENGUSULAN SLKS SOP PENGURUSAN SURAT KELUAR SOP PENGURUSAN SURAT MASUK SOP USULAN ASN TELADAN SOP PENERBITAN SK KEPALA PD SOP PENGUSULAN UJIAN DINAS SOP PENGHAPUSAN ARSIP SOP PEMINJAMAN KENDARAAN DINAS SOP PERMINTAAN PENOMORAN SURAT">
+  <meta itemprop="description" content="SOP IJIN TUGAS BELAJARSOP PENERBITAN SURAT KETERANGANSOP PENGUSULAN KENAIKAN GAJI BERKALASOP PENERBITAN SURAT PERINTAH TUGASSOP CUTI PNSSOP FASILITASI NARASUMBERSOP PELAYANAN KONSULTASISOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBARSOP PELAYANAN TAMUSOP PELAYANAN USULAN TASPENSOP PEMBINAAN PNSSOP PENANGANAN RUMAH TANGGA KANTORSOP PENERBITAN PENGAJUAN ANGKA KREDITSOP PENGAGENDAAN SURATSOP PENGAJUAN PENSIUNSOP PENGAMANAN KANTORSOP PENGUMPULAN SKPSOP PENGUSULAN DIKLATSOP PENGUSULAN KENAIKAN PANGKATSOP PENGUSULAN PERUBAHAN JFTSOP PENGUSULAN PERBH STATUS CPNSSOP PENJATUHAN HUKUMAN DISIPLINSOP PENYEWAAN TEMPATSOP PENYUSUNAN BUKU DUKSOP PERSIAPAN PELAKSANAAN RAPATSOP REKAP KINERJA PNSSOP PENGUSULAN SLKSSOP PENGURUSAN SURAT KELUARSOP PENGURUSAN SURAT MASUKSOP USULAN ASN TELADANSOP PENERBITAN SK KEPALA PDSOP PENGUSULAN UJIAN DINASSOP PENGHAPUSAN ARSIPSOP PEMINJAMAN KENDARAAN DINASSOP PERMINTAAN PENOMORAN SURAT">
   <meta itemprop="datePublished" content="2024-09-09T03:22:08+00:00">
   <meta itemprop="dateModified" content="2024-09-09T03:22:08+00:00">
   <meta itemprop="wordCount" content="136">
@@ -134,8 +155,6 @@ SOP PERMINTAAN PENOMORAN SURAT
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -626,7 +645,7 @@ SOP PERMINTAAN PENOMORAN SURAT
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -719,13 +738,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1059,18 +1078,12 @@ ul.mobile-menu li a:hover {
   
   
 
-  
-  
- 
-  
-
-  <article class="prose lg:prose-lg mx-auto my-8 px-4 text-black" >
-    
-    <h1 class="text-2xl font-bold mb-2 pb-4 pt-6 text-center" style="color: black; font-size: 2rem;">DAFTAR SOP UMUM DAN APARATUR</h1>
+  <div class="max-w-5xl mx-auto px-4">
     
     
-
-    <ol>
+    <article class="prose lg:prose-lg mx-auto my-8">
+      <h1 class="text-2xl font-bold mb-4">DAFTAR SOP UMUM DAN APARATUR</h1>
+      <ol>
 <li><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf">SOP IJIN TUGAS BELAJAR</a></li>
 <li><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf">SOP PENERBITAN SURAT KETERANGAN</a></li>
 <li><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf">SOP PENGUSULAN KENAIKAN GAJI BERKALA</a></li>
@@ -1108,47 +1121,29 @@ ul.mobile-menu li a:hover {
 <li><a href="/file/8QK17qhT43IawazRcn0m.pdf">SOP PERMINTAAN PENOMORAN SURAT</a></li>
 </ol>
 
-    <div class="relative mx-auto">
-      <div class="owl-carousel owl-theme">
-        
-      </div>
-      
-      <div class="absolute top-1 right-8 rounded shadow bg-green-700 text-gray-800 dark:bg-gray-900 dark:text-white px-2 py-0.5 mb-2">
-        
-  
-    09 September 2024
-  
+    </article>
+    
+  </div>
 
-
-      </div>
-      
-    </div>
-    <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items: 1, 
-          loop: true, 
-          nav: true, 
-          dots: false, 
-          autoplay: true, 
-          autoplayTimeout: 3000, 
-          responsiveClass:true,
-          autoHeight: true, 
-          responsive:{
-            0:{
-              items:1
-            },
-            600:{
-              items:1
-            },
-            1000:{
-              items:2
-            }
-          }
-        });
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsiveClass: true,
+        autoHeight: true,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:1 },
+          1000:{ items:1 }
+        }
       });
-      </script>
-  </article>
+    });
+  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"

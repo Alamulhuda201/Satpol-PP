@@ -158,7 +158,7 @@ weight = 6
 identifier = "tentang satpol pp"
 name = "Tentang Satpol PP"
 parent = "profil"
-url = "/tentang satpol pp"
+url = "/profil#tentang-satpol-pp"
 weight = 3
 
 [[languages.id.menu.main]]
@@ -278,7 +278,7 @@ url = "/Struktur Organisasi/struktur/"
 identifier = "visi dan misi"
 name = "Visi Dan Misi"
 parent = "profil"
-url = "/visi-dan-misi/visi-dan-misi"
+url = "/profil#visi-dan-misi"
 weight = 4
 
 [[languages.id.menu.main]]
@@ -369,7 +369,7 @@ weight = 9
 identifier = "profil pimpinan"
 name = "Profil Pimpinan"
 parent = "profil"
-url = "/profil-pimpinan/pejabat-struktural"
+url = "/profil#pejabat-struktural"
 weight = 2
 
 [[languages.id.menu.main]]
@@ -430,16 +430,16 @@ weight = 11
 
 [[languages.id.menu.main]]
 identifier = "motto satpol pp"
-name = "Motto Satpol PP"
-parent = "profil ppid"
-url = "/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
+name = "Motto Satpol PP" 
+parent = "profil"
+url = "/profil#motto-satpol-pp"
 weight = 3
 
 [[languages.id.menu.main]]
 identifier = "motto satpol pp"
 name = "Motto Satpol PP"
 parent = "profil"
-url = "/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat"
+url = "/profil#motto-satpol-pp"
 weight = 3
 
 [[languages.id.menu.main]]

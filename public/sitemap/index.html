@@ -11,7 +11,28 @@
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -91,8 +112,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -583,7 +602,7 @@
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -676,13 +695,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1171,6 +1190,16 @@ ul.mobile-menu li a:hover {
                 </svg>
                 <a href="//localhost:1313/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah/" class="hover:text-custom-yellow text-white">
                     Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah
+                </a>
+            </div>
+            
+            <div class="pl-6 flex items-center gap-2 ">
+                <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                    <path stroke="none" d="M0 0h24v24H0z"/>  
+                    <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
+                </svg>
+                <a href="//localhost:1313/profil/" class="hover:text-custom-yellow text-white">
+                    Profil
                 </a>
             </div>
             
@@ -1983,16 +2012,6 @@ ul.mobile-menu li a:hover {
                     <path stroke="none" d="M0 0h24v24H0z"/>  
                     <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
                 </svg>
-                <a href="//localhost:1313/profil-pimpinan/" class="hover:text-custom-yellow text-white">
-                    Profil Pimpinan
-                </a>
-            </div>
-            
-            <div class="pl-6 flex items-center gap-2 ">
-                <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
-                    <path stroke="none" d="M0 0h24v24H0z"/>  
-                    <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
-                </svg>
                 <a href="//localhost:1313/pelita-perda/" class="hover:text-custom-yellow text-white">
                     PELITA PERDA
                 </a>
@@ -2222,6 +2241,28 @@ ul.mobile-menu li a:hover {
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2" />
                 </svg>
+                profil
+            </div>
+            
+            
+            <div class="pl-6 flex items-center gap-2 ">
+                <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                    <path stroke="none" d="M0 0h24v24H0z"/>  
+                    <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
+                </svg>
+                <a href="//localhost:1313/profil/pejabat-struktural/" class="hover:text-custom-yellow text-white">
+                    PEJABAT STRUKTURAL
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="p-6 border rounded-lg shadow-md  bg-custom-green  bg-white mb-6" style="break-inside: avoid;">
+            <div class="flex items-center gap-2 mb-4 text-xl font-bold text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-folder-open">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2" />
+                </svg>
                 profil-pimpinan
             </div>
             
@@ -2327,6 +2368,28 @@ ul.mobile-menu li a:hover {
                 </svg>
                 <a href="//localhost:1313/renja-monev/daftar-sop-renja-monev/" class="hover:text-custom-yellow text-white">
                     DAFTAR SOP RENJA MONEV
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="p-6 border rounded-lg shadow-md  bg-custom-green  bg-white mb-6" style="break-inside: avoid;">
+            <div class="flex items-center gap-2 mb-4 text-xl font-bold text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-folder-open">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2" />
+                </svg>
+                section
+            </div>
+            
+            
+            <div class="pl-6 flex items-center gap-2 ">
+                <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                    <path stroke="none" d="M0 0h24v24H0z"/>  
+                    <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
+                </svg>
+                <a href="//localhost:1313/profil-pimpinan/" class="hover:text-custom-yellow text-white">
+                    Profil Pimpinan
                 </a>
             </div>
             
@@ -2545,6 +2608,16 @@ ul.mobile-menu li a:hover {
                 tentang-satpol-pp
             </div>
             
+            
+            <div class="pl-6 flex items-center gap-2 ">
+                <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  
+                    <path stroke="none" d="M0 0h24v24H0z"/>  
+                    <path d="M15 13l4 -4l-4 -4m4 4h-11a4 4 0 0 0 0 8h1" />
+                </svg>
+                <a href="//localhost:1313/tentang-satpol-pp/profil-satpol-pp-prov.-kalbar-copy/" class="hover:text-custom-yellow text-white">
+                    Profil Satpol PP Prov. Kalbar
+                </a>
+            </div>
             
             <div class="pl-6 flex items-center gap-2 ">
                 <svg class="h-8 w-8 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  

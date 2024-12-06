@@ -13,7 +13,28 @@
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -98,8 +119,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -590,7 +609,7 @@
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -683,13 +702,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1023,18 +1042,36 @@ ul.mobile-menu li a:hover {
   
   
 
+  <div class="max-w-5xl mx-auto px-4">
+    
+    
+    <article class="bg-white rounded-lg shadow-lg overflow-hidden my-8">
+      
+      <div class="relative">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+          <h1 class="text-3xl font-bold text-white mb-2">KEGIATAN PENGEMBANGAN KAPASITAS DAN KARIER PENYIDIK PEGAWAI NEGERI SIPIL (PPNS)</h1>
+          <div class="flex items-center text-gray-300 text-sm">
+            <span class="mr-4">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              
   
-  
- 
+    20 Juli 2023
   
 
-  <article class="prose lg:prose-lg mx-auto my-8 px-4 text-black" >
-    
-    <h1 class="text-2xl font-bold mb-2 pb-4 pt-6 text-center" style="color: black; font-size: 2rem;">KEGIATAN PENGEMBANGAN KAPASITAS DAN KARIER PENYIDIK PEGAWAI NEGERI SIPIL (PPNS)</h1>
-    
-    
 
-    <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';"><img src="/images/OBfpITmS7GJGwJUBNmoU.jpg" width="1300" height="876" alt="" />Pontianak</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&nbsp;- SATPOL&nbsp;PP PROV. KALBAR&nbsp;menyelenggarakan kegiatan&nbsp;Pengembangan Kapasitas Dan K</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">arier Penyidik Pegawai Negeri Sipil (PPNS) yang dilaksanakan&nbsp;di Star Hotel, Jalan Gajahmada nomer 189 pada Selasa&nbsp;20 Juli 2023. Acara ini dihadiri oleh sejumlah narasumber yang ahli di bidangnya dan dihadiri oleh para Kepala Satuan Polisi Pamong Praja serta Penyidik Pegawai Negeri Sipil Satuan Polisi Pamong Praja se-Kalimantan Barat.</span></span></span></span></p>
+            </span>
+            <span class="mr-4">
+              <i class="fas fa-user mr-2"></i>
+              satpolpp@kalbarprov.go.id
+            </span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="p-6">
+        <div class="prose lg:prose-lg max-w-none">
+          <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';"><img src="/images/OBfpITmS7GJGwJUBNmoU.jpg" width="1300" height="876" alt="" />Pontianak</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&nbsp;- SATPOL&nbsp;PP PROV. KALBAR&nbsp;menyelenggarakan kegiatan&nbsp;Pengembangan Kapasitas Dan K</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">arier Penyidik Pegawai Negeri Sipil (PPNS) yang dilaksanakan&nbsp;di Star Hotel, Jalan Gajahmada nomer 189 pada Selasa&nbsp;20 Juli 2023. Acara ini dihadiri oleh sejumlah narasumber yang ahli di bidangnya dan dihadiri oleh para Kepala Satuan Polisi Pamong Praja serta Penyidik Pegawai Negeri Sipil Satuan Polisi Pamong Praja se-Kalimantan Barat.</span></span></span></span></p>
 <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">Acara yang berlangsung selama satu hari ini dibuka secara resmi oleh Kepala Satuan Polisi Pamong Praja Provinsi Kalimantan Barat Suherman, S.H., M.H. Beliau menyampaikan &ldquo;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">PPNS merupakan salah satu komponen dalam&nbsp;<em style="box-sizing: border-box; margin: 0px; padding: 0px;">&ldquo;Criminal Justice System&rdquo;</em>&nbsp;berdasarkan peraturan perundang &ndash; undangan dituntut untuk semakin profesional&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">dalam&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">menangani pelanggaran Peraturan Daerah&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">dan Peraturan Kepala Daerah&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">sesuai kewenangan yang telah diberikan.</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&nbsp;Dengan demikian, optimalisasi kinerja&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">PPNS&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">agar selalu</span></span>&nbsp;<span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">ditingkatkan melalui pemenuhan kebutuhan fasilitas sarana dan prasarana&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">yang mendukung semua kegiatan dan program kerja PPNS</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">,</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&nbsp;agar penegakan Peraturan Daerah dan Peraturan Kepala Daerah&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">dapat dilaksanakan&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">sesuai dengan harapan</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">.&rdquo;</span></span></span></span></p>
 <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">Dalam acara ini, narasumber pertama, Bapak Setiawan dari Kanwil Dirjen Bea Cukai (DJBC) Kalimantan Bagian Barat, membahas mengenai&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&ldquo;</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">Penggunaan, Pemantauan, Dan Evaluasi Dana Bagi Hasil Cukai Hasil Tembakau (DBHCHT)</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&rdquo;</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">. Setiawan menjelaskan pentingnya pengelolaan dana tersebut guna mendukung pembangunan dan memberikan manfaat yang optimal bagi masyarakat.</span></span></span></span></p>
 <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">Kemudian, Kepala Bidang Pelayanan Hukum dari Kantor Wilayah Kementerian Hukum dan HAM Kalimantan Barat, Bapak Muhayan, SH., MH, memberikan materi mengenai&nbsp;</span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&ldquo;</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">Penguatan Peran Pejabat PPNS Sesuai Dengan Tugas Dan Fungsinya</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-weight: bolder;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">&rdquo;</span></span></span><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';">. Muhayan menyampaikan betapa pentingnya peran PPNS dalam menjaga ketertiban dan keamanan di masyarakat, serta memberikan perlindungan hukum yang adil dan merata.</span></span></span></span></p>
@@ -1046,47 +1083,55 @@ ul.mobile-menu li a:hover {
 <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';"><img src="/images/3tCgv6G4mLJuxnyY6Zzi.jpeg" alt="" width="1599" height="1085" /></span></span></span></span></p>
 <p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; color: #8d8d8d; font-size: 14px; line-height: 1.4; font-family: 'Work Sans', sans-serif; background-color: #ffffff; text-align: justify;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 11pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Calibri, 'sans-serif';"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 12pt;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: Arial, 'sans-serif';"><img src="/images/aq0Xn27dI52UQMz2RLUK.jpeg" alt="" width="560" height="379" /><img src="/images/SNQzyFqvdmoxS63s4Tqp.jpeg" alt="" width="550" height="413" /></span></span></span></span></p>
 
-    <div class="relative mx-auto">
-      <div class="owl-carousel owl-theme">
-        
-      </div>
-      
-      <div class="absolute top-1 right-8 rounded shadow bg-green-700 text-gray-800 dark:bg-gray-900 dark:text-white px-2 py-0.5 mb-2">
-        
-  
-    20 Juli 2023
-  
+        </div>
 
+        
+        
 
+        
+        <div class="mt-8 pt-4 border-t">
+          <div class="flex items-center justify-between">
+            <div class="text-sm text-gray-600">
+              Bagikan artikel ini:
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fberita%2fkegiatan-pengembangan-kapasitas-dan-karier-penyidik-pegawai-negeri-sipil-ppns%2f" target="_blank" class="text-blue-600 hover:text-blue-800">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a href="https://twitter.com/intent/tweet?url=%2f%2flocalhost%3a1313%2fberita%2fkegiatan-pengembangan-kapasitas-dan-karier-penyidik-pegawai-negeri-sipil-ppns%2f&text=KEGIATAN%20PENGEMBANGAN%20KAPASITAS%20DAN%20KARIER%20PENYIDIK%20PEGAWAI%20NEGERI%20SIPIL%20%28PPNS%29" target="_blank" class="text-blue-400 hover:text-blue-600">
+                <i class="fab fa-twitter fa-lg"></i>
+              </a>
+              <a href="https://wa.me/?text=KEGIATAN%20PENGEMBANGAN%20KAPASITAS%20DAN%20KARIER%20PENYIDIK%20PEGAWAI%20NEGERI%20SIPIL%20%28PPNS%29%20%2f%2flocalhost%3a1313%2fberita%2fkegiatan-pengembangan-kapasitas-dan-karier-penyidik-pegawai-negeri-sipil-ppns%2f" target="_blank" class="text-green-600 hover:text-green-800">
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      
-    </div>
-    <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items: 1, 
-          loop: true, 
-          nav: true, 
-          dots: false, 
-          autoplay: true, 
-          autoplayTimeout: 3000, 
-          responsiveClass:true,
-          autoHeight: true, 
-          responsive:{
-            0:{
-              items:1
-            },
-            600:{
-              items:1
-            },
-            1000:{
-              items:2
-            }
-          }
-        });
+    </article>
+
+    
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsiveClass: true,
+        autoHeight: true,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:1 },
+          1000:{ items:1 }
+        }
       });
-      </script>
-  </article>
+    });
+  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"

@@ -14,7 +14,28 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -102,8 +123,6 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -594,7 +613,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -687,13 +706,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1027,18 +1046,12 @@ ul.mobile-menu li a:hover {
   
   
 
-  
-  
- 
-  
-
-  <article class="prose lg:prose-lg mx-auto my-8 px-4 text-black" >
-    
-    <h1 class="text-2xl font-bold mb-2 pb-4 pt-6 text-center" style="color: black; font-size: 2rem;">Profil Singkat Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</h1>
+  <div class="max-w-5xl mx-auto px-4">
     
     
-
-    <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Pejabat Pengelola Informasi dan Dokumentasi Daerah (PPID) pada Satuan Polisi Pamong Praja Provinsi Kalimantan Barat dibentuk tahun 2020 dibentuk berdasarkan Keputusan Gubernur Kalimantan Barat Nomor 7/DISKOMINFO/2020 tentang Pembentukan Pengelola Layanan Informasi dan Dokumentasi Di Lingkungan Pemerintah Provinsi Kalimantan Barat.</span></p>
+    <article class="prose lg:prose-lg mx-auto my-8">
+      <h1 class="text-2xl font-bold mb-4">Profil Singkat Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</h1>
+      <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Pejabat Pengelola Informasi dan Dokumentasi Daerah (PPID) pada Satuan Polisi Pamong Praja Provinsi Kalimantan Barat dibentuk tahun 2020 dibentuk berdasarkan Keputusan Gubernur Kalimantan Barat Nomor 7/DISKOMINFO/2020 tentang Pembentukan Pengelola Layanan Informasi dan Dokumentasi Di Lingkungan Pemerintah Provinsi Kalimantan Barat.</span></p>
 <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Polisi Pamong Praja Provinsi Kalimantan Barat.&nbsp; PPID adalah pejabat yang bertanggung jawab di bidang penyimpanan, pendokumentasian, penyediaan, dan/atau pelayanan informasi di Badan Publik.Keberadaan Satuan Polisi Pamong Praja di daerah pada prinsipnya berkaitan dengan kepentingan penyelenggaraan fungsi pemerintahan di daerah. Konkritnya berkenaan dengan salah satu urusan wajib yang berkaitan dengan pelayanan dasar yaitu ketenteraman, ketertiban umum dan perlindungan masyarakat. Secara lebih spesifik hal ini tertuang dalam ketentuan pasal 255 ayat (1) UU Nomor 23 Tahun 2014 tentang pemerintahan daerah, dinyatakan bahwa Satpol PP dibentuk untuk menegakkan Peraturan Daerah (Perda) dan Peraturan Kepala Daerah (Perkada), menyelenggarakan ketertiban umum dan ketentraman, serta menyelenggarakan perlindungan Masyarakat.</span></p>
 <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Oleh karena itu Satpol PP Provinsi Kalimantan Barat menyadari bahwa keterbukaan informasi publik adalah sarana untuk optimalisasi partisipasi dan pengawasan publik terhadap kinerja Satpol PP dalam memberikan pelayanan yang berkualitas kepada masyarakat dan cara untuk mendapatkan kepercayaan dan dukungan publik, yang mana Satpol PP masih memiliki citra negatif di tengah masyarakat yaitu sebagai Aparatur Pemerintah yang arogan, kasar, musuh Pedagang Kaki Lima (PKL) dan lain sebagainya. Dengan demikian, implementasi keterbukaan informasi publik digunakan sebagai strategi untuk mengabarkan/menginformasikan dan mengedukasi masyarakat bahwa Satpol PP adalah Perangkat Daerah yang ramah, terbuka dan humanis dalam menciptakan suasana masyarakan yang tenteram, tertib, teratur, dan terlindungi.&nbsp;</span></p>
 <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-family: Roboto; font-size: 14px; color: #555555; line-height: 1.7; background-color: #ffffff; text-align: justify;"><strong><span style="box-sizing: border-box; font-family: arial, helvetica, sans-serif; font-size: 12pt;">TUGAS DAN FUNGSI PPID:</span></strong></p>
@@ -1062,47 +1075,29 @@ ul.mobile-menu li a:hover {
 <p><span style="box-sizing: border-box; font-weight: bolder;"></span></p>
 <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-family: Roboto; font-size: 14px; color: #555555; line-height: 1.7; background-color: #ffffff; text-align: center;"><a href="/images/VYKPajD2B8tvSx9Hdlfw.png">STRUKTUR PPID SATPOL PP PROV. KALBAR</a></p>
 
-    <div class="relative mx-auto">
-      <div class="owl-carousel owl-theme">
-        
-      </div>
-      
-      <div class="absolute top-1 right-8 rounded shadow bg-green-700 text-gray-800 dark:bg-gray-900 dark:text-white px-2 py-0.5 mb-2">
-        
-  
-    06 September 2024
-  
+    </article>
+    
+  </div>
 
-
-      </div>
-      
-    </div>
-    <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items: 1, 
-          loop: true, 
-          nav: true, 
-          dots: false, 
-          autoplay: true, 
-          autoplayTimeout: 3000, 
-          responsiveClass:true,
-          autoHeight: true, 
-          responsive:{
-            0:{
-              items:1
-            },
-            600:{
-              items:1
-            },
-            1000:{
-              items:2
-            }
-          }
-        });
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsiveClass: true,
+        autoHeight: true,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:1 },
+          1000:{ items:1 }
+        }
       });
-      </script>
-  </article>
+    });
+  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"

@@ -14,7 +14,28 @@
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -99,8 +120,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -591,7 +610,7 @@
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -684,13 +703,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1024,18 +1043,12 @@ ul.mobile-menu li a:hover {
   
   
 
-  
-  
- 
-  
-
-  <article class="prose lg:prose-lg mx-auto my-8 px-4 text-black" >
-    
-    <h1 class="text-2xl font-bold mb-2 pb-4 pt-6 text-center" style="color: black; font-size: 2rem;">Sejarah Singkat Satuan Polisi Pamong Praja Indonesia</h1>
+  <div class="max-w-5xl mx-auto px-4">
     
     
-
-    <h4 style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 1.77778em 0px 0.444444em; font-size: 18px; color: #111827; line-height: 1.55556; font-family: inter, sans-serif; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-weight: bolder; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><img src="/images/tPUlEtCc6kbylvN3fNdy.png" width="218" height="224" alt="" /></span></span></span></h4>
+    <article class="prose lg:prose-lg mx-auto my-8">
+      <h1 class="text-2xl font-bold mb-4">Sejarah Singkat Satuan Polisi Pamong Praja Indonesia</h1>
+      <h4 style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 1.77778em 0px 0.444444em; font-size: 18px; color: #111827; line-height: 1.55556; font-family: inter, sans-serif; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-weight: bolder; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><img src="/images/tPUlEtCc6kbylvN3fNdy.png" width="218" height="224" alt="" /></span></span></span></h4>
 <p><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-weight: bolder; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"></span></span></span></p>
 <p style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0px 1.33333em; color: #374151; font-family: inter, sans-serif; font-size: 18px; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 14pt; line-height: 21.4667px; font-family: Tahoma, 'sans-serif'; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;KEBERADAAN POLISI PAMONG PRAJA PADA SAAT INI TIDAK LEPAS DARI PERMASALAHAN YANG MUNCUL DAN YANG KITA HADAPI SEJAK DIPROKLAMIRKAN NEGARA KESATUAN REPUBLIK INDONESIA TANGGAL 17 AGUSTUS 1945. UNTUK MELANGSUNGKAN DAN MEMPERTAHANKAN NEGARA KESATUAN REPUBLIK INDONESIA, DIANGGAP PERLU ADANYA KETENTERAMAN DAN KETERTIBAN UMUM MASYARAKAT AGAR PEMERINTAH YANG TELAH TERBENTUK DAPAT BERJALAN DENGAN BAIK. OLEH KARENA ITU, SESUAI SURAT PERINTAH JAWATAN PRAJA DI DAERAH ISTIMEWA YOGYAKARTA NOMOR 1 TAHUN 1948, DIBENTUKLAH &ldquo;DATASEMEN POLISI PENJAGA KEAMANAN KAPANEWON&rdquo; PADA TANGGAL 30 OKTOBER 1948. BELUM SATU BULAN, DATASEMEN INI DIUBAH NAMANYA MENJADI &ldquo;DATASEMEN POLISI PAMONG PRAJA&rdquo; BERDASARKAN SURAT PERINTAH JAWATAN PRAJA DAERAH ISTIOMEWA YOGYAKARTA NOMOR 2 TAHUN 1948 TANGGAL 10 NOVEMBER 1948. LEMBAGA INILAH YANG MERUPAKAN EMBRIO DARI KELAHIRAN POLISI PAMONG PRAJA. </span></span></span></span></p>
 <p style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 0px 0px 1.33333em; color: #374151; font-family: inter, sans-serif; font-size: 18px; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 14pt; line-height: 21.4667px; font-family: Tahoma, 'sans-serif'; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">PADA TAHUN 1950 MELALUI SURAT KEPUTUSAN MENTERI DALAM NEGERI NOMOR 32/2/20 TANGGAL 3 MARET 1950, DATASEMEN POLISI PAMONG PRAJA DIRUBAH MENJADI &ldquo;KESATUAN POLISI PAMONG PRAJA&rdquo; PADA TANGGAL 3 MARET 1950, INI DITETAPKAN MENJADI HARI JADI SATUAN POLISI PAMONG PRAJA YANG DIPERINGATI SETIAP TAHUNNYA.&nbsp; </span><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: Tahoma, 'sans-serif'; font-size: 14pt; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">BERSAMAAN DENGAN KEPUTUSAN TERSEBUT DIKELUARKAN, KETETAPAN MENTERI DALAM NEGERI NOMOR UP.32/2/2/21 TENTANG PEMBENTUKAN SATUAN POLISI PAMONG PRAJA DI LUAR DAERAH ISTIMEWA YOGYAKARTA, SEPUKLUH TAHUN KEMUDIAN DENGAN SURAT KEPUTUSAN MENTERI DALAM NEGERI NOMOR 7 TAHUN 1960, KESATUAN POLISI PAMONG PRAJA DIBENTUK DI TIAP-TIAP DAERAH TINGKAT I. HAL INI, MENDAPAT DUKUNGAN DARI PARA PETINGGI MILITER (ANGKATAN PERANG) SEBAGAIMANA DIKATAKABN OLEH KOLONEL BASUKI RAHMAD : &ldquo;</span><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: Tahoma, 'sans-serif'; font-size: 14pt; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">ADANYA TIM POLISI PAMONG PRAJA DI TIAP-TIAP KEWEDANAN DAN KECAMATAN GUNA MENGEMBALIKAN KEWIBAWAAN PEMERINTAH DAERAH MENUJU STABILITAS PEMERINTAHAN PADA UMUMNYA</span><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: Tahoma, 'sans-serif'; font-size: 14pt; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">&rdquo;.</span></span></span></span></p>
@@ -1043,47 +1056,29 @@ ul.mobile-menu li a:hover {
 <p style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 1.33333em 0px; color: #374151; font-family: inter, sans-serif; font-size: 18px; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 14pt; line-height: 21.4667px; font-family: Tahoma, 'sans-serif'; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PADA TAHUN 1962, SESUAI DENGAN KETETAPAN MENTERI DALAM NEGERI NOMOR 10 TAHUN 1962 TANGGAL 11 JUNI 1962, NAMA KESATUAN POLISI PAMONG PRAJA DIRUBAH MENJADI &ldquo;PAGAR BAYA&rdquo; DENGAN ALASAN UNTUK MEMBEDAKAN DARI KORPS KEPOLISIAN NEGARA SEBAGAIMANA DIMAKSUD UNDANG-UNDANG POKOK KEPOLISIAN NOMOR 13 TAHUN 1961. SELANJUTNYA SESUAI DENGAN KEPUTUSAN MENTERI PEMERINTAHAN UMUM DAN OTONOMI DAERAH NOMOR 1 TAHUN 1963&nbsp; KESATUAN PAGAR BAYA&nbsp; DIGANTI NAMANYA MENJADI &ldquo;KESATUAN PAGAR PRAJA&rdquo;. DENGAN DITERBTIKANNYA UNDANG-UNDANG NOMOR 5 TAHUN 1974 TENTANG POKOK-POKOK PEMERINTAHAN DI DAERAH, MAKA KESATUAN PAGAR PRAJA DIRUBAH LAGU MENJADI &ldquo;SATUAN POLISI PAMONG PRAJA&rdquo; .</span></span></span></span></p>
 <p style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; margin: 1.33333em 0px; color: #374151; font-family: inter, sans-serif; font-size: 18px; text-align: justify; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-family: 'comic sans ms', sans-serif; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; text-align: center; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 20pt; line-height: 30.6667px; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));"><span lang="IN" style="box-sizing: border-box; --tw-border-opacity: 1; --tw-shadow: 0 0 #0000; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59, 130, 246, 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; font-size: 14pt; line-height: 21.4667px; font-family: Tahoma, 'sans-serif'; border: 0px solid rgba(229,231,235,var(--tw-border-opacity));">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SEBAGAI PERANGKAT WILAYAH YANG MELAKSANAKAN TUGAS DEKONSENTRASI SESUAI DENGAN BUNYI PASAL 86 AYAT 1, DENGAN TERBITNYA UNDANG-UNDANG NOMOR 32 TAHUN 2004 TENTANG PEMERINTAHAN DAERAH DAN SESUAI DENGAN PASAL 148, POLISI PAMONG PRAJA DITETAPKAN SEBAGAI PERANGKAT PEMERINTAH DAERAH DENGAN TUGAS POKOK MENYELENGGARAKAN KETENTERAMAN DAN KETERTIBAN UMUM SERTA MENEGAKKAN PERATURAN DAERAH SEBAGAI PELAKSANA TUGAS DESENTRALISASI.</span></span></span></span></p>
 
-    <div class="relative mx-auto">
-      <div class="owl-carousel owl-theme">
-        
-      </div>
-      
-      <div class="absolute top-1 right-8 rounded shadow bg-green-700 text-gray-800 dark:bg-gray-900 dark:text-white px-2 py-0.5 mb-2">
-        
-  
-    23 Agustus 2024
-  
+    </article>
+    
+  </div>
 
-
-      </div>
-      
-    </div>
-    <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items: 1, 
-          loop: true, 
-          nav: true, 
-          dots: false, 
-          autoplay: true, 
-          autoplayTimeout: 3000, 
-          responsiveClass:true,
-          autoHeight: true, 
-          responsive:{
-            0:{
-              items:1
-            },
-            600:{
-              items:1
-            },
-            1000:{
-              items:2
-            }
-          }
-        });
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsiveClass: true,
+        autoHeight: true,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:1 },
+          1000:{ items:1 }
+        }
       });
-      </script>
-  </article>
+    });
+  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"

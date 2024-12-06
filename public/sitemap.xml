@@ -77,6 +77,9 @@
     <loc>//localhost:1313/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat/</loc>
     <lastmod>2024-09-11T07:43:17+00:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/tentang-satpol-pp/profil-satpol-pp-prov.-kalbar-copy/</loc>
+    <lastmod>2024-09-11T06:53:09+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tentang-satpol-pp/profil-satpol-pp-prov.-kalbar/</loc>
     <lastmod>2024-09-11T06:53:09+00:00</lastmod>
   </url><url>
@@ -165,6 +168,12 @@
     <lastmod>2024-08-29T04:37:17+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/profil-pimpinan/pejabat-struktural/</loc>
+    <lastmod>2024-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/profil/pejabat-struktural/</loc>
+    <lastmod>2024-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/profil/</loc>
     <lastmod>2024-08-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/profil-pimpinan/</loc>

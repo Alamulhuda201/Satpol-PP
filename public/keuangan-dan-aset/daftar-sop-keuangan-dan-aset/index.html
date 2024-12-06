@@ -40,7 +40,28 @@
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -48,7 +69,7 @@
   <meta property="og:url" content="//localhost:1313/keuangan-dan-aset/daftar-sop-keuangan-dan-aset/">
   <meta property="og:site_name" content="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat">
   <meta property="og:title" content="DAFTAR SOP KEUANGAN DAN ASET">
-  <meta property="og:description" content="36. SOP BUKU KAS UMUM (BKU) 37. SOP PAJAK 38. SOP PENGELUARAN BARANG INVENTARIS 39. SOP PENYUSUNAN CALK 40. SOP GU 41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN 42. SOP PERMINTAAN GAJI 43.SOP PENCAIRAN ANGGARAN 44. SOP PENCAIRAN DANA KEGIATAN 45. SOP PENGAJUAN SPM GAJI 46. SOP PENCAIRAN UP 47. SOP PENER DAN PENG BARANG INVENTARIS 48. SOP PENERIMAAN BARANG INVENTARIS 49. SOP PENGADAAN PEMELIHARAAN BARANG 50. SOP PENGAJUAN DANA UP 51. SOP PENGHAPUSAN BARANG 52. SOP PENGURUSAN BARANG 54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR 55. SOP PELAKSANAAN VERIFIKASI SPJ 56. SOP IDENTITAS RKBMD 56. SOP PENYAMPAIAN RKBMD 57 SOP PENGAJUAN USULAN LP2P 58. SOP PENGAJUAN PERMINTAAN GU">
+  <meta property="og:description" content="36. SOP BUKU KAS UMUM (BKU)37. SOP PAJAK38. SOP PENGELUARAN BARANG INVENTARIS39. SOP PENYUSUNAN CALK40. SOP GU41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN42. SOP PERMINTAAN GAJI43.SOP PENCAIRAN ANGGARAN44. SOP PENCAIRAN DANA KEGIATAN45. SOP PENGAJUAN SPM GAJI46. SOP PENCAIRAN UP47. SOP PENER DAN PENG BARANG INVENTARIS48. SOP PENERIMAAN BARANG INVENTARIS49. SOP PENGADAAN PEMELIHARAAN BARANG50. SOP PENGAJUAN DANA UP51. SOP PENGHAPUSAN BARANG52. SOP PENGURUSAN BARANG54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR55. SOP PELAKSANAAN VERIFIKASI SPJ56. SOP IDENTITAS RKBMD56. SOP PENYAMPAIAN RKBMD57 SOP PENGAJUAN USULAN LP2P58. SOP PENGAJUAN PERMINTAAN GU">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="keuangan-dan-aset">
@@ -58,11 +79,11 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="DAFTAR SOP KEUANGAN DAN ASET">
-  <meta name="twitter:description" content="36. SOP BUKU KAS UMUM (BKU) 37. SOP PAJAK 38. SOP PENGELUARAN BARANG INVENTARIS 39. SOP PENYUSUNAN CALK 40. SOP GU 41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN 42. SOP PERMINTAAN GAJI 43.SOP PENCAIRAN ANGGARAN 44. SOP PENCAIRAN DANA KEGIATAN 45. SOP PENGAJUAN SPM GAJI 46. SOP PENCAIRAN UP 47. SOP PENER DAN PENG BARANG INVENTARIS 48. SOP PENERIMAAN BARANG INVENTARIS 49. SOP PENGADAAN PEMELIHARAAN BARANG 50. SOP PENGAJUAN DANA UP 51. SOP PENGHAPUSAN BARANG 52. SOP PENGURUSAN BARANG 54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR 55. SOP PELAKSANAAN VERIFIKASI SPJ 56. SOP IDENTITAS RKBMD 56. SOP PENYAMPAIAN RKBMD 57 SOP PENGAJUAN USULAN LP2P 58. SOP PENGAJUAN PERMINTAAN GU">
+  <meta name="twitter:description" content="36. SOP BUKU KAS UMUM (BKU)37. SOP PAJAK38. SOP PENGELUARAN BARANG INVENTARIS39. SOP PENYUSUNAN CALK40. SOP GU41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN42. SOP PERMINTAAN GAJI43.SOP PENCAIRAN ANGGARAN44. SOP PENCAIRAN DANA KEGIATAN45. SOP PENGAJUAN SPM GAJI46. SOP PENCAIRAN UP47. SOP PENER DAN PENG BARANG INVENTARIS48. SOP PENERIMAAN BARANG INVENTARIS49. SOP PENGADAAN PEMELIHARAAN BARANG50. SOP PENGAJUAN DANA UP51. SOP PENGHAPUSAN BARANG52. SOP PENGURUSAN BARANG54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR55. SOP PELAKSANAAN VERIFIKASI SPJ56. SOP IDENTITAS RKBMD56. SOP PENYAMPAIAN RKBMD57 SOP PENGAJUAN USULAN LP2P58. SOP PENGAJUAN PERMINTAAN GU">
 
   
   <meta itemprop="name" content="DAFTAR SOP KEUANGAN DAN ASET">
-  <meta itemprop="description" content="36. SOP BUKU KAS UMUM (BKU) 37. SOP PAJAK 38. SOP PENGELUARAN BARANG INVENTARIS 39. SOP PENYUSUNAN CALK 40. SOP GU 41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN 42. SOP PERMINTAAN GAJI 43.SOP PENCAIRAN ANGGARAN 44. SOP PENCAIRAN DANA KEGIATAN 45. SOP PENGAJUAN SPM GAJI 46. SOP PENCAIRAN UP 47. SOP PENER DAN PENG BARANG INVENTARIS 48. SOP PENERIMAAN BARANG INVENTARIS 49. SOP PENGADAAN PEMELIHARAAN BARANG 50. SOP PENGAJUAN DANA UP 51. SOP PENGHAPUSAN BARANG 52. SOP PENGURUSAN BARANG 54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR 55. SOP PELAKSANAAN VERIFIKASI SPJ 56. SOP IDENTITAS RKBMD 56. SOP PENYAMPAIAN RKBMD 57 SOP PENGAJUAN USULAN LP2P 58. SOP PENGAJUAN PERMINTAAN GU">
+  <meta itemprop="description" content="36. SOP BUKU KAS UMUM (BKU)37. SOP PAJAK38. SOP PENGELUARAN BARANG INVENTARIS39. SOP PENYUSUNAN CALK40. SOP GU41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN42. SOP PERMINTAAN GAJI43.SOP PENCAIRAN ANGGARAN44. SOP PENCAIRAN DANA KEGIATAN45. SOP PENGAJUAN SPM GAJI46. SOP PENCAIRAN UP47. SOP PENER DAN PENG BARANG INVENTARIS48. SOP PENERIMAAN BARANG INVENTARIS49. SOP PENGADAAN PEMELIHARAAN BARANG50. SOP PENGAJUAN DANA UP51. SOP PENGHAPUSAN BARANG52. SOP PENGURUSAN BARANG54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR55. SOP PELAKSANAAN VERIFIKASI SPJ56. SOP IDENTITAS RKBMD56. SOP PENYAMPAIAN RKBMD57 SOP PENGAJUAN USULAN LP2P58. SOP PENGAJUAN PERMINTAAN GU">
   <meta itemprop="datePublished" content="2024-09-09T04:09:35+00:00">
   <meta itemprop="dateModified" content="2024-09-09T04:09:35+00:00">
   <meta itemprop="wordCount" content="107">
@@ -125,8 +146,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -617,7 +636,7 @@
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
+    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
   background-color: #000000;  
@@ -710,13 +729,13 @@ ul.mobile-menu li a:hover {
           </span>
           <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
             
-              <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
             
-              <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
             
-              <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
+              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
             
               <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
             
@@ -1050,18 +1069,12 @@ ul.mobile-menu li a:hover {
   
   
 
-  
-  
- 
-  
-
-  <article class="prose lg:prose-lg mx-auto my-8 px-4 text-black" >
-    
-    <h1 class="text-2xl font-bold mb-2 pb-4 pt-6 text-center" style="color: black; font-size: 2rem;">DAFTAR SOP KEUANGAN DAN ASET</h1>
+  <div class="max-w-5xl mx-auto px-4">
     
     
-
-    <ol>
+    <article class="prose lg:prose-lg mx-auto my-8">
+      <h1 class="text-2xl font-bold mb-4">DAFTAR SOP KEUANGAN DAN ASET</h1>
+      <ol>
 <ol>
 <li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf" title="SOP sekretariat 36-47 Keuangan dan Aset_rotated.pdf">36. SOP BUKU KAS UMUM (BKU)</a></li>
 <li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">37. SOP PAJAK</a></li>
@@ -1090,47 +1103,29 @@ ul.mobile-menu li a:hover {
 </ol>
 <p></p>
 
-    <div class="relative mx-auto">
-      <div class="owl-carousel owl-theme">
-        
-      </div>
-      
-      <div class="absolute top-1 right-8 rounded shadow bg-green-700 text-gray-800 dark:bg-gray-900 dark:text-white px-2 py-0.5 mb-2">
-        
-  
-    09 September 2024
-  
+    </article>
+    
+  </div>
 
-
-      </div>
-      
-    </div>
-    <script>
-      $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-          items: 1, 
-          loop: true, 
-          nav: true, 
-          dots: false, 
-          autoplay: true, 
-          autoplayTimeout: 3000, 
-          responsiveClass:true,
-          autoHeight: true, 
-          responsive:{
-            0:{
-              items:1
-            },
-            600:{
-              items:1
-            },
-            1000:{
-              items:2
-            }
-          }
-        });
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsiveClass: true,
+        autoHeight: true,
+        responsive:{
+          0:{ items:1 },
+          600:{ items:1 },
+          1000:{ items:1 }
+        }
       });
-      </script>
-  </article>
+    });
+  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"
