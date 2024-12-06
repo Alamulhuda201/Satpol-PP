@@ -44,11 +44,11 @@
                         {{ $tautan := where .Site.RegularPages "Section" "tautan-aplikasi-lainnya" }}
                         {{ range $index, $element := $tautan }}
                         {{ if eq (mod $index 2) 1 }}
-                        <div class="slide {{ if ne $index 1 }}hidden{{ end }}">
-                            <div class="bg-white rounded-lg shadow-md p-4 mb-4 h-72">
-                                <img class="w-full h-36 object-cover rounded-lg mb-3" src="{{ $element.Params.thumbnail | absURL }}" alt="Gambar Tautan">
+                        <div class="slide {{ if ne $index 1 }}hidden{{ end }} transform transition-all duration-500 hover:scale-105">
+                            <div class="bg-white rounded-lg shadow-md p-4 mb-4 h-72 hover:shadow-xl transition-shadow duration-300">
+                                <img class="w-full h-36 object-cover rounded-lg mb-3 transform transition-transform duration-300 hover:scale-105" src="{{ $element.Params.thumbnail | absURL }}" alt="Gambar Tautan">
                                 <h3 class="text-lg font-semibold text-center mb-2 h-14 overflow-hidden">{{ $element.Title }}</h3>
-                                <a href="{{ $element.Params.eurl }}" target="_blank" class="block text-center bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">
+                                <a href="{{ $element.Params.eurl }}" target="_blank" class="block text-center bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                                     Kunjungi
                                 </a>
                             </div>
@@ -57,14 +57,14 @@
                         {{ end }}
                     </div>
 
-                    <!-- Navigation Buttons -->
-                    <div class="absolute left-0 right-0 flex justify-between px-2" style="top: 43%; transform: translateY(-50%);">
-                        <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                    <!-- Navigation Buttons - Diposisikan di luar konten slider -->
+                    <div class="absolute left-0 right-0 flex justify-between px-2" style="top: 43%; transform: translateY(-50%); z-index: 20;">
+                        <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                             </svg>
                         </button>
-                        <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                        <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -76,11 +76,11 @@
                         {{ $tautan := where .Site.RegularPages "Section" "tautan-aplikasi-lainnya" }}
                         {{ range $index, $element := $tautan }}
                         {{ if eq (mod $index 2) 0 }}
-                        <div class="slide {{ if ne $index 0 }}hidden{{ end }}">
-                            <div class="bg-white rounded-lg shadow-md p-4 mb-4 h-72">
-                                <img class="w-full h-36 object-cover rounded-lg mb-3" src="{{ $element.Params.thumbnail | absURL }}" alt="Gambar Tautan">
+                        <div class="slide {{ if ne $index 0 }}hidden{{ end }} transform transition-all duration-500 hover:scale-105">
+                            <div class="bg-white rounded-lg shadow-md p-4 mb-4 h-72 hover:shadow-xl transition-shadow duration-300">
+                                <img class="w-full h-36 object-cover rounded-lg mb-3 transform transition-transform duration-300 hover:scale-105" src="{{ $element.Params.thumbnail | absURL }}" alt="Gambar Tautan">
                                 <h3 class="text-lg font-semibold text-center mb-2 h-14 overflow-hidden">{{ $element.Title }}</h3>
-                                <a href="{{ $element.Params.eurl }}" target="_blank" class="block text-center bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300">
+                                <a href="{{ $element.Params.eurl }}" target="_blank" class="block text-center bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                                     Kunjungi
                                 </a>
                             </div>
@@ -101,32 +101,48 @@
         let currentSlideGanjil = 0;
         let currentSlideGenap = 0;
         
-        function showSlide(slides, n) {
-            slides.forEach(slide => slide.classList.add('hidden'));
+        function showSlide(slides, n, direction = 'next') {
+            slides.forEach((slide, index) => {
+                slide.classList.add('hidden');
+                slide.style.opacity = '0';
+                slide.style.transform = direction === 'next' ? 'translateX(100px)' : 'translateX(-100px)';
+            });
             slides[n].classList.remove('hidden');
+            setTimeout(() => {
+                slides[n].style.opacity = '1';
+                slides[n].style.transform = 'translateX(0)';
+            }, 50);
         }
         
         document.getElementById('nextButton').addEventListener('click', function() {
             currentSlideGanjil = (currentSlideGanjil + 1) % slidesGanjil.length;
             currentSlideGenap = (currentSlideGenap + 1) % slidesGenap.length;
-            showSlide(slidesGanjil, currentSlideGanjil);
-            showSlide(slidesGenap, currentSlideGenap);
+            showSlide(slidesGanjil, currentSlideGanjil, 'next');
+            showSlide(slidesGenap, currentSlideGenap, 'next');
         });
         
         document.getElementById('prevButton').addEventListener('click', function() {
             currentSlideGanjil = (currentSlideGanjil - 1 + slidesGanjil.length) % slidesGanjil.length;
             currentSlideGenap = (currentSlideGenap - 1 + slidesGenap.length) % slidesGenap.length;
-            showSlide(slidesGanjil, currentSlideGanjil);
-            showSlide(slidesGenap, currentSlideGenap);
+            showSlide(slidesGanjil, currentSlideGanjil, 'prev');
+            showSlide(slidesGenap, currentSlideGenap, 'prev');
         });
 
-        // Auto slide every 5 seconds
+        // Auto slide every 7 seconds
         setInterval(function() {
             currentSlideGanjil = (currentSlideGanjil + 1) % slidesGanjil.length;
             currentSlideGenap = (currentSlideGenap + 1) % slidesGenap.length;
-            showSlide(slidesGanjil, currentSlideGanjil);
-            showSlide(slidesGenap, currentSlideGenap);
-        }, 5000);
+            showSlide(slidesGanjil, currentSlideGanjil, 'next');
+            showSlide(slidesGenap, currentSlideGenap, 'next');
+        }, 7000);
+
+        // Initial setup
+        slidesGanjil.forEach(slide => {
+            slide.style.transition = 'all 0.5s ease-in-out';
+        });
+        slidesGenap.forEach(slide => {
+            slide.style.transition = 'all 0.5s ease-in-out';
+        });
     });
 </script>
 
