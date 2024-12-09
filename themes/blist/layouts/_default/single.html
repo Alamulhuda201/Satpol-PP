@@ -3,19 +3,20 @@
   {{ $datestr := (partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "long")) }}
 
   <div class="w-full px-4">
+    {{ if or (eq .Section "berita") (eq .Section "tentang-satpol-pp") }}
+    <!-- Tampilan Khusus untuk Berita dan Tentang Satpol PP -->
     {{ if eq .Section "berita" }}
-    <!-- Tampilan Khusus untuk Berita -->
     <div class="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto">
       <!-- Kolom Kiri - Artikel Utama -->
       <div class="w-full mt-20 md:w-2/3">
         <article class="bg-white rounded-lg border-2 p-6">
-          <!-- Header Berita -->
+          <!-- Header -->
           <div class="relative">
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t to-transparent p-6">
             </div>
           </div>
 
-          <!-- Judul Berita -->
+          <!-- Judul -->
           <div class="px-2">
             <h2 class="text-2xl font-bold text-gray-800">{{ .Title }}</h2>
           </div>
@@ -31,25 +32,11 @@
             </span>
           </div>
 
-          <!-- Konten Berita -->
+          <!-- Konten -->
           <div class="px-2 -mt-auto">
             <div class="prose lg:prose-lg">
               {{ .Content }}
             </div>
-
-            <!-- Galeri Gambar
-            {{ if .Params.images }}
-            <div class="mt-4">
-              <h3 class="text-xl font-semibold mb-4">Galeri Foto</h3>
-              <div class="owl-carousel owl-theme">
-                {{ range $index, $imageUrl := .Params.images }}
-                <div class="item">
-                  <img src="{{ $imageUrl }}" class="rounded-lg shadow-sm w-full object-cover" style="height: 300px;"/>
-                </div>
-                {{ end }}
-              </div>
-            </div>
-            {{ end }} -->
 
             <!-- Share Buttons -->
             <div class="mt-8 pt-4">
@@ -106,57 +93,311 @@
       </div>
     </div>
     {{ else }}
-    <!-- Tampilan Default untuk Non-Berita -->
-    <div class="flex">
-      <div class="w-1/4 mr-4">
-        <div class="bg-white rounded-lg border-2 p-6">
-          <article class="prose lg:prose-lg w-full my-8">
-            <h1 class="text-2xl font-bold mb-4">{{ .Title }}</h1>
+    <!-- Tampilan untuk Tentang Satpol PP -->
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul class="sidebar-menu">
+          <li><a href="#profil" class="menu-link" data-scroll>Profil Singkat</a></li>
+          <li><a href="#tugas" class="menu-link" data-scroll>Tugas Satpol PP</a></li>
+          <li><a href="#fungsi" class="menu-link" data-scroll>Fungsi Satpol PP</a></li>
+          <li><a href="#struktur" class="menu-link" data-scroll>Struktur Organisasi</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="content">
+        <div class="container" id="profil">
+          <h1 class="title">{{ .Title }}</h1>
+          <div class="description">
             {{ .Content }}
-          </article>
+          </div>
+        </div>
+
+        <div class="container" id="tugas">
+          <h2 class="section-title">Tugas Satpol PP:</h2>
+          <ul class="task-list">
+            {{ range .Params.tugas }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="container" id="fungsi">
+          <h2 class="section-title">Fungsi Satpol PP:</h2>
+          <ul class="function-list">
+            {{ range .Params.fungsi }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="container" id="struktur">
+          <h2 class="section-title">Struktur Organisasi:</h2>
+          {{ if .Params.struktur_image }}
+          <img src="{{ .Params.struktur_image }}" alt="Struktur Organisasi" class="w-full">
+          {{ end }}
         </div>
       </div>
-      <div class="w-2/3">
-        <div class="bg-white rounded-lg border-2 p-6 min-h-screen">
-          <div class="container mx-auto px-4">
-            <div class="bg-gray-100 rounded-lg p-4">
-              <div class="markdown-content">
-                {{ if .Params.pdf }}
-                  <iframe src="{{ .Params.pdf }}" width="100%" height="600"></iframe>
-                {{ else }}
-                  {{ .Content }}
-                {{ end }}
-              </div>
-            </div>
-          </div>
+    </div>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 120px;
+      }
+
+      .main-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .sidebar {
+        width: 25%;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+        background: #F7FAFC;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .sidebar:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-menu li {
+        margin-bottom: 15px;
+      }
+
+      .menu-link {
+        display: block;
+        text-decoration: none;
+        color: #2C5282;
+        font-weight: 600;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .menu-link:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        background: #4299E1;
+        transition: width 0.3s ease;
+      }
+
+      .menu-link:hover {
+        color: #4299E1;
+        background: rgba(66, 153, 225, 0.1);
+        padding-left: 20px;
+      }
+
+      .menu-link:hover:before {
+        width: 100%;
+      }
+
+      .content {
+        width: 75%;
+      }
+
+      
+
+      .title {
+        color: #2C5282;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        color: #2D3748;
+        font-size: 1.5em;
+        margin: 30px 0 15px;
+        border-bottom: 2px solid #4299E1;
+        padding-bottom: 8px;
+      }
+
+      .task-list, .function-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .task-list li, .function-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+      }
+
+      .task-list li:before, .function-list li:before {
+        content: "•";
+        color: #4299E1;
+        position: absolute;
+        left: 0;
+      }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[data-scroll]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          const offset = 120;
+          
+          if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+    </script>
+    {{ end }}
+    {{ else }}
+    <!-- Tampilan Default untuk Non-Berita -->
+    <div class="main-container mt-32">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <ul class="sidebar-menu">
+          <li><a href="#" class="menu-link" data-target="renja2024">RENJA 2024</a></li>
+          <li><a href="#" class="menu-link" data-target="sop">DAFTAR SOP RENJA MONEV</a></li>
+          <li><a href="#" class="menu-link" data-target="renstra">RENSTRA 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="iku">IKU SATPOL PP 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="lakip">LAKIP SATPOL PP</a></li>
+          <li><a href="#" class="menu-link" data-target="perjakin">PERJAKIN SATPOL PP</a></li>
+          <li><a href="#" class="menu-link" data-target="pohon">POHON KINERJA</a></li>
+          <li><a href="#" class="menu-link" data-target="cascading">CASCADING 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="sakip">LAPORAN SAKIP 2024</a></li>
+          <li><a href="#" class="menu-link" data-target="rka2023">RKA DAN DPA 2023</a></li>
+          <li><a href="#" class="menu-link" data-target="rka2024">RKA DAN DPA 2024</a></li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <div class="content">
+        <div id="content-placeholder">
+          <div class="bg-white rounded-lg border-2 p-6">
+            <article class="prose lg:prose-lg w-full my-8">
+              <h1 class="text-2xl font-bold mb-4">{{ .Title }}</h1>
+              {{ if .Params.pdf }}
+                <iframe src="{{ .Params.pdf }}" width="100%" height="600"></iframe>
+              {{ else }}
+                {{ .Content }}
+              {{ end }}
+            </article>
           </div>
         </div>
       </div>
     </div>
+
+    <style>
+      .main-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 20px;
+      }
+      .sidebar {
+        width: 25%;
+        background: #F9F9F9;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar-menu li {
+        margin: 10px 0;
+      }
+      .menu-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .menu-link:hover {
+        color: #007BFF;
+      }
+      .content {
+        flex: 1;
+        background: #FFFFFF;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".menu-link");
+        const contentPlaceholder = document.getElementById("content-placeholder");
+
+        const contentMap = {
+          renja2024: `
+            <h2>RENJA 2024</h2>
+            <iframe src="https://drive.google.com/file/d/1OkzkMwqUDdphA8zQUGuslNlSKD0JzOdw/preview" width="100%" height="500"></iframe>
+          `,
+          sop: `
+            <h2>DAFTAR SOP RENJA MONEV</h2>
+            <ul>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan Rencana Kerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan RKA Penyempurnaan</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Monev Kinerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Pengumpulan Data Kinerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Perbaikan Data Kinerja</a></li>
+            </ul>
+          `,
+          renstra: `
+            <h2>RENSTRA 2024-2026</h2>
+            <iframe src="https://drive.google.com/file/d/1KJv9vJCiO0zuad_013JH-GGwybGqHy5V/preview" width="100%" height="500"></iframe>
+          `,
+          iku: `
+            <h2>IKU SATPOL PP 2024-2026</h2>
+            <p>Konten IKU SATPOL PP akan ditampilkan di sini.</p>
+          `,
+        };
+
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = this.getAttribute("data-target");
+            contentPlaceholder.innerHTML = contentMap[target] || "<p>Konten tidak tersedia.</p>";
+          });
+        });
+      });
+    </script>
     {{ end }}
   </div>
-
-  <script>
-    $(document).ready(function(){
-      $(".owl-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsiveClass: true,
-        autoHeight: true,
-        responsive:{
-          0:{ items:1 },
-          600:{ items:1 },
-          1000:{ items:1 }
-        }
-      });
-    });
-  </script>
 
   {{- partial "comments.html" . -}}
   {{- partial "intro.html" . -}}
 {{ end }}
-
