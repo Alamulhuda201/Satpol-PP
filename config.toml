@@ -272,7 +272,7 @@ weight = 2
 identifier = "struktur organisasi"
 name = "Struktur Organisasi"
 parent = "profil"
-url = "/Struktur Organisasi/struktur/"
+url = "/profil#struktur-organisasi"
 
 [[languages.id.menu.main]]
 identifier = "visi dan misi"
