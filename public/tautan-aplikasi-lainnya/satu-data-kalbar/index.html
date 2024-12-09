@@ -1555,52 +1555,120 @@
   <div class="w-full px-4">
     
     
-    <div class="flex">
-      <div class="w-1/4 mr-4">
-        <div class="bg-white rounded-lg border-2 p-6">
-          <article class="prose lg:prose-lg w-full my-8">
-            <h1 class="text-2xl font-bold mb-4">Satu Data Kalbar</h1>
-            
-          </article>
-        </div>
-      </div>
-      <div class="w-2/3">
-        <div class="bg-white rounded-lg border-2 p-6 min-h-screen">
-          <div class="container mx-auto px-4">
-            <div class="bg-gray-100 rounded-lg p-4">
-              <div class="markdown-content">
+    <div class="main-container mt-32">
+      
+      <aside class="sidebar">
+        <ul class="sidebar-menu">
+          <li><a href="#" class="menu-link" data-target="renja2024">RENJA 2024</a></li>
+          <li><a href="#" class="menu-link" data-target="sop">DAFTAR SOP RENJA MONEV</a></li>
+          <li><a href="#" class="menu-link" data-target="renstra">RENSTRA 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="iku">IKU SATPOL PP 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="lakip">LAKIP SATPOL PP</a></li>
+          <li><a href="#" class="menu-link" data-target="perjakin">PERJAKIN SATPOL PP</a></li>
+          <li><a href="#" class="menu-link" data-target="pohon">POHON KINERJA</a></li>
+          <li><a href="#" class="menu-link" data-target="cascading">CASCADING 2024-2026</a></li>
+          <li><a href="#" class="menu-link" data-target="sakip">LAPORAN SAKIP 2024</a></li>
+          <li><a href="#" class="menu-link" data-target="rka2023">RKA DAN DPA 2023</a></li>
+          <li><a href="#" class="menu-link" data-target="rka2024">RKA DAN DPA 2024</a></li>
+        </ul>
+      </aside>
+
+      
+      <div class="content">
+        <div id="content-placeholder">
+          <div class="bg-white rounded-lg border-2 p-6">
+            <article class="prose lg:prose-lg w-full my-8">
+              <h1 class="text-2xl font-bold mb-4">Satu Data Kalbar</h1>
+              
                 
-                  
-                
-              </div>
-            </div>
-          </div>
+              
+            </article>
           </div>
         </div>
       </div>
     </div>
+
+    <style>
+      .main-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 20px;
+      }
+      .sidebar {
+        width: 25%;
+        background: #F9F9F9;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar-menu li {
+        margin: 10px 0;
+      }
+      .menu-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .menu-link:hover {
+        color: #007BFF;
+      }
+      .content {
+        flex: 1;
+        background: #FFFFFF;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".menu-link");
+        const contentPlaceholder = document.getElementById("content-placeholder");
+
+        const contentMap = {
+          renja2024: `
+            <h2>RENJA 2024</h2>
+            <iframe src="https://drive.google.com/file/d/1OkzkMwqUDdphA8zQUGuslNlSKD0JzOdw/preview" width="100%" height="500"></iframe>
+          `,
+          sop: `
+            <h2>DAFTAR SOP RENJA MONEV</h2>
+            <ul>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan Rencana Kerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan RKA Penyempurnaan</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Monev Kinerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Pengumpulan Data Kinerja</a></li>
+              <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Perbaikan Data Kinerja</a></li>
+            </ul>
+          `,
+          renstra: `
+            <h2>RENSTRA 2024-2026</h2>
+            <iframe src="https://drive.google.com/file/d/1KJv9vJCiO0zuad_013JH-GGwybGqHy5V/preview" width="100%" height="500"></iframe>
+          `,
+          iku: `
+            <h2>IKU SATPOL PP 2024-2026</h2>
+            <p>Konten IKU SATPOL PP akan ditampilkan di sini.</p>
+          `,
+        };
+
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = this.getAttribute("data-target");
+            contentPlaceholder.innerHTML = contentMap[target] || "<p>Konten tidak tersedia.</p>";
+          });
+        });
+      });
+    </script>
     
   </div>
-
-  <script>
-    $(document).ready(function(){
-      $(".owl-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsiveClass: true,
-        autoHeight: true,
-        responsive:{
-          0:{ items:1 },
-          600:{ items:1 },
-          1000:{ items:1 }
-        }
-      });
-    });
-  </script>
 <div class="px-2 mb-2">
   
   <script src="https://giscus.app/client.js"

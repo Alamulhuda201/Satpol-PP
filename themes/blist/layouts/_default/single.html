@@ -2,13 +2,13 @@
   {{ $lastmodstr := (partial "date.html" (dict "date" .Lastmod "language" $.Page.Language "format" "long")) }}
   {{ $datestr := (partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "long")) }}
 
-  <div class="w-full px-4">
+  <div class="w-full mt-28 px-4">
     {{ if or (eq .Section "berita") (eq .Section "tentang-satpol-pp") }}
     <!-- Tampilan Khusus untuk Berita dan Tentang Satpol PP -->
     {{ if eq .Section "berita" }}
     <div class="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto">
       <!-- Kolom Kiri - Artikel Utama -->
-      <div class="w-full mt-20 md:w-2/3">
+      <div class="w-full mt-10 md:w-2/3">
         <article class="bg-white rounded-lg border-2 p-6">
           <!-- Header -->
           <div class="relative">
@@ -62,7 +62,7 @@
       </div>
 
       <!-- Kolom Kanan - Berita Terkini -->
-      <div class="w-full mt-20 md:w-1/3">
+      <div class="w-full mt-10 md:w-1/3">
         <div class="bg-white rounded-lg border-2 p-6">
           <h3 class="text-xl font-bold mb-4 text-custom-green">Berita Terkini</h3>
           {{ $recentPosts := where .Site.RegularPages "Section" "berita" }}
@@ -94,9 +94,9 @@
     </div>
     {{ else }}
     <!-- Tampilan untuk Tentang Satpol PP -->
-    <div class="main-container">
+    <div class="main-container ">
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar mt-5">
         <ul class="sidebar-menu">
           <li><a href="#profil" class="menu-link" data-scroll>Profil Singkat</a></li>
           <li><a href="#tugas" class="menu-link" data-scroll>Tugas Satpol PP</a></li>
@@ -149,10 +149,11 @@
 
       .main-container {
         display: flex;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         padding: 20px;
         gap: 30px;
+        background: #F2F2F2;
       }
 
       .sidebar {
@@ -160,16 +161,17 @@
         position: sticky;
         top: 20px;
         height: fit-content;
-        background: #F7FAFC;
+        background: #F6F6F6;
         padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #D3D3D3;
         transition: all 0.3s ease;
+
       }
 
       .sidebar:hover {
         transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
       }
 
       .sidebar-menu {
@@ -185,7 +187,7 @@
       .menu-link {
         display: block;
         text-decoration: none;
-        color: #2C5282;
+        color: #03A055;
         font-weight: 600;
         padding: 10px 15px;
         border-radius: 8px;
@@ -202,15 +204,15 @@
         bottom: 0;
         height: 2px;
         width: 0;
-        background: #4299E1;
+        background: #03A055;
         transition: width 0.3s ease;
       }
 
-      .menu-link:hover {
+      /* .menu-link:hover {
         color: #4299E1;
         background: rgba(66, 153, 225, 0.1);
         padding-left: 20px;
-      }
+      } */
 
       .menu-link:hover:before {
         width: 100%;
@@ -223,13 +225,13 @@
       
 
       .title {
-        color: #2C5282;
+        color: #03A055;
         font-size: 2em;
         margin-bottom: 20px;
       }
 
       .section-title {
-        color: #2D3748;
+        color: #03A055;
         font-size: 1.5em;
         margin: 30px 0 15px;
         border-bottom: 2px solid #4299E1;
