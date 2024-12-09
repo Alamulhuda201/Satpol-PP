@@ -1,10 +1,10 @@
 <!-- Running Text -->
 {{ $runningText := .Site.Params.running_text }}
 {{ if $runningText }}
-<div class="w-full bg-white p-4 border border-gray-300 shadow rounded mb-0">
+<div class="w-full bg-white p-2 sm:p-3 md:p-4 border border-gray-300 shadow rounded mb-0">
     <div class="marquee">
         <div class="marquee-text">
-            <p class="text-lg font-semibold text-black" style="font-size: 0.9rem;">
+            <p class="text-sm sm:text-base md:text-lg font-semibold text-black">
                 {{ range $runningText }}{{ .text }}&nbsp;&nbsp;&nbsp;&nbsp;{{ end }}
             </p>
         </div>
@@ -22,7 +22,22 @@
     .marquee-text {
         display: inline-block;
         white-space: nowrap;
-        animation: marquee 15s linear infinite;
+        animation: marquee 20s linear infinite;
+    }
+    @media (max-width: 640px) {
+        .marquee-text {
+            animation-duration: 12s;
+        }
+    }
+    @media (min-width: 641px) and (max-width: 768px) {
+        .marquee-text {
+            animation-duration: 15s;
+        }
+    }
+    @media (min-width: 769px) {
+        .marquee-text {
+            animation-duration: 20s;
+        }
     }
     @keyframes marquee {
         0% {

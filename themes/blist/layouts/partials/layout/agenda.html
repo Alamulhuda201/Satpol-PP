@@ -2,28 +2,31 @@
 {{ $agendaPages := where .Site.RegularPages.ByDate.Reverse "Section" "agenda" }}
 {{ $sortedAgendaPages := sort $agendaPages "Params.date" "asc" }}
 {{ if $sortedAgendaPages }}
-<div class="bg-gray-300 p-2 rounded-t-lg">
-    <h2 class="text-4xl font-bold text-center text-green-700 h-10">AGENDA</h2>
-</div>
-<div class="relative z-0 py-4 bg-gray-100 rounded-t-2xl shadow-md">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
-        {{ range $sortedAgendaPages }}
-        <div class="bg-white rounded-lg shadow-md overflow-hidden flex">
-            <!-- Tanggal -->
-            <div class="bg-green-500 text-white flex flex-col items-center justify-center p-4">
-                <span class="text-2xl font-bold">{{ .Params.date.Format "2" }}</span>
-                <span class="text-base font-semibold uppercase">{{ .Params.day }}</span>
+<div class="container mx-auto px-4">
+    <div class="bg-gray-300 p-2 rounded-t-lg">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-green-700 h-auto md:h-10">AGENDA</h2>
+    </div>
+    <div class="relative z-0 py-4 bg-gray-100 rounded-t-2xl shadow-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-10 px-4 md:px-6 lg:px-10">
+            {{ range $sortedAgendaPages }}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row">
+                <!-- Tanggal -->
+                <div class="bg-green-500 text-white flex flex-row sm:flex-col items-center justify-center p-2 sm:p-4">
+                    <span class="text-xl sm:text-2xl font-bold mr-2 sm:mr-0">{{ .Params.date.Format "2" }}</span>
+                    <span class="text-sm sm:text-base font-semibold uppercase">{{ .Params.day }}</span>
+                </div>
+                <!-- Detail Agenda -->
+                <div class="p-2 sm:p-3 flex-1">
+                    <h3 class="text-sm sm:text-base font-bold text-gray-800 mb-1 line-clamp-2">{{ .Title }}</h3>
+                    <p class="text-xs text-gray-600 flex items-center mb-1">
+                        <i class="fas fa-map-marker-alt text-black mr-1"></i>
+                        <span class="line-clamp-1">{{ .Params.location }}</span>
+                    </p>
+                    <p class="text-xs text-gray-600">{{ .Params.time }}</p>
+                </div>
             </div>
-            <!-- Detail Agenda -->
-            <div class="p-3 flex-1">
-                <h3 class="text-base font-bold text-gray-800 mb-1">{{ .Title }}</h3>
-                <p class="text-xs text-gray-600 flex items-center mb-1">
-                    <i class="fas fa-map-marker-alt text-black mr-1"></i>{{ .Params.location }}
-                </p>
-                <p class="text-xs text-gray-600">{{ .Params.time }}</p>
-            </div>
+            {{ end }}
         </div>
-        {{ end }}
     </div>
 </div>
 {{ end }}

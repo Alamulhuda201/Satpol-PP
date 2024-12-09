@@ -1,9 +1,5 @@
 {{ $sliderImages := .Site.Params.sliders.images }}
 
-
-<!-- Search Bar -->
-
-
 {{ if len $sliderImages }}
 <!-- Swiper Slider -->
 <div class="swiper mySwiper">
@@ -50,7 +46,21 @@
             },
             loop: true,
             speed: 1000,
-            grabCursor: true
+            grabCursor: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                }
+            }
         });
     });
 </script>
@@ -68,90 +78,27 @@
         color: #333;
     }
 
-    /* Background Image Styles */
     .background-container {
-        position: absolute;
-        padding-bottom: 100px;
+        position: relative;
         width: 100%;
-        height: 800px;
+        height: auto;
+        min-height: 400px;
+        max-height: 800px;
         overflow: hidden;
         background-color: #eaeaea;
+        padding: 20px 0;
     }
 
-    .background-container .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.7);
-        transform: scale(1.1);
-        transition: transform 0.3s ease;
-    }
-
-    .search-bar-container {
-        position: relative;
-        top: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 800px;
-        padding: 0 20px;
-    }
-
-    .search-bar-input {
-        width: 70%;
-        padding: 15px;
-        font-size: 16px;
-        border: none;
-        border-radius: 30px 0 0 30px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-
-    .search-bar-input:focus {
-        outline: none;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-
-    .search-bar-button {
-        padding: 15px 30px;
-        font-size: 16px;
-        background: linear-gradient(135deg, #15803d 0%, #166534 100%);
-        color: white;
-        border: none;
-        border-radius: 0 30px 30px 0;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .search-bar-button:hover {
-        background: linear-gradient(135deg, #166534 0%, #14532d 100%);
-        transform: translateY(-2px);
-    }
-
-    /* Swiper Styles */
     .swiper {
         position: relative;
-        top: 48px;
-        width: 90%;
-        max-width: 1800px;
-        height: 700px;
+        width: 80%; /* Dikecilkan dari 90% */
+        max-width: 1400px; /* Dikecilkan dari 1800px */
+        height: auto;
+        aspect-ratio: 16/9;
         margin: 0 auto;
-        margin-bottom: 10px;
-        border-radius: 20px;
+        border-radius: clamp(10px, 2vw, 20px);
         overflow: hidden;
-        box-shadow: 0 10px 30px #166534;
-        z-index: 2;
-    }
-
-    .swiper-slide {
-        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(22, 101, 52, 0.3);
     }
 
     .slide-content {
@@ -163,8 +110,8 @@
     .slide-content img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Diubah dari cover ke contain agar gambar tidak terpotong */
-        background-color: rgba(0,0,0,0.8); /* Menambahkan background gelap */
+        object-fit: cover;
+        background-color: rgba(0,0,0,0.8);
         transition: transform 0.3s ease;
     }
 
@@ -173,109 +120,70 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding: 30px;
+        padding: clamp(15px, 3vw, 30px);
         background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         color: white;
-        transform: translateY(0);
-        transition: transform 0.3s ease;
     }
 
     .slide-caption h2 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
+        font-size: clamp(1.2rem, 3vw, 2.5rem);
+        margin-bottom: clamp(5px, 1vw, 10px);
         font-weight: 700;
     }
 
     .slide-caption p {
-        font-size: 1.1rem;
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
         opacity: 0.9;
     }
 
-    .swiper-slide:hover img {
-        transform: scale(1.02); /* Mengurangi skala hover agar tetap proporsional */
-    }
-
-    /* Navigation Buttons */
     .swiper-button-next,
     .swiper-button-prev {
         background-color: rgba(255,255,255,0.9);
-        width: 50px !important;
-        height: 50px !important;
+        width: clamp(30px, 5vw, 50px) !important;
+        height: clamp(30px, 5vw, 50px) !important;
         border-radius: 50%;
         color: #15803d;
         transition: all 0.3s ease;
     }
 
-    .swiper-button-next:hover,
-    .swiper-button-prev:hover {
-        background-color: #15803d;
-        color: white;
-        transform: scale(1.1);
-    }
-
     .swiper-button-next::after,
     .swiper-button-prev::after {
-        font-size: 20px !important;
-        font-weight: bold;
+        font-size: clamp(14px, 2vw, 20px) !important;
     }
 
-    /* Pagination Bullets */
     .swiper-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        background-color: rgba(255,255,255,0.7);
-        transition: all 0.3s ease;
+        width: clamp(8px, 1.5vw, 12px);
+        height: clamp(8px, 1.5vw, 12px);
     }
 
-    .swiper-pagination-bullet-active {
-        background-color: #15803d;
-        transform: scale(1.2);
+    @media (max-width: 1024px) {
+        .swiper {
+            width: 85%; /* Dikecilkan dari 95% */
+        }
     }
 
     @media (max-width: 768px) {
         .background-container {
-            height: 500px;
+            min-height: 300px;
         }
-
-        .swiper {
-            height: 400px;
-            top: -180px;
-            width: 95%;
-        }
-
-        .slide-caption h2 {
-            font-size: 1.8rem;
-        }
-
-        .slide-caption p {
-            font-size: 1rem;
+        
+        .slide-caption {
+            padding: 15px;
         }
     }
 
     @media (max-width: 480px) {
         .background-container {
-            height: 400px;
+            min-height: 200px;
         }
 
-        .swiper {
-            height: 350px;
-            top: -120px;
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
         }
-
-        .search-bar-input {
-            width: calc(100% - 120px);
-        }
-
-        .slide-caption h2 {
-            font-size: 1.5rem;
-        }
-
-        .slide-caption p {
-            font-size: 0.9rem;
-        }
-
-        .search-bar-button {
-            padding: 15px 20px;
+        
+        .slide-caption {
+            padding: 10px;
         }
     }
 </style>
