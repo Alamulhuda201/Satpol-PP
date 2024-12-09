@@ -616,284 +616,368 @@ Satuan Polisi Pamong Praja atau yang biasa dikenal dengan sebutan Satpol PP meru
     </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
-  background-color: #000000;  
-}
-ul.mobile-menu li {
-  font-size: 1rem;
-  padding: 10px;
-  color: white;
-}
-ul.mobile-menu li a:hover {
-  color: #ffffff;
-}
+      background-color: #000000;
+    }
+
+     
+    @media (max-width: 480px) {
+      .mobile-menu {
+        width: 100%;
+        padding: 0.75rem;
+      }
+      
+      .mobile-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+
+      .logo-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      .site-title {
+        font-size: 14px;
+        margin-top: 0.25rem;
+        line-height: 1.2;
+      }
+    }
+
+     
+    @media (min-width: 481px) and (max-width: 768px) {
+      .mobile-menu {
+        padding: 0.875rem;
+      }
+
+      .site-title {
+        font-size: 16px;
+        line-height: 1.3;
+      }
+
+      .logo-container {
+        padding: 0.75rem;
+      }
+    }
+
+      
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .site-title {
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .logo-container {
+        padding: 1rem;
+      }
+    }
+
+     
+    @media (min-width: 1025px) {
+      .mobile-menu {
+        display: flex !important;
+      }
+
+      .site-title {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .logo-container {
+        padding: 1.25rem;
+      }
+    }
+
+    ul.mobile-menu li {
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      padding: clamp(6px, 1.2vw, 10px);
+      color: white;
+      transition: all 0.2s ease;
+    }
 
     ul.mobile-menu li a {
-      font-size: 0.9rem;
-      padding: 8px;
-      transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+      font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+      padding: clamp(4px, 1vw, 8px);
+      transition: all 0.3s ease;
+      display: block;
+      width: 100%;
     }
 
     ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #064e3b;  
-  border-radius: 8px;
-}
+      color: #ffffff;
+      background-color: #064e3b;
+      border-radius: 6px;
+      transform: translateY(-1px);
+    }
 
-.dark ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #15803d;  
-  border-radius: 8px;
-}
-
+    .dark ul.mobile-menu li a:hover {
+      color: #ffffff;
+      background-color: #15803d;
+    }
 
     ul.mobile-menu {
-  gap: 1rem;  
-  
-}
-
-
-    ul.mobile-menu li .language-dropdown a {
-      padding: 11px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+      gap: clamp(0.25rem, 1.5vw, 1rem);
+      transition: all 0.3s ease;
     }
 
-    ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #064e3b;  
-  border-radius: 8px;
-}
+    ul.mobile-menu li .language-dropdown a {
+      padding: clamp(6px, 1.2vw, 10px);
+      border-radius: 6px;
+    }
 
-.dark ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #15803d;  
-  border-radius: 8px;
-}
+    .language-dropdown {
+      width: clamp(180px, 45vw, 280px);
+      transition: all 0.2s ease;
+    }
 
+    .logo-container img {
+      width: clamp(30px, 4vw, 45px);
+      height: auto;
+      transition: all 0.2s ease;
+    }
 
+    #mobile-menu-button {
+      padding: clamp(0.5rem, 1vw, 1rem);
+      transition: all 0.2s ease;
+    }
+
+    #mobile-menu-button:hover {
+      transform: scale(1.1);
+    }
+
+    .toggle-dark-mode {
+      padding: clamp(0.25rem, 0.5vw, 0.5rem);
+      transition: all 0.2s ease;
+    }
+
+    .toggle-dark-mode:hover {
+      transform: rotate(30deg);
+    }
   </style>
 
-    
-      <div class="flex items-center">
-        <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="mx-10 my-2" style="width: 45px;" />
-        <span class="font-bold text-white text-pretty" style="font-size: 20px;">
-          Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
-        </span>
-      </div>
+  <div class="flex items-center logo-container">
+    <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="mx-auto md:mx-10 my-2" />
+    <span class="font-bold text-white text-pretty site-title">
+      Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
+    </span>
+  </div>
       
-      
-    </a>
-    <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <line x1="4" y1="8" x2="20" y2="8" />
-        <line x1="4" y1="16" x2="20" y2="16" />
-      </svg>
-    </button>
-    
-    <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 bg-green-700 dark:bg-gray-900 mr-8 my-auto">
+  <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial mr-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
 
-      <li class="my-4"><a href='//localhost:1313/'>Beranda</a></li>
+  
+  <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 bg-green-700 dark:bg-gray-900 mr-8 my-auto">
+
+    <li class="my-4"><a href='//localhost:1313/'>Beranda</a></li>
+    
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Profil</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Informasi</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/galeri">Galeri</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/berita">Berita</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Link Terkait</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="https://kalbarprov.go.id/">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar">SIKEDIP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://ppid.kalbarprov.go.id/">PPID PROV. KALBAR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208">SI RENOVPOLPP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://www.lapor.go.id/">LAPOR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://data.kalbarprov.go.id/">SATU DATA PROV. KALBAR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kemendagri.go.id/">SIM SATPOL PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/login">SEKAMPADI</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://linmaskalbar.my.id/">ANTENNA POL PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://bukutamu.kalbarprov.go.id/visitor/check-in">BUKU TAMU</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://srikandi.arsip.go.id/">SRIKANDI</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://lpse.kalbarprov.go.id/eproc4">LPSE</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Dokumen</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-ketertiban-umum-dan-ketentraman">Bidang Ketertiban Umum Dan Ketenteraman</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
-            
-          </div>
-        </li>
-        
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Profil</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
+          
+        </div>
+      </li>
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Pelayanan</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
-            
-          </div>
-        </li>
-        
+    
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>PPID</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Sop</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/sop-pelayanan">Sop Pelayanan</a>
-            
-          </div>
-        </li>
-        
       
-        
       
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Informasi</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/galeri">Galeri</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/berita">Berita</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Link Terkait</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="https://kalbarprov.go.id/">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar">SIKEDIP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://ppid.kalbarprov.go.id/">PPID PROV. KALBAR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208">SI RENOVPOLPP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://www.lapor.go.id/">LAPOR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://data.kalbarprov.go.id/">SATU DATA PROV. KALBAR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://satpolpp.kemendagri.go.id/">SIM SATPOL PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/login">SEKAMPADI</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://linmaskalbar.my.id/">ANTENNA POL PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://bukutamu.kalbarprov.go.id/visitor/check-in">BUKU TAMU</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://srikandi.arsip.go.id/">SRIKANDI</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://lpse.kalbarprov.go.id/eproc4">LPSE</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Dokumen</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-ketertiban-umum-dan-ketentraman">Bidang Ketertiban Umum Dan Ketenteraman</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Pelayanan</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>PPID</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Sop</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/sop-pelayanan">Sop Pelayanan</a>
+          
+        </div>
+      </li>
+      
+    
+
+    
+
+    
       <li class="grid place-items-center">
         <span class="toggle-dark-mode inline-block cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -913,21 +997,36 @@ ul.mobile-menu li a:hover {
     
   </ul>
 
-  </div>
-
-  
-  
-
-
-
   <script>
-  $(document).ready(function() {
-    $('#mobile-menu li').click(function() {
-      $('#mobile-menu li').removeClass('active');
-      $(this).addClass('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.remove('hidden');
+          }
+        }, 250);
+      });
+
+      
+      document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+          if (window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 </header>
 <div class="fixed-social-media">
@@ -961,7 +1060,7 @@ ul.mobile-menu li a:hover {
 <style>
 .fixed-social-media {
     position: fixed;
-    right: 0;  
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999;
@@ -970,38 +1069,39 @@ ul.mobile-menu li a:hover {
 .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .social-icon {
     position: relative;
-    width: 50px;
-    height: 50px;
-    background: #fff;
+    width: 40px;
+    height: 40px;
+    background: #15803d;  
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
-    font-size: 20px;
-    border-radius: 10px 0 0 10px;  
-    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);  
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    width: 60px;
-    transform: translateX(-5px);  
+    width: 50px;
+    transform: translateX(-5px);
+    background: #166534;  
 }
 
 .social-icon .tooltip {
     position: absolute;
-    right: 120%;  
-    background: #333;
+    right: 120%;
+    background: #15803d;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -1010,34 +1110,76 @@ ul.mobile-menu li a:hover {
 
 .social-icon:hover .tooltip {
     opacity: 1;
-    right: 110%;  
+    right: 110%;
 }
 
  
-.facebook {
-    background: #1877f2;
-    color: white;
+@media (min-width: 1024px) {
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .social-icon:hover {
+        width: 60px;
+    }
 }
 
-.instagram {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
+@media (max-width: 1023px) {
+    .social-icons {
+        gap: 6px;
+    }
+    
+    .social-icon .tooltip {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
 }
 
-.twitter {
-    background: #1DA1F2;
-    color: white;
-}
-
-.youtube {
-    background: #FF0000;
-    color: white;
-}
-
- 
 @media (max-width: 768px) {
     .fixed-social-media {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        border-radius: 8px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .social-icon:hover {
+        width: 35px;
+        transform: translateY(-3px);
+    }
+    
+    .social-icon .tooltip {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
 }
 </style>
@@ -1046,12 +1188,15 @@ ul.mobile-menu li a:hover {
   
   
 
-  <div class="max-w-5xl mx-auto px-4">
+  <div class="w-full px-4">
     
     
-    <article class="prose lg:prose-lg mx-auto my-8">
-      <h1 class="text-2xl font-bold mb-4">Profil Satpol PP Prov. Kalbar</h1>
-      <p class="MsoListParagraph" style="margin-left: 1.0cm; mso-add-space: auto; text-align: justify; text-indent: -28.9pt; mso-list: l2 level1 lfo2;"><!-- [if !supportLists]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">I.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: Arial;">Sejarah Singkat<o:p></o:p></span></b></p>
+    <div class="flex">
+      <div class="w-1/4 mr-4">
+        <div class="bg-white rounded-lg border-2 p-6">
+          <article class="prose lg:prose-lg w-full my-8">
+            <h1 class="text-2xl font-bold mb-4">Profil Satpol PP Prov. Kalbar</h1>
+            <p class="MsoListParagraph" style="margin-left: 1.0cm; mso-add-space: auto; text-align: justify; text-indent: -28.9pt; mso-list: l2 level1 lfo2;"><!-- [if !supportLists]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">I.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: Arial;">Sejarah Singkat<o:p></o:p></span></b></p>
 <p class="MsoNormal" style="text-align: justify; text-indent: 30.0pt;"><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satuan Polisi Pamong Praja atau yang biasa dikenal dengan sebutan Satpol PP merupakan Perangkat Pemerintah Daerah yang dipimpin oleh kepala Satuan yang berada dan bertanggung jawab kepada Gubernur melalui Sekretaris Daerah. <o:p></o:p></span></p>
 <p class="MsoNormal" style="text-align: justify; text-indent: 30.0pt;"><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satpol PP dibentuk untuk menegakkan Peraturan daerah dan Peraturan Kepala Daerah, menyelenggarakan ketertiban umum dan ketenteraman, serta menyelenggarakan pelindungan masyarakat yang tertuang dalam ayat (1) pasal 255&nbsp; UU Nomor 23 Tahun 2014 tentang pemerintahan daerah yang <span style="background: white;">sebagaimana telah </span></span><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: 'Times New Roman'; color: #212529; background: white; mso-bidi-font-weight: bold;">diubah dengan Undang-Undang Nomor 9 Tahun 2015 tentang Perubahan Kedua atas Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah.</span><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';"><o:p></o:p></span></p>
 <p class="Default" style="text-align: justify;"><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman'; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Satpol PP Provinsi Kalimantan Barat terbentuk berdasarkan </span><span style="font-family: 'Book Antiqua','serif';">Peraturan Daerah Provinsi Kalimantan Barat Nomor 11 Tahun 2019 Tentang Perubahan Atas Peraturan Daerah Nomor 8 Tahun 2016 tentang Pembentukan Dan Susunan Perangkat Daerah Provinsi Kalimantan Barat </span><i><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">jo </span></i><span style="font-family: 'Book Antiqua','serif';">Peraturan Gubernur Nomor 70 Tahun 2019 tentang Perubahan Atas Peraturan Gubernur Nomor 120 Tahun 2016 Tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, Serta Tata Kerja Satpol PP Provinsi Kalimantan Barat. D</span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman'; background: white;">i mana </span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satuan Polisi Pamong Praja Provinsi Kalimantan Barat tipe A dengan menyelenggarakan urusan Pemerintahan Bidang Ketentraman dan Ketertiban Umum serta Perlindungan Masyarakat.<o:p></o:p></span></p>
@@ -1104,7 +1249,76 @@ ul.mobile-menu li a:hover {
 <p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/822">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 2021 TENTANG PENYELENGGARAAN KETENTERAMAN, KETERTIBAN UMUM DAN PERLINDUNGAN MASYARAKAT</a></p>
 <p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"></p>
 
-    </article>
+          </article>
+        </div>
+      </div>
+      <div class="w-2/3">
+        <div class="bg-white rounded-lg border-2 p-6 min-h-screen">
+          <div class="container mx-auto px-4">
+            <div class="bg-gray-100 rounded-lg p-4">
+              <div class="markdown-content">
+                
+                  <p class="MsoListParagraph" style="margin-left: 1.0cm; mso-add-space: auto; text-align: justify; text-indent: -28.9pt; mso-list: l2 level1 lfo2;"><!-- [if !supportLists]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">I.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: Arial;">Sejarah Singkat<o:p></o:p></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 30.0pt;"><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satuan Polisi Pamong Praja atau yang biasa dikenal dengan sebutan Satpol PP merupakan Perangkat Pemerintah Daerah yang dipimpin oleh kepala Satuan yang berada dan bertanggung jawab kepada Gubernur melalui Sekretaris Daerah. <o:p></o:p></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 30.0pt;"><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satpol PP dibentuk untuk menegakkan Peraturan daerah dan Peraturan Kepala Daerah, menyelenggarakan ketertiban umum dan ketenteraman, serta menyelenggarakan pelindungan masyarakat yang tertuang dalam ayat (1) pasal 255&nbsp; UU Nomor 23 Tahun 2014 tentang pemerintahan daerah yang <span style="background: white;">sebagaimana telah </span></span><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: 'Times New Roman'; color: #212529; background: white; mso-bidi-font-weight: bold;">diubah dengan Undang-Undang Nomor 9 Tahun 2015 tentang Perubahan Kedua atas Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah.</span><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';"><o:p></o:p></span></p>
+<p class="Default" style="text-align: justify;"><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman'; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Satpol PP Provinsi Kalimantan Barat terbentuk berdasarkan </span><span style="font-family: 'Book Antiqua','serif';">Peraturan Daerah Provinsi Kalimantan Barat Nomor 11 Tahun 2019 Tentang Perubahan Atas Peraturan Daerah Nomor 8 Tahun 2016 tentang Pembentukan Dan Susunan Perangkat Daerah Provinsi Kalimantan Barat </span><i><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">jo </span></i><span style="font-family: 'Book Antiqua','serif';">Peraturan Gubernur Nomor 70 Tahun 2019 tentang Perubahan Atas Peraturan Gubernur Nomor 120 Tahun 2016 Tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, Serta Tata Kerja Satpol PP Provinsi Kalimantan Barat. D</span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman'; background: white;">i mana </span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Satuan Polisi Pamong Praja Provinsi Kalimantan Barat tipe A dengan menyelenggarakan urusan Pemerintahan Bidang Ketentraman dan Ketertiban Umum serta Perlindungan Masyarakat.<o:p></o:p></span></p>
+<p class="Default" style="text-align: justify; text-indent: 18.0pt;"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span><span style="font-family: 'Book Antiqua','serif';">Berikut ini Susunan Organisasi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat terdiri atas:<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Kepala Satuan;</span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';"><o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->2.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Sekretariat;</span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';"><o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->3.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Bidang Pembinaan Masyarakat;</span><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';"><o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->4.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Ketertiban Umum dan Ketenteraman;<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->5.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Bidang Penegakan Peraturan Daerah dan Peraturan Kepala Daerah;<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->6.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Bidang Perlindungan Masyarakat; dan<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 36.0pt; text-align: justify; text-indent: -18.0pt; mso-list: l0 level1 lfo1;"><!-- [if !supportLists]-->7.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp; </span><!--[endif]--><span style="font-family: 'Book Antiqua','serif'; mso-bidi-font-family: 'Times New Roman';">Kelompok Jabatan Fungsional.<o:p></o:p></span></p>
+<p class="Default"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="margin-left: 1.0cm; text-indent: -28.9pt; mso-list: l2 level1 lfo2;"><!-- [if !supportLists]--><b><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">II.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-family: 'Book Antiqua','serif';">Tugas, Fungsi, Wewenang<o:p></o:p></span></b></p>
+<p class="Default" style="margin-left: 1.0cm;"><b><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></b><!-- [if !supportLists]--><b><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-family: 'Book Antiqua','serif';">Tugas:<o:p></o:p></span></b></p>
+<p class="Default" style="margin-left: 64.35pt; text-indent: -18.0pt; mso-list: l5 level1 lfo4;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">a.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Menegakkan Perda dan Perkada;<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-indent: -18.0pt; mso-list: l5 level1 lfo4;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">b.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Menyelenggarakan ketertiban umum dan ketenteraman; dan<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-indent: -18.0pt; mso-list: l5 level1 lfo4;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">c.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Menyelenggarakan pelindungan masyarakat.<o:p></o:p></span><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="margin-left: 64.35pt;"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="margin-left: 46.35pt; text-indent: -18.0pt; mso-list: l4 level1 lfo3;"><!-- [if !supportLists]--><b><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">2.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-family: 'Book Antiqua','serif';">Fungsi:<o:p></o:p></span></b></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l1 level1 lfo5;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">a.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> &nbsp;</span></span><span style="font-family: 'Book Antiqua','serif';">Penyusunan program penegakan Perda dan Perkada, penyelenggaraan ketertiban umum dan ketenteraman serta penyelenggaraan pelindungan masyarakat;<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l1 level1 lfo5;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">b.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> &nbsp;</span></span><span style="font-family: 'Book Antiqua','serif';">Pelaksanaan kebijakan penegakan Perda dan Perkada, penyelenggaraan ketertiban umum dan ketenteraman masyarakat serta penyelenggaraan pelindungan masyarakat;<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l1 level1 lfo5;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">c.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; &nbsp;</span></span><span style="text-indent: -18pt; font-family: 'Book Antiqua', 'serif';">Pelaksanaan koordinasi penegakan Perda dan Perkada, penyelenggaraan ketertiban umum dan ketenteraman serta penyelenggaraan pelindungan masyarakat dengan instansi terkait;</span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l1 level1 lfo5;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">d.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Pengawasan terhadap masyarakat, aparatur, atau badan hukum atas pelaksanaan Perda dan Perkada; dan<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l1 level1 lfo5;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">e.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; &nbsp; &nbsp;&nbsp;</span></span><span style="font-size: 11.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">P</span><span style="font-size: 12.0pt; line-height: 107%; font-family: 'Book Antiqua','serif'; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">elaksanaan</span><span style="font-family: 'Book Antiqua','serif';">&nbsp;fungsi lain berdasarkan tugas yang diberikan oleh kepala daerah sesuai dengan ketentuan peraturan perundang-undangan.<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="margin-left: 46.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l4 level1 lfo3;"><!-- [if !supportLists]--><b><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">3.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-family: 'Book Antiqua','serif';">Wewenang: <o:p></o:p></span></b></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l3 level1 lfo6;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">a.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; &nbsp;</span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Melakukan tindakan penertiban non-yustisial terhadap warga masyarakat, aparatur, atau badan hukum yang melakukan pelanggaran atas Perda dan/atau Perkada;<b><o:p></o:p></b></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l3 level1 lfo6;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">b.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: 'Book Antiqua','serif';">Menindak warga masyarakat, aparatur, atau badan hukum yang mengganggu ketertiban umum dan ketenteraman masyarakat;<b><o:p></o:p></b></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l3 level1 lfo6;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">c.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family: 'Book Antiqua','serif';">Melakukan tindakan penyelidikan terhadap warga masyarakat, aparatur, atau badan hukum yang diduga melakukan pelanggaran atas Perda dan/atau Perkada; dan<b><o:p></o:p></b></span></p>
+<p class="Default" style="margin-left: 64.35pt; text-align: justify; text-indent: -18.0pt; mso-list: l3 level1 lfo6;"><!-- [if !supportLists]--><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">d.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> &nbsp;</span></span><span style="font-family: 'Book Antiqua','serif';">Melakukan tindakan administratif terhadap warga masyarakat, aparatur, atau badan hukum yang melakukan pelanggaran atas Perda dan/atau Perkada.<b><o:p></o:p></b></span></p>
+<p class="Default" style="text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">&nbsp;</span></p>
+<p class="Default" style="margin-left: 1.0cm; text-align: justify; text-indent: -28.9pt; mso-list: l2 level1 lfo2;"><!-- [if !supportLists]--><b><span style="font-family: 'Book Antiqua','serif'; mso-fareast-font-family: 'Book Antiqua'; mso-bidi-font-family: 'Book Antiqua';">III.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><!--[endif]--><b><span style="font-family: 'Book Antiqua','serif';">Alamat Kantor<o:p></o:p></span></b></p>
+<p class="Default" style="margin-left: 49.65pt; text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">Komplek Kantor Gubernur Provinsi Kalimantan Barat <o:p></o:p></span></p>
+<p class="Default" style="margin-left: 49.65pt; text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">Jl. Jenderal Ahmad Yani , Pontianak.<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 49.65pt; text-align: justify;"><span style="font-family: 'Book Antiqua','serif';">Kalimantan Barat, 78124.<o:p></o:p></span></p>
+<p class="Default" style="margin-left: 49.65pt; text-align: justify;"><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"> <v:stroke joinstyle="miter"> <v:formulas> <v:f eqn="if lineDrawn pixelLineWidth 0"> <v:f eqn="sum @0 1 0"> <v:f eqn="sum 0 0 @1"> <v:f eqn="prod @2 1 2"> <v:f eqn="prod @3 21600 pixelWidth"> <v:f eqn="prod @3 21600 pixelHeight"> <v:f eqn="sum @0 0 1"> <v:f eqn="prod @6 1 2"> <v:f eqn="prod @7 21600 pixelWidth"> <v:f eqn="sum @8 21600 0"> <v:f eqn="prod @7 21600 pixelHeight"> <v:f eqn="sum @10 21600 0"> </v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas> <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"> <o:lock v:ext="edit" aspectratio="t"> </o:lock></v:path></v:stroke></v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_s1026" type="#_x0000_t75" style="position: absolute; left: 0; text-align: left; margin-left: 56.25pt; margin-top: 6.35pt; width: 27pt; height: 27pt; z-index: -251658240; visibility: visible; mso-wrap-style: square; mso-width-percent: 0; mso-height-percent: 0; mso-wrap-distance-left: 9pt; mso-wrap-distance-top: 0; mso-wrap-distance-right: 9pt; mso-wrap-distance-bottom: 0; mso-position-horizontal: absolute; mso-position-horizontal-relative: text; mso-position-vertical: absolute; mso-position-vertical-relative: text; mso-width-relative: margin; mso-height-relative: margin;"> <v:imagedata src="file:///C:\Users\ACER\AppData\Local\Temp\msohtmlclip1\01\clip_image001.png" o:title=""> <w:wrap type="tight"> </w:wrap></v:imagedata></v:shape><o:p></o:p></p>
+<p class="Default" style="margin-left: 49.65pt; text-align: justify;"><img src="/images/ZTJ3Cd2rq5lkU6J40q6d.png" width="41" height="41" alt="" />&nbsp; &nbsp;https://maps.app.goo.gl/rJFqC3fV49YyCBW86</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"></p>
+<p class="Default" style="margin-left: 1cm; text-align: justify;"><o:p>&nbsp;&nbsp;</o:p></p>
+<p class="Default" style="margin-left: 1cm; text-align: justify;"></p>
+<p><span style="color: #e03e2d;">Silahkan download :</span></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.bappenas.go.id/peraturan/detailperaturan/146/undang-undang-nomor-23-tahun-2014">Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintah Daerah</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://bphn.go.id/data/documents/15uu009.pdf">Undang-Undang Nomor 9 Tahun 2015 tentang Perubahan Kedua atas Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://peraturan.bpk.go.id/Details/77284/pp-no-16-tahun-2018">Peraturan Pemerintah (PP) Nomor 16 Tahun 2018 tentang Satuan Polisi Pamong Praja</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/107">Perda Prov. Kalbar Nomor 8 Tahun 2016 Tentang Pembentukan Dan Susunan Perangkat Daerah Provinsi Kalimantan Barat</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/128">Perda Provinsi Kalimantan Barat Nomor 11 Tahun 2019 Tentang Perubahan Atas Peraturan Daerah Nomor 8 Tahun 2016 tentang Pembentukan Dan Susunan Perangkat Daerah Provinsi Kalimantan Barat</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/335">Peraturan Gubernur Nomor 70 Tahun 2019 tentang Perubahan Atas Peraturan Gubernur Nomor 120 Tahun 2016 Tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, Serta Tata Kerja Satpol PP Provinsi Kalimantan Barat</a>&nbsp;</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="file:///C:/Users/ACER/Downloads/Permendagri%20Nomor%2016%20Tahun%202023.pdf">PERATURAN MENTERI DALAM NEGERI REPUBLIK INDONESIA NOMOR 16 TAHUN 2023 TENTANG STANDAR OPERASIONAL PROSEDUR SATUAN POLISI PAMONG PRAJA DAN KODE ETIK POLISI PAMONG PRAJA</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/822">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 2021 TENTANG PENYELENGGARAAN KETENTERAMAN, KETERTIBAN UMUM DAN PERLINDUNGAN MASYARAKAT</a></p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px 40px; color: #777777; font-family: 'Helvetica Neue', Roboto, Arial, 'Droid Sans', sans-serif; font-size: 13px; text-align: justify;"></p>
+
+                
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
   </div>
 
@@ -1155,71 +1369,81 @@ ul.mobile-menu li a:hover {
         body {
           font-family: 'Poppins', sans-serif;
         }
-      </style><footer class="p-1 mx-auto w-full bg-gradient-to-b from-green-700 to-green-800 text-white">
-  <div class="container mx-auto px-1">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6">
-      <div class="text-center md:text-left transform hover:scale-105 transition duration-300">
-        <h1 class="font-bold text-xl mb-2 text-green-100">SATUAN POLISI PAMONG PRAJA PROVINSI KALIMANTAN BARAT</h1>
-        <p class="text-base font-medium text-green-200">Web Resmi Polisi Pamong Praja Provinsi Kalimantan Barat</p>
-        
-        
-        <div class="mt-4 px-4">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.2259474347772!2d109.35257842670621!3d-0.06174539999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59a102965473%3A0x9ef363f0cf41c6b2!2sGedung%20Pelayanan%20Terpadu%20Prov.%20Kalbar!5e0!3m2!1sid!2sid!4v1708745123456!5m2!1sid!2sid"
-            width="90%" 
-            height="150" 
-            style="border:0; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="flex flex-col space-y-3">
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-phone-alt text-xl text-green-100"></i>
-          <a href="tel:081225197681" class="ml-2 text-sm font-semibold">081225197681</a>
-        </div>
-        
-        <div class="flex items-start bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-map-marker-alt text-xl text-green-100 mt-1"></i>
-          <a href="https://goo.gl/maps/YOUR-MAPS-LINK" target="_blank" class="ml-2 text-sm">
-            Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124
-          </a>
-        </div>
-        
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-envelope text-xl text-green-100"></i>
-          <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 text-sm font-semibold">satpolpp@kalbarprov.go.id</a>
-        </div>
-        
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-sitemap text-xl text-green-100"></i>
-          <a href="//localhost:1313/sitemap" class="ml-2 text-sm font-semibold">Sitemap</a>
-        </div>
+      </style><footer class="p-4 bg-green-700 text-white">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="text-center md:text-center">
+      <h1 class="font-bold text-3xl mt-10 mb-10 text-white  ">
+        SATUAN POLISI PAMONG PRAJA PROVINSI <br />
+        KALIMANTAN BARAT
+      </h1>
+      <p class="text-lg text-white">
+        Web Resmi Polisi Pamong Praja <br />
+        Provinsi Kalimantan Barat
+      </p>
+    </div>
 
-        <div class="flex items-center justify-center space-x-3 mt-3">
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-facebook text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-twitter text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-instagram text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-youtube text-lg"></i>
-          </a>
-        </div>
+    
+    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-64 w-px bg-black mt-0"></div>
+
+    
+    <div class="space-y-3 mt-10 text-lg">
+      <div class="flex items-center">
+        <i class="fas fa-phone-alt text-white"></i>
+        <a href="tel:081225197681" class="ml-2 hover:underline">
+          081225197681
+        </a>
+      </div>
+      <div class="flex items-start">
+        <i class="fas fa-map-marker-alt text-white mt-1"></i>
+        <a
+          href="https://goo.gl/maps/YOUR-MAPS-LINK"
+          target="_blank"
+          class="ml-2 hover:underline"
+        >
+          Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal
+          Ahmad Yani Pontianak, Kalimantan Barat 78124
+        </a>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-envelope text-white"></i>
+        <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 hover:underline">
+          satpolpp@kalbarprov.go.id
+        </a>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-sitemap text-white"></i>
+        <a href="//localhost:1313/sitemap" class="ml-2 hover:underline">
+          Sitemap
+        </a>
       </div>
     </div>
   </div>
+
+  
+  <div class="mt-4 flex justify-end space-x-4 mr-96">
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-facebook text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-twitter text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-instagram text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-youtube text-white text-xl"></i>
+    </a>
+  </div>
+
+  
+  <div class="mt-4 text-center border-t border-custom-green pt-2">
+    <p class="text-lg">
+      &copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.
+    </p>
+  </div>
 </footer>
 
-<div class="w-full text-center p-3 bg-green-900 text-white border-t-2 border-green-600">
-  <p class="text-sm font-medium">&copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.</p>
-</div>
 
 <div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
   <div class="container max-w-3xl mx-auto p-12">

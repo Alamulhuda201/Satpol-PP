@@ -616,284 +616,368 @@ NO" />
     </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-40 w-full bg-green-700 dark:bg-gray-900'>
   <style>
     .navbar {
-  background-color: #000000;  
-}
-ul.mobile-menu li {
-  font-size: 1rem;
-  padding: 10px;
-  color: white;
-}
-ul.mobile-menu li a:hover {
-  color: #ffffff;
-}
+      background-color: #000000;
+    }
+
+     
+    @media (max-width: 480px) {
+      .mobile-menu {
+        width: 100%;
+        padding: 0.75rem;
+      }
+      
+      .mobile-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+
+      .logo-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      .site-title {
+        font-size: 14px;
+        margin-top: 0.25rem;
+        line-height: 1.2;
+      }
+    }
+
+     
+    @media (min-width: 481px) and (max-width: 768px) {
+      .mobile-menu {
+        padding: 0.875rem;
+      }
+
+      .site-title {
+        font-size: 16px;
+        line-height: 1.3;
+      }
+
+      .logo-container {
+        padding: 0.75rem;
+      }
+    }
+
+      
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .site-title {
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .logo-container {
+        padding: 1rem;
+      }
+    }
+
+     
+    @media (min-width: 1025px) {
+      .mobile-menu {
+        display: flex !important;
+      }
+
+      .site-title {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+
+      .logo-container {
+        padding: 1.25rem;
+      }
+    }
+
+    ul.mobile-menu li {
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      padding: clamp(6px, 1.2vw, 10px);
+      color: white;
+      transition: all 0.2s ease;
+    }
 
     ul.mobile-menu li a {
-      font-size: 0.9rem;
-      padding: 8px;
-      transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+      font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+      padding: clamp(4px, 1vw, 8px);
+      transition: all 0.3s ease;
+      display: block;
+      width: 100%;
     }
 
     ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #064e3b;  
-  border-radius: 8px;
-}
+      color: #ffffff;
+      background-color: #064e3b;
+      border-radius: 6px;
+      transform: translateY(-1px);
+    }
 
-.dark ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #15803d;  
-  border-radius: 8px;
-}
-
+    .dark ul.mobile-menu li a:hover {
+      color: #ffffff;
+      background-color: #15803d;
+    }
 
     ul.mobile-menu {
-  gap: 1rem;  
-  
-}
-
-
-    ul.mobile-menu li .language-dropdown a {
-      padding: 11px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+      gap: clamp(0.25rem, 1.5vw, 1rem);
+      transition: all 0.3s ease;
     }
 
-    ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #064e3b;  
-  border-radius: 8px;
-}
+    ul.mobile-menu li .language-dropdown a {
+      padding: clamp(6px, 1.2vw, 10px);
+      border-radius: 6px;
+    }
 
-.dark ul.mobile-menu li a:hover {
-  color: #ffffff;  
-  background-color: #15803d;  
-  border-radius: 8px;
-}
+    .language-dropdown {
+      width: clamp(180px, 45vw, 280px);
+      transition: all 0.2s ease;
+    }
 
+    .logo-container img {
+      width: clamp(30px, 4vw, 45px);
+      height: auto;
+      transition: all 0.2s ease;
+    }
 
+    #mobile-menu-button {
+      padding: clamp(0.5rem, 1vw, 1rem);
+      transition: all 0.2s ease;
+    }
+
+    #mobile-menu-button:hover {
+      transform: scale(1.1);
+    }
+
+    .toggle-dark-mode {
+      padding: clamp(0.25rem, 0.5vw, 0.5rem);
+      transition: all 0.2s ease;
+    }
+
+    .toggle-dark-mode:hover {
+      transform: rotate(30deg);
+    }
   </style>
 
-    
-      <div class="flex items-center">
-        <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="mx-10 my-2" style="width: 45px;" />
-        <span class="font-bold text-white text-pretty" style="font-size: 20px;">
-          Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
-        </span>
-      </div>
+  <div class="flex items-center logo-container">
+    <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="mx-auto md:mx-10 my-2" />
+    <span class="font-bold text-white text-pretty site-title">
+      Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
+    </span>
+  </div>
       
-      
-    </a>
-    <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <line x1="4" y1="8" x2="20" y2="8" />
-        <line x1="4" y1="16" x2="20" y2="16" />
-      </svg>
-    </button>
-    
-    <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 bg-green-700 dark:bg-gray-900 mr-8 my-auto">
+  <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial mr-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
 
-      <li class="my-4"><a href='//localhost:1313/'>Beranda</a></li>
+  
+  <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 bg-green-700 dark:bg-gray-900 mr-8 my-auto">
+
+    <li class="my-4"><a href='//localhost:1313/'>Beranda</a></li>
+    
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Profil</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Informasi</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/galeri">Galeri</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/berita">Berita</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Link Terkait</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="https://kalbarprov.go.id/">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar">SIKEDIP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://ppid.kalbarprov.go.id/">PPID PROV. KALBAR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208">SI RENOVPOLPP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://www.lapor.go.id/">LAPOR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://data.kalbarprov.go.id/">SATU DATA PROV. KALBAR</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://satpolpp.kemendagri.go.id/">SIM SATPOL PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/login">SEKAMPADI</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://linmaskalbar.my.id/">ANTENNA POL PP</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://bukutamu.kalbarprov.go.id/visitor/check-in">BUKU TAMU</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://srikandi.arsip.go.id/">SRIKANDI</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://lpse.kalbarprov.go.id/eproc4">LPSE</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Dokumen</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-ketertiban-umum-dan-ketentraman">Bidang Ketertiban Umum Dan Ketenteraman</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
-            
-          </div>
-        </li>
-        
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Profil</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#pejabat-struktural">Profil Pimpinan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#motto-satpol-pp">Motto Satpol PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#tentang-satpol-pp">Tentang Satpol PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/profil#visi-dan-misi">Visi Dan Misi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
+          
+        </div>
+      </li>
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Pelayanan</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
-            
-          </div>
-        </li>
-        
+    
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>PPID</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
-            
-              <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
-            
-              <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
-            
-          </div>
-        </li>
-        
       
-        
-        
-        
-        
-        <li class="relative cursor-pointer my-2 px-4 md:px-1">
-          <span class="language-switcher flex items-center gap-2">
-            <a>Sop</a>
-            <i class="fas fa-chevron-down"></i>
-          </span>
-          <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-            
-              <a class="px-5 py-4 md:py-2" href="/sop-pelayanan">Sop Pelayanan</a>
-            
-          </div>
-        </li>
-        
       
-        
       
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Informasi</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/galeri">Galeri</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/berita">Berita</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Link Terkait</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="https://kalbarprov.go.id/">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar">SIKEDIP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://ppid.kalbarprov.go.id/">PPID PROV. KALBAR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208">SI RENOVPOLPP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://www.lapor.go.id/">LAPOR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://data.kalbarprov.go.id/">SATU DATA PROV. KALBAR</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://satpolpp.kemendagri.go.id/">SIM SATPOL PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/login">SEKAMPADI</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://linmaskalbar.my.id/">ANTENNA POL PP</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://bukutamu.kalbarprov.go.id/visitor/check-in">BUKU TAMU</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://srikandi.arsip.go.id/">SRIKANDI</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://lpse.kalbarprov.go.id/eproc4">LPSE</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Dokumen</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-ketertiban-umum-dan-ketentraman">Bidang Ketertiban Umum Dan Ketenteraman</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Pelayanan</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>PPID</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
+          
+            <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
+          
+            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
+          
+        </div>
+      </li>
+      
+    
+      
+      
+      
+      
+      <li class="relative cursor-pointer my-2 px-4 md:px-1">
+        <span class="language-switcher flex items-center gap-2">
+          <a>Sop</a>
+          <i class="fas fa-chevron-down"></i>
+        </span>
+        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
+          
+            <a class="px-5 py-4 md:py-2" href="/sop-pelayanan">Sop Pelayanan</a>
+          
+        </div>
+      </li>
+      
+    
+
+    
+
+    
       <li class="grid place-items-center">
         <span class="toggle-dark-mode inline-block cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -913,21 +997,36 @@ ul.mobile-menu li a:hover {
     
   </ul>
 
-  </div>
-
-  
-  
-
-
-
   <script>
-  $(document).ready(function() {
-    $('#mobile-menu li').click(function() {
-      $('#mobile-menu li').removeClass('active');
-      $(this).addClass('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.remove('hidden');
+          }
+        }, 250);
+      });
+
+      
+      document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+          if (window.innerWidth < 768) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 </header>
 <div class="fixed-social-media">
@@ -961,7 +1060,7 @@ ul.mobile-menu li a:hover {
 <style>
 .fixed-social-media {
     position: fixed;
-    right: 0;  
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999;
@@ -970,38 +1069,39 @@ ul.mobile-menu li a:hover {
 .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .social-icon {
     position: relative;
-    width: 50px;
-    height: 50px;
-    background: #fff;
+    width: 40px;
+    height: 40px;
+    background: #15803d;  
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
-    font-size: 20px;
-    border-radius: 10px 0 0 10px;  
-    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);  
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    width: 60px;
-    transform: translateX(-5px);  
+    width: 50px;
+    transform: translateX(-5px);
+    background: #166534;  
 }
 
 .social-icon .tooltip {
     position: absolute;
-    right: 120%;  
-    background: #333;
+    right: 120%;
+    background: #15803d;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -1010,34 +1110,76 @@ ul.mobile-menu li a:hover {
 
 .social-icon:hover .tooltip {
     opacity: 1;
-    right: 110%;  
+    right: 110%;
 }
 
  
-.facebook {
-    background: #1877f2;
-    color: white;
+@media (min-width: 1024px) {
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .social-icon:hover {
+        width: 60px;
+    }
 }
 
-.instagram {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
+@media (max-width: 1023px) {
+    .social-icons {
+        gap: 6px;
+    }
+    
+    .social-icon .tooltip {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
 }
 
-.twitter {
-    background: #1DA1F2;
-    color: white;
-}
-
-.youtube {
-    background: #FF0000;
-    color: white;
-}
-
- 
 @media (max-width: 768px) {
     .fixed-social-media {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        border-radius: 8px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .social-icon:hover {
+        width: 35px;
+        transform: translateY(-3px);
+    }
+    
+    .social-icon .tooltip {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
     }
 }
 </style>
@@ -1046,12 +1188,15 @@ ul.mobile-menu li a:hover {
   
   
 
-  <div class="max-w-5xl mx-auto px-4">
+  <div class="w-full px-4">
     
     
-    <article class="prose lg:prose-lg mx-auto my-8">
-      <h1 class="text-2xl font-bold mb-4">REKAPITULASI TIDAK ADA KETENTUAN PELANGGARAN DAN TIDAK ADA SANKSI PERDA PROV KALBAR</h1>
-      <table class="MsoTable15Grid4Accent4" border="1" cellspacing="0" cellpadding="0" width="1030" style="width: 772.6pt; margin-left: -42.8pt; border-collapse: collapse; border: none; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;">
+    <div class="flex">
+      <div class="w-1/4 mr-4">
+        <div class="bg-white rounded-lg border-2 p-6">
+          <article class="prose lg:prose-lg w-full my-8">
+            <h1 class="text-2xl font-bold mb-4">REKAPITULASI TIDAK ADA KETENTUAN PELANGGARAN DAN TIDAK ADA SANKSI PERDA PROV KALBAR</h1>
+            <table class="MsoTable15Grid4Accent4" border="1" cellspacing="0" cellpadding="0" width="1030" style="width: 772.6pt; margin-left: -42.8pt; border-collapse: collapse; border: none; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;">
 <tbody>
 <tr style="mso-yfti-irow: -1; mso-yfti-firstrow: yes; mso-yfti-lastfirstrow: yes;">
 <td width="41" valign="top" style="width: 30.85pt; border: solid #0F9ED5 1.0pt; mso-border-themecolor: accent4; border-right: none; mso-border-top-alt: solid #0F9ED5 .5pt; mso-border-top-themecolor: accent4; mso-border-left-alt: solid #0F9ED5 .5pt; mso-border-left-themecolor: accent4; mso-border-bottom-alt: solid #0F9ED5 .5pt; mso-border-bottom-themecolor: accent4; background: #0F9ED5; mso-background-themecolor: accent4; padding: 0cm 5.4pt 0cm 5.4pt;">
@@ -1631,7 +1776,603 @@ ul.mobile-menu li a:hover {
 </tr>
 </tbody>
 </table>
-    </article>
+          </article>
+        </div>
+      </div>
+      <div class="w-2/3">
+        <div class="bg-white rounded-lg border-2 p-6 min-h-screen">
+          <div class="container mx-auto px-4">
+            <div class="bg-gray-100 rounded-lg p-4">
+              <div class="markdown-content">
+                
+                  <table class="MsoTable15Grid4Accent4" border="1" cellspacing="0" cellpadding="0" width="1030" style="width: 772.6pt; margin-left: -42.8pt; border-collapse: collapse; border: none; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;">
+<tbody>
+<tr style="mso-yfti-irow: -1; mso-yfti-firstrow: yes; mso-yfti-lastfirstrow: yes;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #0F9ED5 1.0pt; mso-border-themecolor: accent4; border-right: none; mso-border-top-alt: solid #0F9ED5 .5pt; mso-border-top-themecolor: accent4; mso-border-left-alt: solid #0F9ED5 .5pt; mso-border-left-themecolor: accent4; mso-border-bottom-alt: solid #0F9ED5 .5pt; mso-border-bottom-themecolor: accent4; background: #0F9ED5; mso-background-themecolor: accent4; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="margin-bottom: 0cm; text-align: center; line-height: normal; mso-yfti-cnfc: 5;"><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;">NO</span></b><span lang="SV" style="font-family: 'Arial',sans-serif; color: white; mso-themecolor: background1; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border: solid #0F9ED5 1.0pt; mso-border-themecolor: accent4; border-left: none; mso-border-top-alt: solid #0F9ED5 .5pt; mso-border-top-themecolor: accent4; mso-border-bottom-alt: solid #0F9ED5 .5pt; mso-border-bottom-themecolor: accent4; mso-border-right-alt: solid #0F9ED5 .5pt; mso-border-right-themecolor: accent4; background: #0F9ED5; mso-background-themecolor: accent4; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="margin-bottom: 0cm; text-align: center; line-height: normal; mso-yfti-cnfc: 1;"><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;">JUDUL</span></b><span lang="SV" style="font-family: 'Arial',sans-serif; color: white; mso-themecolor: background1; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 0;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">1</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/2"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2010 TENTANG TAMBAHAN SETORAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS BANK PEMBANGUNAN DAERAH KALIMANTAN BARAT TAHUN ANGGARAN 2010 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 1;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">2</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/4"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2010 TENTANG PERUBAHAN ATAS PERATURAN DAERAH NOMOR 10 TAHUN 2008 TENTANG SUSUNAN ORGANISASI PERANGKAT DAERAH PROVINSI KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 2;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">3</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/7"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 8 TAHUN 2011 TENTANG PEMBENTUKAN DANA CADANGAN UNTUK PEMBIAYAAN PELAKSANAAN PEMILIHAN UMUM KEPALA DAERAH PROVINSI KALIMANTAN BARAT TAHUN 2012 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 3;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">4</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/10"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2012 TENTANG PEMBENTUKAN PERSEROAN TERBATAS PENJAMINAN KREDIT DAERAH KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 4;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">5</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/12"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2012 TENTANG PERUBAHAN LAMPIRAN PERATURAN DAERAH NOMOR 8 TAHUN 2008 TENTANG RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH (RPJMD) PROVINSI KALIMANTAN BARAT TAHUN 2008 - 2013 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 5;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">6</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/22"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2003 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH KALIMANTAN BARAT TAHUN ANGGARAN 2003 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 6;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">7</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/27"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 6 TAHUN 2003 TENTANG POKOK-POKOK PENGELOLAAN KEUANGAN DAERAH </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 7;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">8</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/29"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 8 TAHUN 2003 TENTANG SISA PERHITUNGAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2002 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 8;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">9</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/30"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2003 TENTANG PENCABUTAN PERATURAN DAERAH PROPINSI KALIMANTAN BARAT NOMOR 6 TAHUN 2001 TENTANG RETRIBUSI PENGUJIAN KENDARAAN BERMOTOR </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 9;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">10</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/31"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2004 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2004 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 10;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">11</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/35"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2004 TENTANG PERUBAHAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2004 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 11;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">12</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/36"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2005 TENTANG KEDUDUKAN PROTOKOLER DAN KEUANGAN PIMPINAN DAN ANGGOTA DEWAN PERWAKILAN RAKYAT DAERAH PROVINSI KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 12;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">13</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/38"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2005 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2005 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 13;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">14</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/39"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 2005 TENTANG TRANSPARANSI PENYELENGGARAAN PEMERINTAHAN PROVINSI KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 14;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">15</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/43"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2005 TENTANG TATA CARA PENYUSUNAN RENCANA PEMBANGUNAN DAERAH DAN PELAKSANAAN MUSYAWARAH PERENCANAAN PEMBANGUNAN DAERAH PROVINSI KALIMANTAN BARAT </span></a></span></u><span style="font-size: 10.0pt; font-family: 'Arial',sans-serif;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 15;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">16</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/44"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 10 TAHUN 2005 TENTANG RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH (RPJMD) PROVINSI KALIMANTAN BARAT TAHUN 2006-2008 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 16;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">17</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/45"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 11 TAHUN 2005 TENTANG PERUBAHAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2005 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 17;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">18</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/51"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 6 TAHUN 2006 TENTANG PERHITUNGAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2005 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 18;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">19</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/52"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2006 TENTANG BANTUAN KEUANGAN KEPADA PARTAI POLITIK </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 19;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">20</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/54"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2006 TENTANG PERUBAHAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGRAN 2006 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 20;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">21</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/61"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 8 TAHUN 2007 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PT. </span>BANK PEMBANGUNAN DAERAH KALIMANTAN BARAT </span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 21;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">22</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/65"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2008 TENTANG PENGELOLAAN BARANG MILIK DAERAH </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 22;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">23</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/68"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2008 TENTANG RENCANA PEMBANGUNAN JANGKA PANJANG DAERAH TAHUN 2007-2027 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 23;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">24</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/70"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 8 TAHUN 2008 TENTANG RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH (RPJMD) PROVINSI KALIMANTAN BARAT TAHUN 2008-2013 </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 24;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">25</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/71"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2008 TENTANG URUSAN PEMERINTAHAN YANG MENJADI KEWENANGAN PROVINSI KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 25;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">26</span></b><b><span style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/73"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2013 TENTANG PENYIDIK PEGAWAI NEGERI SIPIL DI LINGKUNGAN PEMERINTAH PROVINSI KALIMANTAN BARAT </span></span></a></span></u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-ansi-language: SV;"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 26;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">27</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/74"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 15 TAHUN 2008 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERUSAHAAN DAERAH ANEKA USAHA PROVINSI KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 27;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">28</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/75"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 16 TAHUN 2008 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS BANK PEMBANGUNAN DAERAH KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 28;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">29</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/76"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 17 TAHUN 2008 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS ASURANSI BANGUN ASKRIDA </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 29;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">30</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/77"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 18 TAHUN 2008 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERUSAHAAN DAERAH AIR MINUM PROVINSI KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 30;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">31</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/78"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2009 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2009 </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 31;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">32</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/79"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2008 TENTANG PENCEGAHAN DAN PENANGGULANGAN HIV DAN AIDS DI PROVINSI KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 32;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">33</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/85"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2013 TENTANG PENYELENGGARAAN KESEHATAN REPRODUKS </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 33;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">34</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/86"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 1964 TENTANG LAMBANG DAERAH </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 34;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">35</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/87"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2013 TENTANG PENGELOLAAN DAN PENYELENGGARAAN PENDIDIKAN DI DAERAH KHUSUS DI PROVINSI KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 35;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">36</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/89"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2014 TENTANG PERUBAHAN KEDUA ATAS PERATURAN DAERAH NOMOR 1 TAHUN 2005 TENTANG KEDUDUKAN PROTOKOLER DAN KEUANGAN PIMPINAN DAN ANGGOTA DEWAN PERWAKILAN RAKYAT DAERAH PROVINSI KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 36;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">37</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/95"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2015 TENTANG PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS PENJAMINAN KREDIT DAERAH KALIMANTAN BARAT </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 37;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">38</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/96"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;"><span style="mso-spacerun: yes;">&nbsp;</span>PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2015 TENTANG PENYELENGGARAAN PERLINDUNGAN PEREMPUAN DARI TINDAK KEKERASAN </span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 38;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">39</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/104"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2016 TENTANG RENCANA PEMBANGUNAN JANGKA PANJANG DAERAH PROVINSI KALIMANTAN BARAT TAHUN 2005-2025</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 39;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">40</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/106"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 6 TAHUN 2016 TENTANG TAMBAHAN PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS BANK PEMBANGUNAN DAERAH KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 40;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">41</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/107"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 8 TAHUN 2016 TENTANG PEMBENTUKAN DAN SUSUNAN PERANGKAT DAERAH PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 41;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">42</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/109"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2017 TENTANG RENCANA PEMBANGUNAN INDUSTRI PROVINSI KALIMANTAN BARAT TAHUN 2017-2037</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 42;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">43</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/108"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2017 TENTANG HAK KEUANGAN DAN ADMINISTRATIF PIMPINAN DAN ANGGOTA DEWAN PERWAKILAN RAKYAT DAERAH PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 43;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">44</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/113"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 3 TAHUN 2018 TENTANG RENCANA INDUK PEMBANGUNAN PARIWISATA DAERAH TAHUN 2017 - 2032</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 44;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">45</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/117"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2018 TENTANG PENGELOLAAN PENDIDIKAN MENENGAH DAN PENDIDIKAN KHUSUS</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 45;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">46</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/118"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2019 TENTANG RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH (RPJMD) PROVINSI KALIMANTAN BARAT TAHUN 2018-2023</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 46;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">47</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/121"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 2019 TENTANG PERTANGGUNGJAWABAN PELAKSANAAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2018</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 47;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">48</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/124"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2019 TENTANG RENCANA PERLINDUNGAN DAN PENGELOLAAN LINGKUNGAN HIDUP</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 48;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">49</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #222324; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/127"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 10 TAHUN 2019 TENTANG PENYELENGGARAAN PEMBANGUNAN KETAHANAN KELUARGA</span></span></a></span></u><u><span lang="SV" style="font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #0563c1; mso-font-kerning: 0pt; mso-ligatures: none; mso-ansi-language: SV; mso-fareast-language: EN-ID;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 49;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">50</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/128"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 11 TAHUN 2019 TENTANG PERUBAHAN ATAS PERATURAN DAERAH NOMOR 8 TAHUN 2016 TENTANG PEMBENTUKAN DAN SUSUNAN PERANGKAT DAERAH PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 50;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">51</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/129"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 12 TAHUN 2019 TENTANG PENAMBAHAN PENYERTAAN MODAL PEMERINTAH PROVINSI KALIMANTAN BARAT PADA PERSEROAN TERBATAS BANK PEMBANGUNAN DAERAH KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 51;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">52</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/130"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 13 TAHUN 2019 TENTANG PERUBAHAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH PROVINSI KALIMANTAN BARAT TAHUN ANGGARAN 2019</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 52;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">53</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/131"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 14 TAHUN 2019 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH PROVINSI KALIMANTAN BARAT TAHUN ANGGARAN 2019</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 53;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">54</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/132"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 11 TAHUN 2019 TENTANG PERUBAHAN ATAS PERATURAN DAERAH NOMOR 8 TAHUN 2016 TENTANG PEMBENTUKAN DAN SUSUNAN PERANGKAT DAERAH PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 54;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">55</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/136"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2018 TENTANG PENCABUTAN PERATURAN DAERAH NOMOR 4 TAHUN 2013 TENTANG SUMBANGAN PIHAK KETIGA DALAM PEMBANGUNAN DAERAH</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 55;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">56</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/137"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 2 TAHUN 2020 TENTANG PENYELENGARAAN KEWIRAUSAHAAN PEMUDA</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 56;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">57</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/140"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 1 TAHUN 2021 TENTANG PERUBAHAN ATAS PERATURAN DAERAH NOMOR 2 TAHUN 2019 TENTANG RENCANA PEMBANGUNAN JANGKA MENENGAH DAERAH PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 57;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">58</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/142"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 5 TAHUN 2020 TENTANG PENGELOLAAN KEUANGAN DAERAH</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 58;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">59</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/143"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 5 TAHUN 2021 TENTANG PERUBAHAN KEDUA ATAS PERATURAN DAERAH NOMOR 8 TAHUN 2016 TENTANG PEMBENTUKAN DAN SUSUNAN PERANGKAT DAERAH</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 59;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">60</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/823"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2016 TENTANG PENCABUTAN PERATURAN DAERAH NOMOR 2 TAHUN 2006 TENTANG PENDIRIAN PERUSAHAAN DAERAH AIR MINUM PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 60;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">61</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/824"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2017 TENTANG PERUBAHAN ATAS PERATURAN DAERAH NOMOR 1 TAHUN 2013 TENTANG PENGELOLAAN DAN PENYELENGGARAAN PENDIDIKAN DI DAERAH KHUSUS DI PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 61;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">62</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/825"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 5 TAHUN 2017 TENTANG PENCABUTAN PERATURAN DAERAH NOMOR 2 TAHUN 2010 TENTANG PENGENDALIAN PEREDARAN MINUMAN BERALKOHOL DI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 62;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">63</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/826"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 4 TAHUN 2017 TENTANG PENCABUTAN PERATURAN DAERAH NOMOR 9 TAHUN 2008 TENTANG URUSAN PEMERINTAHAN YANG MENJADI KEWENANGAN PROVINSI KALIMANTAN BARAT</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 63;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">64</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/890"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN GUBERNUR KALIMANTAN BARAT NOMOR 2 TAHUN 2020 TENTANG PERUBAHAN ATAS PERATURAN GUBERNUR NOMOR 55 TAHUN 2019 TENTANG PENJABARAN ANGGARAP BELANJA DAERAH TAHUN ANGGARAN 2020</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 64;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">65</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/895"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 9 TAHUN 2021 TENTANG RENCANA UMUM ENERGI DAERAH PROVINSI TAHUN 2021 - 2050</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 65;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">66</span></b><b><span lang="SV" style="font-family: 'Arial',sans-serif; color: #222324; mso-ansi-language: SV;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/896"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH PROVINSI KALIMANTAN BARAT NOMOR 7 TAHUN 2021 TENTANG PERTANGGUNGJAWABAN PELAKSANAAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2020</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 66;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">67</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/1084"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH KALIMANTAN BARAT NOMOR 3 TAHUN 2023 TENTANG PERUBAHAN BENTUK HUKUM DARI PERUSAHAAN DAERAH ANEKA USAHA MENJADI PERUSAHAAN UMUM DAERAH ANEKA USAHA</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 67;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">68</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/1088"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH KALIMANTAN BARAT NOMOR 6 TAHUN 2022 TENTANG PENGELOLAAN JASA LINGKUNGAN HIDUP</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 68;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">69</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/1090"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH KALIMANTAN BARAT NOMOR 4 TAHUN 2022 TENTANG PERUBAHAN ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2022</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 69;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 4; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">70</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/1097"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN DAERAH KALIMANTAN BARAT NOMOR 7 TAHUN 2022 TENTANG ANGGARAN PENDAPATAN DAN BELANJA DAERAH TAHUN ANGGARAN 2023</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+<tr style="mso-yfti-irow: 70; mso-yfti-lastrow: yes;">
+<td width="41" valign="top" style="width: 30.85pt; border: solid #60CAF3 1.0pt; mso-border-themecolor: accent4; mso-border-themetint: 153; border-top: none; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; mso-yfti-cnfc: 68; margin: 6.0pt 0cm 0cm 0cm;"><b><span style="font-family: 'Arial',sans-serif; color: black;">71</span></b><b><span style="font-family: 'Arial',sans-serif; color: #222324;"><o:p></o:p></span></b></p>
+</td>
+<td width="989" valign="top" style="width: 741.75pt; border-top: none; border-left: none; border-bottom: solid #60CAF3 1.0pt; mso-border-bottom-themecolor: accent4; mso-border-bottom-themetint: 153; border-right: solid #60CAF3 1.0pt; mso-border-right-themecolor: accent4; mso-border-right-themetint: 153; mso-border-top-alt: solid #60CAF3 .5pt; mso-border-top-themecolor: accent4; mso-border-top-themetint: 153; mso-border-left-alt: solid #60CAF3 .5pt; mso-border-left-themecolor: accent4; mso-border-left-themetint: 153; mso-border-alt: solid #60CAF3 .5pt; mso-border-themecolor: accent4; mso-border-themetint: 153; background: #CAEDFB; mso-background-themecolor: accent4; mso-background-themetint: 51; padding: 0cm 5.4pt 0cm 5.4pt;">
+<p class="MsoNormal" style="text-align: justify; line-height: normal; mso-yfti-cnfc: 64; margin: 6.0pt 0cm 0cm 0cm;"><u><span style="font-family: 'Arial',sans-serif; color: #0563c1;"><a href="https://jdih.kalbarprov.go.id/peraturan/detail-peraturan/1101"><span lang="SV" style="mso-ansi-language: SV;"><span style="mso-font-charset: 0;">PERATURAN GUBERNUR KALIMANTAN BARAT NOMOR 10 TAHUN 2023 TENTANG TEKNIS PEMBERIAN TUNJANGAN HARI RAYA DAN GAJI KETIGA BELAS YANG BERSUMBER DARI ANGGARAN PENDAPATAN DAN BELANJA DAERAH</span></span></a></span></u><u><span lang="SV" style="font-family: 'Arial',sans-serif; color: #0563c1; mso-ansi-language: SV;"><o:p></o:p></span></u></p>
+</td>
+</tr>
+</tbody>
+</table>
+                
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
   </div>
 
@@ -1682,71 +2423,81 @@ ul.mobile-menu li a:hover {
         body {
           font-family: 'Poppins', sans-serif;
         }
-      </style><footer class="p-1 mx-auto w-full bg-gradient-to-b from-green-700 to-green-800 text-white">
-  <div class="container mx-auto px-1">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6">
-      <div class="text-center md:text-left transform hover:scale-105 transition duration-300">
-        <h1 class="font-bold text-xl mb-2 text-green-100">SATUAN POLISI PAMONG PRAJA PROVINSI KALIMANTAN BARAT</h1>
-        <p class="text-base font-medium text-green-200">Web Resmi Polisi Pamong Praja Provinsi Kalimantan Barat</p>
-        
-        
-        <div class="mt-4 px-4">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.2259474347772!2d109.35257842670621!3d-0.06174539999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59a102965473%3A0x9ef363f0cf41c6b2!2sGedung%20Pelayanan%20Terpadu%20Prov.%20Kalbar!5e0!3m2!1sid!2sid!4v1708745123456!5m2!1sid!2sid"
-            width="90%" 
-            height="150" 
-            style="border:0; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="flex flex-col space-y-3">
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-phone-alt text-xl text-green-100"></i>
-          <a href="tel:081225197681" class="ml-2 text-sm font-semibold">081225197681</a>
-        </div>
-        
-        <div class="flex items-start bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-map-marker-alt text-xl text-green-100 mt-1"></i>
-          <a href="https://goo.gl/maps/YOUR-MAPS-LINK" target="_blank" class="ml-2 text-sm">
-            Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124
-          </a>
-        </div>
-        
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-envelope text-xl text-green-100"></i>
-          <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 text-sm font-semibold">satpolpp@kalbarprov.go.id</a>
-        </div>
-        
-        <div class="flex items-center bg-green-600 hover:bg-green-500 p-2 rounded-lg transition duration-300 transform hover:scale-105">
-          <i class="fas fa-sitemap text-xl text-green-100"></i>
-          <a href="//localhost:1313/sitemap" class="ml-2 text-sm font-semibold">Sitemap</a>
-        </div>
+      </style><footer class="p-4 bg-green-700 text-white">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="text-center md:text-center">
+      <h1 class="font-bold text-3xl mt-10 mb-10 text-white  ">
+        SATUAN POLISI PAMONG PRAJA PROVINSI <br />
+        KALIMANTAN BARAT
+      </h1>
+      <p class="text-lg text-white">
+        Web Resmi Polisi Pamong Praja <br />
+        Provinsi Kalimantan Barat
+      </p>
+    </div>
 
-        <div class="flex items-center justify-center space-x-3 mt-3">
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-facebook text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-twitter text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-instagram text-lg"></i>
-          </a>
-          <a href="#" class="bg-green-600 p-1.5 rounded-full hover:bg-green-500 transition duration-300 transform hover:scale-110">
-            <i class="fab fa-youtube text-lg"></i>
-          </a>
-        </div>
+    
+    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-64 w-px bg-black mt-0"></div>
+
+    
+    <div class="space-y-3 mt-10 text-lg">
+      <div class="flex items-center">
+        <i class="fas fa-phone-alt text-white"></i>
+        <a href="tel:081225197681" class="ml-2 hover:underline">
+          081225197681
+        </a>
+      </div>
+      <div class="flex items-start">
+        <i class="fas fa-map-marker-alt text-white mt-1"></i>
+        <a
+          href="https://goo.gl/maps/YOUR-MAPS-LINK"
+          target="_blank"
+          class="ml-2 hover:underline"
+        >
+          Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal
+          Ahmad Yani Pontianak, Kalimantan Barat 78124
+        </a>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-envelope text-white"></i>
+        <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 hover:underline">
+          satpolpp@kalbarprov.go.id
+        </a>
+      </div>
+      <div class="flex items-center">
+        <i class="fas fa-sitemap text-white"></i>
+        <a href="//localhost:1313/sitemap" class="ml-2 hover:underline">
+          Sitemap
+        </a>
       </div>
     </div>
   </div>
+
+  
+  <div class="mt-4 flex justify-end space-x-4 mr-96">
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-facebook text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-twitter text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-instagram text-white text-xl"></i>
+    </a>
+    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
+      <i class="fab fa-youtube text-white text-xl"></i>
+    </a>
+  </div>
+
+  
+  <div class="mt-4 text-center border-t border-custom-green pt-2">
+    <p class="text-lg">
+      &copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.
+    </p>
+  </div>
 </footer>
 
-<div class="w-full text-center p-3 bg-green-900 text-white border-t-2 border-green-600">
-  <p class="text-sm font-medium">&copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.</p>
-</div>
 
 <div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
   <div class="container max-w-3xl mx-auto p-12">
