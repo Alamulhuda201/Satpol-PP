@@ -6,14 +6,14 @@
     <description>Recent content in Struktur Organisasi on Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</description>
     <generator>Hugo</generator>
     <language>id</language>
-    <lastBuildDate>Thu, 01 Aug 2024 04:11:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2024 07:43:17 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/struktur-organisasi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Struktur Organisasi</title>
       <link>//localhost:1313/struktur-organisasi/struktur/</link>
-      <pubDate>Thu, 01 Aug 2024 04:11:10 +0000</pubDate>
+      <pubDate>Wed, 11 Sep 2024 07:43:17 +0000</pubDate>
       <guid>//localhost:1313/struktur-organisasi/struktur/</guid>
-      <description>&lt;div class=&#34;struktur-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;struktur-frame&#34;&gt;&#xD;&#xA;        &lt;!-- Menampilkan PDF langsung --&gt;&#xD;&#xA;        &lt;iframe src=&#34;//localhost:1313/file/tll1ebeI0CWGPw09v61g.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34; style=&#34;border: none;&#34;&gt;&lt;/iframe&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;struktur-buttons&#34;&gt;&#xD;&#xA;        &lt;!-- Tombol untuk melihat dan mengunduh PDF --&gt;&#xD;&#xA;        &lt;a href=&#34;//localhost:1313/file/tll1ebeI0CWGPw09v61g.pdf&#34; target=&#34;_blank&#34; class=&#34;btn-view&#34;&gt;👁 Lihat&lt;/a&gt;&#xD;&#xA;        &lt;a href=&#34;//localhost:1313/file/tll1ebeI0CWGPw09v61g.pdf&#34; download class=&#34;btn-download&#34;&gt;⬇ Unduh&lt;/a&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/images/ARElTSXIq5ipXL2wsLGw3SRGi0f0WWWLvmnBvQH3.jpg&#34; width=&#34;1350&#34; height=&#34;1350&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&#xD;&#xA;&lt;iframe src=&#34;//localhost:1313/file/tll1ebeI0CWGPw09v61g.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34; style=&#34;border: none;&#34;&gt;&lt;/iframe&gt;</description>
     </item>
   </channel>
 </rss>

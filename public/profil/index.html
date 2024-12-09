@@ -845,7 +845,7 @@
   }
 </style>
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 mb-10 flex items-center justify-center" id="navbar">
+<nav class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 mb-10 flex items-center justify-center" id="navbar">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       
@@ -1082,7 +1082,17 @@
         
         <button id="theme-toggle" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
           <div id="theme-icon">
-           <svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>
+            <script>
+              
+              document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.getElementById('theme-icon');
+                if (document.documentElement.classList.contains('dark')) {
+                  themeIcon.innerHTML = `<svg class="matahari w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"/></svg>`;
+                } else {
+                  themeIcon.innerHTML = `<svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>`;
+                }
+              });
+            </script>
           </div>
         </button>
       </div>
@@ -1531,7 +1541,12 @@
 }
 </style>
 
-    <main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
+    <main class="flex-1 main-content overflow-x-hidden " style=" min-height: 61vh;">
+      <style>
+        .dark .main-content {
+          background-color: black !important;
+        }
+      </style>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -1545,20 +1560,116 @@
 }
 </style>
 
-<div class="relative px-28" id="struktur-organisasi">
+<div class="px-10 w-full border border-gray-200 rounded-lg p-6" id="struktur-organisasi">
     <div class="text-left mt-32 flex items-center justify-start mb-10">
         <h1 class="text-2xl font-bold text-green-600 whitespace-nowrap">Struktur Organisasi</h1>
         <span class="h-1 bg-green-600 ml-4 flex-grow"></span>
     </div>
-    <div class="struktur-container">
+    
+      <div class="flex justify-center">
         
-            
-            
-                
-                
-            
         
-    </div>
+          
+          <div class="relative">
+            <img src="/images/ARElTSXIq5ipXL2wsLGw3SRGi0f0WWWLvmnBvQH3.jpg" 
+                 alt="Struktur Organisasi" 
+                 class="object-cover rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-105 hover:brightness-110 filter hover:contrast-110" 
+                 style="height: 400px; width: 1400px"
+                 onclick="openImageModal('\/images\/ARElTSXIq5ipXL2wsLGw3SRGi0f0WWWLvmnBvQH3.jpg')"
+            >
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-4">
+              <button onclick="openImageModal('\/images\/ARElTSXIq5ipXL2wsLGw3SRGi0f0WWWLvmnBvQH3.jpg')" class="group flex items-center px-4 py-2 bg-white border-2 border-green-600 rounded-lg transition-colors duration-200 hover:bg-green-600">
+                <i class="fa-solid fa-eye text-green-600 group-hover:text-white mr-2"></i>
+                <span class="text-green-600 group-hover:text-white font-medium">Lihat</span>
+              </button>
+              
+                
+                <button onclick="downloadPDF('\/file\/tll1ebeI0CWGPw09v61g.pdf')" class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200">
+                  <ion-icon name="cloud-download-outline" class="mr-2"></ion-icon>
+                  <span class="font-medium">Unduh</span>
+                </button>
+                <script>
+                  async function downloadPDF(url) {
+                    try {
+                      const response = await fetch(url);
+                      const blob = await response.blob();
+                      const downloadUrl = window.URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = downloadUrl;
+                      a.download = 'struktur-organisasi.pdf';
+                      document.body.appendChild(a);
+                      a.click();
+                      document.body.removeChild(a);
+                      window.URL.revokeObjectURL(downloadUrl);
+                    } catch (error) {
+                      console.error('Error downloading PDF:', error);
+                    }
+                  }
+
+                  function openImageModal(src) {
+                    const modal = document.createElement('div');
+                    modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75';
+                    
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'max-h-[90vh] max-w-[90vw] transform transition-transform duration-200';
+                    
+                    let scale = 1;
+                    let isDragging = false;
+                    let startX, startY, translateX = 0, translateY = 0;
+                    
+                    
+                    modal.addEventListener('wheel', (e) => {
+                      e.preventDefault();
+                      const delta = e.deltaY * -0.01;
+                      scale = Math.min(Math.max(0.5, scale + delta), 4);
+                      img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                    });
+                    
+                    
+                    modal.addEventListener('mousedown', (e) => {
+                      isDragging = true;
+                      startX = e.clientX - translateX;
+                      startY = e.clientY - translateY;
+                    });
+                    
+                    modal.addEventListener('mousemove', (e) => {
+                      if (isDragging) {
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                      }
+                    });
+                    
+                    modal.addEventListener('mouseup', () => {
+                      isDragging = false;
+                    });
+                    
+                    
+                    modal.addEventListener('dblclick', () => {
+                      scale = 1;
+                      translateX = 0;
+                      translateY = 0;
+                      img.style.transform = `translate(0px, 0px) scale(1)`;
+                    });
+                    
+                    
+                    modal.addEventListener('click', (e) => {
+                      if (e.target === modal) {
+                        document.body.removeChild(modal);
+                      }
+                    });
+                    
+                    modal.appendChild(img);
+                    document.body.appendChild(modal);
+                  }
+                </script>
+              
+            </div>
+          </div>
+        
+      </div>
+    
 </div>
 
 <div class="relative px-10 w-full" id="pejabat-struktural">
@@ -1575,21 +1686,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/rX3L4gCUzeoIJsBTiuMR.jpeg" class="block mb-10">
-                <img src="/images/rX3L4gCUzeoIJsBTiuMR.jpeg" alt="1. Kepala Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/rX3L4gCUzeoIJsBTiuMR.jpeg" alt="1. Kepala Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">1. Kepala Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">1. Kepala Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</span>
                 </div>
               </a>
             </div>
@@ -1599,21 +1711,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/lFHReJMbUbagtAXu95WG.png" class="block mb-10">
-                <img src="/images/lFHReJMbUbagtAXu95WG.png" alt="2. Sekretaris Satpol PP Prov. Kalbar" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/lFHReJMbUbagtAXu95WG.png" alt="2. Sekretaris Satpol PP Prov. Kalbar" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">2. Sekretaris Satpol PP Prov. Kalbar</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">2. Sekretaris Satpol PP Prov. Kalbar</span>
                 </div>
               </a>
             </div>
@@ -1623,21 +1736,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/H6mNTTYNU4AM13EM4tT4.png" class="block mb-10">
-                <img src="/images/H6mNTTYNU4AM13EM4tT4.png" alt="3. Kepala Bidang Penegakan Peraturan Daerah dan Peraturan Kepala Daerah" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/H6mNTTYNU4AM13EM4tT4.png" alt="3. Kepala Bidang Penegakan Peraturan Daerah dan Peraturan Kepala Daerah" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">3. Kepala Bidang Penegakan Peraturan Daerah dan Peraturan Kepala Daerah</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">3. Kepala Bidang Penegakan Peraturan Daerah dan Peraturan Kepala Daerah</span>
                 </div>
               </a>
             </div>
@@ -1647,21 +1761,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/NkynmSMPb8ge5CXQk7kz.png" class="block mb-10">
-                <img src="/images/NkynmSMPb8ge5CXQk7kz.png" alt="4. Kepala Bidang Ketertiban Umum dan Ketentraman" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/NkynmSMPb8ge5CXQk7kz.png" alt="4. Kepala Bidang Ketertiban Umum dan Ketentraman" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">4. Kepala Bidang Ketertiban Umum dan Ketentraman</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">4. Kepala Bidang Ketertiban Umum dan Ketentraman</span>
                 </div>
               </a>
             </div>
@@ -1671,21 +1786,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/tpLxraVeCOcgfDcFYaK5.png" class="block mb-10">
-                <img src="/images/tpLxraVeCOcgfDcFYaK5.png" alt="5. Kepala Bidang Pembinaan Masyarakat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/tpLxraVeCOcgfDcFYaK5.png" alt="5. Kepala Bidang Pembinaan Masyarakat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">5. Kepala Bidang Pembinaan Masyarakat</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">5. Kepala Bidang Pembinaan Masyarakat</span>
                 </div>
               </a>
             </div>
@@ -1695,21 +1811,22 @@
           
           
           <div class="swiper-slide">
-            <div class="p-6 rounded-b-xl w-80 text-center shadow-md hover:shadow-lg transition-shadow mx-4 relative" style="background-color: #e8e8e8;">
+            <div class="p-6 rounded-b-xl w-80 text-center shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-2xl mx-4 relative" style="background-color: #e8e8e8;">
               <a href="/images/BMHu1EoD8R5IqbA1IZtV.png" class="block mb-10">
-                <img src="/images/BMHu1EoD8R5IqbA1IZtV.png" alt="6. Kepala Bidang Perlindungan Masyarakat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover">
-                
-                <div class="flex mt-2 px-2 gap-x-4 justify-center mb-16">
-                  <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs relative w-20 h-7 text-left">
-                    <i class="fa-solid fa-eye"></i> Lihat
-                  </button>
-                  <button class="bg-green-600 text-white py-1 rounded-md text-xs relative w-20 h-7 px-3 text-left">
-                    <ion-icon name="cloud-download-outline"></ion-icon>Unduh
-                  </button>
+                <div class="relative group">
+                  <img src="/images/BMHu1EoD8R5IqbA1IZtV.png" alt="6. Kepala Bidang Perlindungan Masyarakat" class="w-60 h-72 mx-auto mb-10 rounded-lg object-cover transition-transform duration-300 group-hover:brightness-90">
+                  <div class="absolute bottom-4 left-0 right-0 flex gap-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="bg-white text-green-600 ring-green-600 ring-1 px-3 py-1 rounded-md text-xs w-20 h-7 text-left hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+                      <i class="fa-solid fa-eye"></i> Lihat
+                    </button>
+                    <button class="bg-green-600 text-white py-1 rounded-md text-xs w-20 h-7 px-3 text-left hover:bg-white hover:text-green-600 hover:ring-1 hover:ring-green-600 transition-all duration-300 transform hover:scale-110">
+                      <ion-icon name="cloud-download-outline"></ion-icon>Unduh
+                    </button>
+                  </div>
                 </div>
                 
-                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
-                  <span class="text-sm text-black font-bold block" style="word-break: break-word; overflow-wrap: break-word;">6. Kepala Bidang Perlindungan Masyarakat</span>
+                <div class="bg-green-200 p-2 absolute bottom-0 left-0 right-0 rounded-b-xl transition-all duration-300 hover:bg-green-300" style="min-height: 60px; display: flex; align-items: center; justify-content: center; text-align: center;">
+                  <span class="text-sm text-black font-bold block transition-all duration-300 hover:text-green-800" style="word-break: break-word; overflow-wrap: break-word;">6. Kepala Bidang Perlindungan Masyarakat</span>
                 </div>
               </a>
             </div>
@@ -1718,12 +1835,12 @@
       
     </div>
     <div class="absolute left-0 right-0 flex justify-between px-2 z-10" style="top: 43%; transform: translateY(-50%);">
-        <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+        <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full transition-all duration-300 hover:bg-green-700 hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
         </button>
-        <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+        <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full transition-all duration-300 hover:bg-green-700 hover:scale-110">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
