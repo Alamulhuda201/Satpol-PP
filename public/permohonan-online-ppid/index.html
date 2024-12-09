@@ -13,7 +13,28 @@
   <link rel="stylesheet" href="/css/styles.css" />
   
 
+  
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+    <div class="max-w-4xl w-full mx-auto flex justify-center">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Preview" class="h-full rounded-lg mx-auto" style="width: 80%;">
+        <button onclick="closeImageModal()" class="absolute top-0 right-0 text-white bg-red-600 w-10 rounded-full p-2 hover:bg-red-700">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    function openImageModal(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  </script>
 
   
   
@@ -92,8 +113,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-
 
 </head>
 <body class="dark:text-black">
@@ -584,422 +603,789 @@
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
       <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-    </div><header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full bg-green-700 dark:bg-gray-900'>
-  <style>
-    .navbar {
-      background-color: #000000;
+    </div><style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-     
-    @media (max-width: 480px) {
-      .mobile-menu {
-        width: 100%;
-        padding: 0.75rem;
-      }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .dropdown-item {
+    animation: fadeInUp 0.3s ease forwards;
+  }
+
+  #navbar {
+    background-color: rgb(22 101 52) !important;  
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 96px;
+  }
+
+  .dark #navbar {
+    background-color: rgb(17 24 39) !important;  
+  }
+
+  #navbar.scrolled {
+    backdrop-filter: blur(8px);
+    background-color: rgba(22, 101, 52, 0.9) !important;  
+    height: 80px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+  }
+
+  .dark #navbar.scrolled {
+    background-color: rgba(17, 24, 39, 0.9) !important;  
+  }
+
+  #mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(22 101 52);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .dark #mobile-menu {
+    background: rgb(17 24 39);
+  }
+
+  #mobile-menu.show {
+    display: block;
+    max-height: 80vh;
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .hamburger-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .hamburger-line:nth-child(1) {
+    top: 6px;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 12px;
+  }
+
+  .hamburger-line:nth-child(3) {
+    top: 18px;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 12px;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+
+  #mobile-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  #mobile-menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-down .arrow-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #FCD34D;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  .logo-container {
+    transition: transform 0.3s ease;
+  }
+
+  .logo-container:hover {
+    transform: scale(1.05);
+  }
+
+  .theme-toggle {
+    transition: transform 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    transform: rotate(180deg);
+  }
+
+   
+  .desktop-dropdown {
+    position: relative;
+  }
+
+  .desktop-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(22 101 52);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .dark .desktop-dropdown-content {
+    background-color: rgb(17 24 39);
+  }
+
+  .desktop-dropdown:hover .desktop-dropdown-content {
+    display: block;
+    animation: fadeInUp 0.3s ease forwards;
+  }
+
+  .desktop-dropdown-item {
+    padding: 12px 16px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .desktop-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style>
+
+<nav class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 mb-10 flex items-center justify-center" id="navbar">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
       
-      .mobile-menu li {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0;
-      }
-
-      .logo-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0.5rem;
-      }
-
-      .site-title {
-        font-size: 14px;
-        margin-top: 0.25rem;
-        line-height: 1.2;
-      }
-    }
-
-     
-    @media (min-width: 481px) and (max-width: 768px) {
-      .mobile-menu {
-        padding: 0.875rem;
-      }
-
-      .site-title {
-        font-size: 16px;
-        line-height: 1.3;
-      }
-
-      .logo-container {
-        padding: 0.75rem;
-      }
-    }
+      
+      <div class="logo-container">
+        <a href="//localhost:1313/" class="flex items-center">
+          
+          <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="h-28 w-12" />
+          
+          <span class="ml-4 text-md font-medium text-white hover:text-yellow-300 dark:hover:text-yellow-400 dark:text-yellow-500 leading-tight transition-colors duration-300">
+            Dinas Perkebunan dan Peternakan<br/>
+            Provinsi Kalimantan Barat
+          </span>
+        </a>
+      </div>
 
       
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .site-title {
-        font-size: 18px;
-        line-height: 1.4;
-      }
+      <div class="lg:hidden flex items-center">
+        <button id="theme-toggle-mobile" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
+          <div id="theme-icon-mobile">
+            <svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>
+          </div>
+        </button>
+        <button class="text-white focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105" id="mobile-menu-button" aria-label="Menu">
+          <div class="hamburger-icon transition-all duration-300 ease-in-out">
+            <span class="hamburger-line transition-all duration-300"></span>
+            <span class="hamburger-line transition-all duration-300"></span>
+            <span class="hamburger-line transition-all duration-300"></span>
+          </div>
+        </button>
+      </div>
 
-      .logo-container {
-        padding: 1rem;
-      }
-    }
+      
+      <div class="hidden lg:flex lg:items-center lg:space-x-6">
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Profil
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="/profil#pejabat-struktural" class="desktop-dropdown-item">Profil Pimpinan</a>
+              
+              <a href="/profil#motto-satpol-pp" class="desktop-dropdown-item">Motto Satpol PP</a>
+              
+              <a href="/profil#tentang-satpol-pp" class="desktop-dropdown-item">Tentang Satpol PP</a>
+              
+              <a href="/profil#visi-dan-misi" class="desktop-dropdown-item">Visi Dan Misi</a>
+              
+              <a href="/profil#struktur-organisasi" class="desktop-dropdown-item">Struktur Organisasi</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Informasi
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="/galeri" class="desktop-dropdown-item">Galeri</a>
+              
+              <a href="/berita" class="desktop-dropdown-item">Berita</a>
+              
+              <a href="/flyers" class="desktop-dropdown-item">Flyers</a>
+              
+              <a href="/vidio" class="desktop-dropdown-item">Vidio</a>
+              
+              <a href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf" class="desktop-dropdown-item">Jalur Evakuasi</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Link Terkait
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="https://kalbarprov.go.id/" class="desktop-dropdown-item">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
+              
+              <a href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar" class="desktop-dropdown-item">SIKEDIP</a>
+              
+              <a href="https://ppid.kalbarprov.go.id/" class="desktop-dropdown-item">PPID PROV. KALBAR</a>
+              
+              <a href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208" class="desktop-dropdown-item">SI RENOVPOLPP</a>
+              
+              <a href="https://www.lapor.go.id/" class="desktop-dropdown-item">LAPOR</a>
+              
+              <a href="https://data.kalbarprov.go.id/" class="desktop-dropdown-item">SATU DATA PROV. KALBAR</a>
+              
+              <a href="https://satpolpp.kemendagri.go.id/" class="desktop-dropdown-item">SIM SATPOL PP</a>
+              
+              <a href="https://sekampadi.kalbarprov.go.id/login" class="desktop-dropdown-item">SEKAMPADI</a>
+              
+              <a href="https://linmaskalbar.my.id/" class="desktop-dropdown-item">ANTENNA POL PP</a>
+              
+              <a href="https://bukutamu.kalbarprov.go.id/visitor/check-in" class="desktop-dropdown-item">BUKU TAMU</a>
+              
+              <a href="https://srikandi.arsip.go.id/" class="desktop-dropdown-item">SRIKANDI</a>
+              
+              <a href="https://lpse.kalbarprov.go.id/eproc4" class="desktop-dropdown-item">LPSE</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Dokumen
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="/renja-monev/renja-monev" class="desktop-dropdown-item">Renja Monev</a>
+              
+              <a href="/keuangan-dan-aset/laporan-keuangan" class="desktop-dropdown-item">Keuangan Dan Aset</a>
+              
+              <a href="/umum-aparatur/aparatur/" class="desktop-dropdown-item">Aparatur</a>
+              
+              <a href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah" class="desktop-dropdown-item">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
+              
+              <a href="/bidang-ketertiban-umum-dan-ketentraman" class="desktop-dropdown-item">Bidang Ketertiban Umum Dan Ketenteraman</a>
+              
+              <a href="/bidang-perlindungan-masyarakat" class="desktop-dropdown-item">Bidang Perlindungan Masyarakat</a>
+              
+              <a href="/bidang-pembinaan-masyarakat/" class="desktop-dropdown-item">Bidang Pembinaan Masyarakat</a>
+              
+              <a href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara" class="desktop-dropdown-item">LHKPN</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Pelayanan
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0" class="desktop-dropdown-item">Penilai Pelayananan</a>
+              
+              <a href="/standar-layanan/standar-pelayanan" class="desktop-dropdown-item">Standar Pelayanan</a>
+              
+              <a href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png" class="desktop-dropdown-item">Kontak Pengaduan</a>
+              
+              <a href="/pelita-perda" class="desktop-dropdown-item">PELITA PERDA</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            PPID
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat" class="desktop-dropdown-item">Profil PPID</a>
+              
+              <a href="/permohonan-online-ppid/form-ppid-utama" class="desktop-dropdown-item">Formulir PPID Utama</a>
+              
+              <a href="/sop-ppid/sop-pelayanan-publik" class="desktop-dropdown-item">SOP PPID</a>
+              
+              <a href="/jadwal-pelayanan-informasi-publik/tata-cara" class="desktop-dropdown-item">Tata Cara</a>
+              
+              <a href="/daftar-informasi-publik/daftar-informasi" class="desktop-dropdown-item">Daftar Informasi</a>
+              
+              <a href="/permohonan-online-ppid/permohonan-online-ppid" class="desktop-dropdown-item">Permohonan Online</a>
+              
+              <a href="/laporan-ppid/laporan-ppid" class="desktop-dropdown-item">Laporan PPID</a>
+              
+              <a href="/formulir-ppid/formulir-ppid" class="desktop-dropdown-item">Formulir PPID</a>
+              
+              <a href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi" class="desktop-dropdown-item">Jumlah Permohonan Informasi</a>
+              
+              <a href="/regulasi-ppid/regulasi-ppid" class="desktop-dropdown-item">Regulasi PPID</a>
+              
+              <a href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf" class="desktop-dropdown-item">Maklumat Pelayanan PPID</a>
+              
+            
+          </div>
+        </div>
+        
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            Sop
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            
+              
+              <a href="/sop-pelayanan" class="desktop-dropdown-item">Sop Pelayanan</a>
+              
+            
+          </div>
+        </div>
+        
 
-     
-    @media (min-width: 1025px) {
-      .mobile-menu {
-        display: flex !important;
-      }
+        
+        <button id="theme-toggle" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
+          <div id="theme-icon">
+            <script>
+              
+              document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.getElementById('theme-icon');
+                if (document.documentElement.classList.contains('dark')) {
+                  themeIcon.innerHTML = `<svg class="matahari w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"/></svg>`;
+                } else {
+                  themeIcon.innerHTML = `<svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>`;
+                }
+              });
+            </script>
+          </div>
+        </button>
+      </div>
 
-      .site-title {
-        font-size: 20px;
-        line-height: 1.5;
-      }
-
-      .logo-container {
-        padding: 1.25rem;
-      }
-    }
-
-    ul.mobile-menu li {
-      font-size: clamp(0.75rem, 1.5vw, 1rem);
-      padding: clamp(6px, 1.2vw, 10px);
-      color: white;
-      transition: all 0.2s ease;
-    }
-
-    ul.mobile-menu li a {
-      font-size: clamp(0.7rem, 1.4vw, 0.9rem);
-      padding: clamp(4px, 1vw, 8px);
-      transition: all 0.3s ease;
-      display: block;
-      width: 100%;
-    }
-
-    ul.mobile-menu li a:hover {
-      color: #ffffff;
-      background-color: #064e3b;
-      border-radius: 6px;
-      transform: translateY(-1px);
-    }
-
-    .dark ul.mobile-menu li a:hover {
-      color: #ffffff;
-      background-color: #15803d;
-    }
-
-    ul.mobile-menu {
-      gap: clamp(0.25rem, 1.5vw, 1rem);
-      transition: all 0.3s ease;
-    }
-
-    ul.mobile-menu li .language-dropdown a {
-      padding: clamp(6px, 1.2vw, 10px);
-      border-radius: 6px;
-    }
-
-    .language-dropdown {
-      width: clamp(180px, 45vw, 280px);
-      transition: all 0.2s ease;
-    }
-
-    .logo-container img {
-      width: clamp(30px, 4vw, 45px);
-      height: auto;
-      transition: all 0.2s ease;
-    }
-
-    #mobile-menu-button {
-      padding: clamp(0.5rem, 1vw, 1rem);
-      transition: all 0.2s ease;
-    }
-
-    #mobile-menu-button:hover {
-      transform: scale(1.1);
-    }
-
-    .toggle-dark-mode {
-      padding: clamp(0.25rem, 0.5vw, 0.5rem);
-      transition: all 0.2s ease;
-    }
-
-    .toggle-dark-mode:hover {
-      transform: rotate(30deg);
-    }
-  </style>
-
-  <div class="flex items-center logo-container">
-    <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="mx-auto md:mx-10 my-2" />
-    <span class="font-bold text-white text-pretty site-title">
-      Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
-    </span>
+    </div>
   </div>
-      
-  <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial mr-4">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <line x1="4" y1="8" x2="20" y2="8" />
-      <line x1="4" y1="16" x2="20" y2="16" />
-    </svg>
-  </button>
 
   
-  <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 bg-green-700 dark:bg-gray-900 mr-8 my-auto">
-
-    <li class="my-4"><a href='//localhost:1313/'>Beranda</a></li>
-    
+  <div class="lg:hidden transition-all duration-300 ease-in-out transform origin-top" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
       
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Profil</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="/profil-pimpinan/pejabat-struktural">Profil Pimpinan</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/maklumat-pelayanan/motto-satpol-pp-provinsi-kalimantan-barat">Motto Satpol PP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/tentang-satpol-pp">Tentang Satpol PP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/visi-dan-misi/visi-dan-misi">Visi Dan Misi</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/struktur-organisasi/struktur/">Struktur Organisasi</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Informasi</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="/galeri">Galeri</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/berita">Berita</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/flyers">Flyers</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/vidio">Vidio</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/IUoVvGWLfaAsFo1Ecj3z.pdf">Jalur Evakuasi</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Link Terkait</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="https://kalbarprov.go.id/">PEMERINTAH PROVINSI KALIMANTAN BARAT</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://sikedip.kalbarprov.go.id/opd/satuan-polisi-pamong-praja-prov-kalbar">SIKEDIP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://ppid.kalbarprov.go.id/">PPID PROV. KALBAR</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://www.appsheet.com/start/f0644d20-7d94-4de6-afbe-76715f210208">SI RENOVPOLPP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://www.lapor.go.id/">LAPOR</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://data.kalbarprov.go.id/">SATU DATA PROV. KALBAR</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://satpolpp.kemendagri.go.id/">SIM SATPOL PP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/login">SEKAMPADI</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://linmaskalbar.my.id/">ANTENNA POL PP</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://bukutamu.kalbarprov.go.id/visitor/check-in">BUKU TAMU</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://srikandi.arsip.go.id/">SRIKANDI</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://lpse.kalbarprov.go.id/eproc4">LPSE</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Dokumen</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="/renja-monev/renja-monev">Renja Monev</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/keuangan-dan-aset/laporan-keuangan">Keuangan Dan Aset</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/umum-aparatur/aparatur/">Aparatur</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/bidang-ketertiban-umum-dan-ketentraman">Bidang Ketertiban Umum Dan Ketenteraman</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/bidang-perlindungan-masyarakat">Bidang Perlindungan Masyarakat</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/bidang-pembinaan-masyarakat/">Bidang Pembinaan Masyarakat</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara">LHKPN</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Pelayanan</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="https://sekampadi.kalbarprov.go.id/survey/index/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09/NTA0">Penilai Pelayananan</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/standar-layanan/standar-pelayanan">Standar Pelayanan</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/layanan%20pengaduan/thumbnails/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png">Kontak Pengaduan</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/pelita-perda">PELITA PERDA</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>PPID</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="/ppid/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat">Profil PPID</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/form-ppid-utama">Formulir PPID Utama</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/sop-ppid/sop-pelayanan-publik">SOP PPID</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/jadwal-pelayanan-informasi-publik/tata-cara">Tata Cara</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/daftar-informasi-publik/daftar-informasi">Daftar Informasi</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/permohonan-online-ppid/permohonan-online-ppid">Permohonan Online</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/laporan-ppid/laporan-ppid">Laporan PPID</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/formulir-ppid/formulir-ppid">Formulir PPID</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/jumlah-permohonan-informasi/jumlah-permohonan-informasi">Jumlah Permohonan Informasi</a>
-          
-            <a class="px-5 py-4 md:py-2" href="/regulasi-ppid/regulasi-ppid">Regulasi PPID</a>
-          
-            <a class="px-5 py-4 md:py-2" href="https://awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/xx3so0aAj9zScuJpa4aY.pdf">Maklumat Pelayanan PPID</a>
-          
-        </div>
-      </li>
-      
-    
-      
-      
-      
-      
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>Sop</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 bg-green-700 dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          
-            <a class="px-5 py-4 md:py-2" href="/sop-pelayanan">Sop Pelayanan</a>
-          
-        </div>
-      </li>
-      
-    
-
-    
-
-    
-      <li class="grid place-items-center">
-        <span class="toggle-dark-mode inline-block cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="3" />
-            <line x1="12" y1="5" x2="12" y2="5.01" />
-            <line x1="17" y1="7" x2="17" y2="7.01" />
-            <line x1="19" y1="12" x2="19" y2="12.01" />
-            <line x1="17" y1="17" x2="17" y2="17.01" />
-            <line x1="12" y1="19" x2="12" y2="19.01" />
-            <line x1="7" y1="17" x2="7" y2="17.01" />
-            <line x1="5" y1="12" x2="5" y2="12.01" />
-            <line x1="7" y1="7" x2="7" y2="7.01" />
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Profil
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
-        </span>
-      </li>
-    
-  </ul>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('\/profil#pejabat-struktural')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Profil Pimpinan</button>
+          
+          <button onclick="handleMenuClick('\/profil#motto-satpol-pp')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Motto Satpol PP</button>
+          
+          <button onclick="handleMenuClick('\/profil#tentang-satpol-pp')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Tentang Satpol PP</button>
+          
+          <button onclick="handleMenuClick('\/profil#visi-dan-misi')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Visi Dan Misi</button>
+          
+          <button onclick="handleMenuClick('\/profil#struktur-organisasi')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Struktur Organisasi</button>
+          
+        </div>
+        
+      </div>
       
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
-
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Informasi
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('\/galeri')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Galeri</button>
+          
+          <button onclick="handleMenuClick('\/berita')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Berita</button>
+          
+          <button onclick="handleMenuClick('\/flyers')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Flyers</button>
+          
+          <button onclick="handleMenuClick('\/vidio')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Vidio</button>
+          
+          <button onclick="handleMenuClick('https:\/\/awdi.kalbarprov.go.id\/storage\/satpolpp.kalbarprov.go.id\/file\/IUoVvGWLfaAsFo1Ecj3z.pdf')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Jalur Evakuasi</button>
+          
+        </div>
+        
+      </div>
       
-      let resizeTimeout;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-          if (window.innerWidth >= 768) {
-            mobileMenu.classList.remove('hidden');
-          }
-        }, 250);
-      });
-
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Link Terkait
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('https:\/\/kalbarprov.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">PEMERINTAH PROVINSI KALIMANTAN BARAT</button>
+          
+          <button onclick="handleMenuClick('https:\/\/sikedip.kalbarprov.go.id\/opd\/satuan-polisi-pamong-praja-prov-kalbar')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SIKEDIP</button>
+          
+          <button onclick="handleMenuClick('https:\/\/ppid.kalbarprov.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">PPID PROV. KALBAR</button>
+          
+          <button onclick="handleMenuClick('https:\/\/www.appsheet.com\/start\/f0644d20-7d94-4de6-afbe-76715f210208')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SI RENOVPOLPP</button>
+          
+          <button onclick="handleMenuClick('https:\/\/www.lapor.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">LAPOR</button>
+          
+          <button onclick="handleMenuClick('https:\/\/data.kalbarprov.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SATU DATA PROV. KALBAR</button>
+          
+          <button onclick="handleMenuClick('https:\/\/satpolpp.kemendagri.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SIM SATPOL PP</button>
+          
+          <button onclick="handleMenuClick('https:\/\/sekampadi.kalbarprov.go.id\/login')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SEKAMPADI</button>
+          
+          <button onclick="handleMenuClick('https:\/\/linmaskalbar.my.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">ANTENNA POL PP</button>
+          
+          <button onclick="handleMenuClick('https:\/\/bukutamu.kalbarprov.go.id\/visitor\/check-in')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">BUKU TAMU</button>
+          
+          <button onclick="handleMenuClick('https:\/\/srikandi.arsip.go.id\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SRIKANDI</button>
+          
+          <button onclick="handleMenuClick('https:\/\/lpse.kalbarprov.go.id\/eproc4')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">LPSE</button>
+          
+        </div>
+        
+      </div>
       
-      document.addEventListener('click', function(e) {
-        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-          if (window.innerWidth < 768) {
-            mobileMenu.classList.add('hidden');
-          }
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Dokumen
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('\/renja-monev\/renja-monev')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Renja Monev</button>
+          
+          <button onclick="handleMenuClick('\/keuangan-dan-aset\/laporan-keuangan')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Keuangan Dan Aset</button>
+          
+          <button onclick="handleMenuClick('\/umum-aparatur\/aparatur\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Aparatur</button>
+          
+          <button onclick="handleMenuClick('\/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah</button>
+          
+          <button onclick="handleMenuClick('\/bidang-ketertiban-umum-dan-ketentraman')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Bidang Ketertiban Umum Dan Ketenteraman</button>
+          
+          <button onclick="handleMenuClick('\/bidang-perlindungan-masyarakat')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Bidang Perlindungan Masyarakat</button>
+          
+          <button onclick="handleMenuClick('\/bidang-pembinaan-masyarakat\/')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Bidang Pembinaan Masyarakat</button>
+          
+          <button onclick="handleMenuClick('\/lhkpn\/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">LHKPN</button>
+          
+        </div>
+        
+      </div>
+      
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Pelayanan
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('https:\/\/sekampadi.kalbarprov.go.id\/survey\/index\/d2h1U3FCZzkraW9HY3d2ckZKaksyZz09\/NTA0')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Penilai Pelayananan</button>
+          
+          <button onclick="handleMenuClick('\/standar-layanan\/standar-pelayanan')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Standar Pelayanan</button>
+          
+          <button onclick="handleMenuClick('\/layanan%20pengaduan\/thumbnails\/compressed_vnsr9lpubnnhn0merwi2o8nflq6pql1bvd1byeau.png')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Kontak Pengaduan</button>
+          
+          <button onclick="handleMenuClick('\/pelita-perda')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">PELITA PERDA</button>
+          
+        </div>
+        
+      </div>
+      
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          PPID
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('\/ppid\/profil-singkat-satuan-polisi-pamong-praja-provinsi-kalimantan-barat')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Profil PPID</button>
+          
+          <button onclick="handleMenuClick('\/permohonan-online-ppid\/form-ppid-utama')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Formulir PPID Utama</button>
+          
+          <button onclick="handleMenuClick('\/sop-ppid\/sop-pelayanan-publik')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">SOP PPID</button>
+          
+          <button onclick="handleMenuClick('\/jadwal-pelayanan-informasi-publik\/tata-cara')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Tata Cara</button>
+          
+          <button onclick="handleMenuClick('\/daftar-informasi-publik\/daftar-informasi')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Daftar Informasi</button>
+          
+          <button onclick="handleMenuClick('\/permohonan-online-ppid\/permohonan-online-ppid')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Permohonan Online</button>
+          
+          <button onclick="handleMenuClick('\/laporan-ppid\/laporan-ppid')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Laporan PPID</button>
+          
+          <button onclick="handleMenuClick('\/formulir-ppid\/formulir-ppid')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Formulir PPID</button>
+          
+          <button onclick="handleMenuClick('\/jumlah-permohonan-informasi\/jumlah-permohonan-informasi')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Jumlah Permohonan Informasi</button>
+          
+          <button onclick="handleMenuClick('\/regulasi-ppid\/regulasi-ppid')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Regulasi PPID</button>
+          
+          <button onclick="handleMenuClick('https:\/\/awdi.kalbarprov.go.id\/storage\/satpolpp.kalbarprov.go.id\/file\/xx3so0aAj9zScuJpa4aY.pdf')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Maklumat Pelayanan PPID</button>
+          
+        </div>
+        
+      </div>
+      
+      <div class="mobile-dropdown">
+        
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          Sop
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          
+          <button onclick="handleMenuClick('\/sop-pelayanan')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">Sop Pelayanan</button>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</nav>
+
+<script>
+  
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+    hamburgerIcon.classList.toggle('active');
+  });
+
+  
+  let openDropdown = null;
+  document.querySelectorAll('.mobile-dropdown > button').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = button.nextElementSibling;
+      
+      if (openDropdown && openDropdown !== dropdown) {
+        openDropdown.classList.add('hidden');
+        openDropdown.previousElementSibling.classList.remove('arrow-down');
+      }
+      
+      button.classList.toggle('arrow-down');
+      if (dropdown) {
+        dropdown.classList.toggle('hidden');
+        if (!dropdown.classList.contains('hidden')) {
+          openDropdown = dropdown;
+        } else {
+          openDropdown = null;
         }
-      });
+      }
     });
-  </script>
+  });
 
-</header>
+  function handleMenuClick(url) {
+    if (url.startsWith('http')) {
+      window.open(url, '_blank');
+    } else {
+      window.location.href = url;
+    }
+  }
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeIconMobile = document.getElementById('theme-icon-mobile');
+  const html = document.documentElement;
+  
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    html.classList.add('dark');
+    navbar.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+    navbar.classList.remove('dark');
+  }
+
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+      
+    if (document.documentElement.classList.contains('dark')) {
+      const sunIcon = '<svg class="matahari w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"/></svg>';
+      themeIcon.innerHTML = sunIcon;
+      themeIconMobile.innerHTML = sunIcon;
+      navbar.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      const moonIcon = '<svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>';
+      themeIcon.innerHTML = moonIcon;
+      themeIconMobile.innerHTML = moonIcon;
+      navbar.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  themeToggle.addEventListener('click', toggleTheme);
+  themeToggleMobile.addEventListener('click', toggleTheme);
+</script>
 <div class="fixed-social-media">
     <div class="social-icons">
         
@@ -1155,7 +1541,12 @@
 }
 </style>
 
-    <main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
+    <main class="flex-1 main-content overflow-x-hidden " style=" min-height: 61vh;">
+      <style>
+        .dark .main-content {
+          background-color: black !important;
+        }
+      </style>
 
   <h1 class="container text-center mb-4 mt-2 px-6 pt-6 mx-auto text-3xl font-bold dark:text-blac text-green-700">PERMOHONAN ONLINE PPID</h1>
   

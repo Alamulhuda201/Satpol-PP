@@ -1,281 +1,435 @@
-<header class='flex flex-wrap justify-between items-center mx-auto sticky top-0 z-50 w-full {{ default "bg-defaultColor" .Site.Params.ascentColor }} dark:bg-gray-900'>
-  <style>
-    .navbar {
-      background-color: #000000;
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    /* Mobile styles */
-    @media (max-width: 480px) {
-      .mobile-menu {
-        width: 100%;
-        padding: 0.75rem;
-      }
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .dropdown-item {
+    animation: fadeInUp 0.3s ease forwards;
+  }
+
+  #navbar {
+    background-color: rgb(22 101 52) !important; /* Tambahkan !important */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 96px;
+  }
+
+  .dark #navbar {
+    background-color: rgb(17 24 39) !important; /* Tambahkan !important */
+  }
+
+  #navbar.scrolled {
+    backdrop-filter: blur(8px);
+    background-color: rgba(22, 101, 52, 0.9) !important; /* Tambahkan !important */
+    height: 80px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+  }
+
+  .dark #navbar.scrolled {
+    background-color: rgba(17, 24, 39, 0.9) !important; /* Tambahkan !important */
+  }
+
+  #mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(22 101 52);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .dark #mobile-menu {
+    background: rgb(17 24 39);
+  }
+
+  #mobile-menu.show {
+    display: block;
+    max-height: 80vh;
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .hamburger-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .hamburger-line:nth-child(1) {
+    top: 6px;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 12px;
+  }
+
+  .hamburger-line:nth-child(3) {
+    top: 18px;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 12px;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+
+  #mobile-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  #mobile-menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @media (min-width: 1024px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-down .arrow-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: #FCD34D;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  .logo-container {
+    transition: transform 0.3s ease;
+  }
+
+  .logo-container:hover {
+    transform: scale(1.05);
+  }
+
+  .theme-toggle {
+    transition: transform 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    transform: rotate(180deg);
+  }
+
+  /* Tambahan style untuk dropdown desktop */
+  .desktop-dropdown {
+    position: relative;
+  }
+
+  .desktop-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(22 101 52);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .dark .desktop-dropdown-content {
+    background-color: rgb(17 24 39);
+  }
+
+  .desktop-dropdown:hover .desktop-dropdown-content {
+    display: block;
+    animation: fadeInUp 0.3s ease forwards;
+  }
+
+  .desktop-dropdown-item {
+    padding: 12px 16px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .desktop-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style>
+
+<nav class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 mb-10 flex items-center justify-center" id="navbar">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
       
-      .mobile-menu li {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0;
-      }
-
-      .logo-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0.5rem;
-      }
-
-      .site-title {
-        font-size: 14px;
-        margin-top: 0.25rem;
-        line-height: 1.2;
-      }
-    }
-
-    /* Small tablet styles */
-    @media (min-width: 481px) and (max-width: 768px) {
-      .mobile-menu {
-        padding: 0.875rem;
-      }
-
-      .site-title {
-        font-size: 16px;
-        line-height: 1.3;
-      }
-
-      .logo-container {
-        padding: 0.75rem;
-      }
-    }
-
-    /* Large tablet styles */ 
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .site-title {
-        font-size: 18px;
-        line-height: 1.4;
-      }
-
-      .logo-container {
-        padding: 1rem;
-      }
-    }
-
-    /* Desktop styles */
-    @media (min-width: 1025px) {
-      .mobile-menu {
-        display: flex !important;
-      }
-
-      .site-title {
-        font-size: 20px;
-        line-height: 1.5;
-      }
-
-      .logo-container {
-        padding: 1.25rem;
-      }
-    }
-
-    ul.mobile-menu li {
-      font-size: clamp(0.75rem, 1.5vw, 1rem);
-      padding: clamp(6px, 1.2vw, 10px);
-      color: white;
-      transition: all 0.2s ease;
-    }
-
-    ul.mobile-menu li a {
-      font-size: clamp(0.7rem, 1.4vw, 0.9rem);
-      padding: clamp(4px, 1vw, 8px);
-      transition: all 0.3s ease;
-      display: block;
-      width: 100%;
-    }
-
-    ul.mobile-menu li a:hover {
-      color: #ffffff;
-      background-color: #064e3b;
-      border-radius: 6px;
-      transform: translateY(-1px);
-    }
-
-    .dark ul.mobile-menu li a:hover {
-      color: #ffffff;
-      background-color: #15803d;
-    }
-
-    ul.mobile-menu {
-      gap: clamp(0.25rem, 1.5vw, 1rem);
-      transition: all 0.3s ease;
-    }
-
-    ul.mobile-menu li .language-dropdown a {
-      padding: clamp(6px, 1.2vw, 10px);
-      border-radius: 6px;
-    }
-
-    .language-dropdown {
-      width: clamp(180px, 45vw, 280px);
-      transition: all 0.2s ease;
-    }
-
-    .logo-container img {
-      width: clamp(30px, 4vw, 45px);
-      height: auto;
-      transition: all 0.2s ease;
-    }
-
-    #mobile-menu-button {
-      padding: clamp(0.5rem, 1vw, 1rem);
-      transition: all 0.2s ease;
-    }
-
-    #mobile-menu-button:hover {
-      transform: scale(1.1);
-    }
-
-    .toggle-dark-mode {
-      padding: clamp(0.25rem, 0.5vw, 0.5rem);
-      transition: all 0.2s ease;
-    }
-
-    .toggle-dark-mode:hover {
-      transform: rotate(30deg);
-    }
-  </style>
-
-  <div class="flex items-center logo-container">
-    <img src='{{ absURL "/" }}kalbar-logo.png' alt="{{ .Site.Title }}" class="mx-auto md:mx-10 my-2" />
-    <span class="font-bold text-white text-pretty site-title">
-      Situs Resmi Satuan Polisi Pamong<br>Praja Provinsi Kalimantan Barat
-    </span>
-  </div>
-      
-  <button id="mobile-menu-button" class="mobile-menu-button md:hidden text-white hover:text-green-900 dark:hover:text-yellow-400 flex-initial mr-4">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <line x1="4" y1="8" x2="20" y2="8" />
-      <line x1="4" y1="16" x2="20" y2="16" />
-    </svg>
-  </button>
-
-  {{ $accent := .Site.Params.ascentColor }}
-  <ul id="mobile-menu" class="flex justify-center space-x-4 text-gray-100 mobile-menu absolute z-10 pb-6 md:p-0 top-full w-full md:w-auto md:relative hidden md:flex md:flex-row flex-auto place-self-end text-pretty flex-col place-content-end md:items-center gap-4 lg:gap-2 {{ default "bg-defaultColor" .Site.Params.ascentColor }} dark:bg-gray-900 mr-8 my-auto">
-
-    <li class="my-4"><a href='{{ absURL "/" }}'>Beranda</a></li>
-    {{ range .Site.Menus.main }}
-      {{ $menuURL := .URL }}
-      {{ $menuName := .Name }}
-      {{ $menuHasChildren := .HasChildren }}
-      {{ if $menuHasChildren }}
-      <li class="relative cursor-pointer my-2 px-4 md:px-1">
-        <span class="language-switcher flex items-center gap-2">
-          <a>{{ $menuName }}</a>
-          <i class="fas fa-chevron-down"></i>
-        </span>
-        <div class='language-dropdown w-screen md:w-52 absolute top-3/4 mt-2 flex-col gap-4 md:gap-2 {{ default "bg-defaultColor" $accent }} dark:bg-gray-900 z-10 hidden' style="border-radius: 8px; border-color: green; border-style: solid; border-width:1px">
-          {{ range .Children }}
-            <a class="px-5 py-4 md:py-2" href="{{ .URL }}">{{ .Name }}</a>
+      <!-- Logo & Title -->
+      <div class="logo-container">
+        <a href="{{ absURL "/" }}" class="flex items-center">
+          {{ if .Site.Params.logo }}
+          <img src='{{ absURL "/" }}kalbar-logo.png' alt="{{ .Site.Title }}" class="h-28 w-12" />
           {{ end }}
-        </div>
-      </li>
-      {{ else }}
-        <li class="my-4 px-4 md:px-1"><a href="{{ $menuURL }}">{{ $menuName }}</a></li>
-      {{ end }}
-    {{ end }}
-
-    {{ if hugo.IsMultilingual }}
-      {{ if ge (len .Site.Languages) 3 }}
-        <li class="relative cursor-pointer my-2">
-          <span class="language-switcher flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <circle cx="12" cy="12" r="9" />
-              <line x1="3.6" y1="9" x2="20.4" y2="9" />
-              <line x1="3.6" y1="15" x2="20.4" y2="15" />
-              <path d="M11.5 3a17 17 0 0 0 0 18" />
-              <path d="M12.5 3a17 17 0 0 1 0 18" />
-            </svg>
-            <a>{{ i18n "languageSwitcherLabel" }}</a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M18 15l-6 -6l-6 6h12" transform="rotate(180 12 12)" />
-            </svg>
+          <span class="ml-4 text-md font-medium text-white hover:text-yellow-300 dark:hover:text-yellow-400 dark:text-yellow-500 leading-tight transition-colors duration-300">
+            Situs Resmi Satuan Polisi Pamong<br/>
+            Praja Provinsi Kalimantan Barat
           </span>
-          <div class='language-dropdown absolute top-full mt-2 left-0 flex-col gap-2 {{ default "bg-defaultColor" .Site.Params.ascentColor }} dark:bg-gray-900 dark:text-white z-10 hidden'>
-            {{ range .Site.Languages }}
-              {{ if not (eq .Lang $.Site.Language.Lang) }}
-                <a class="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700" href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden flex items-center">
+        <button id="theme-toggle-mobile" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
+          <div id="theme-icon-mobile">
+            <svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>
+          </div>
+        </button>
+        <button class="text-white focus:outline-none transition-transform duration-300 ease-in-out transform hover:scale-105" id="mobile-menu-button" aria-label="Menu">
+          <div class="hamburger-icon transition-all duration-300 ease-in-out">
+            <span class="hamburger-line transition-all duration-300"></span>
+            <span class="hamburger-line transition-all duration-300"></span>
+            <span class="hamburger-line transition-all duration-300"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex lg:items-center lg:space-x-6">
+        {{ range .Site.Menus.main }}
+        <div class="desktop-dropdown">
+          <button class="nav-link px-3 py-2 text-white hover:text-yellow-300 transition-all duration-300 flex items-center text-sm">
+            {{ .Name }}
+            <svg class="arrow-icon w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div class="desktop-dropdown-content">
+            {{ if .HasChildren }}
+              {{ range .Children }}
+              <a href="{{ .URL }}" class="desktop-dropdown-item">{{ .Name }}</a>
               {{ end }}
+            {{ else }}
+              <a href="{{ .URL }}" class="desktop-dropdown-item">{{ .Name }}</a>
             {{ end }}
           </div>
-        </li>
-      {{ else }}
-        <li class="flex items-center my-2">
-          {{ range .Site.Languages }}
-            {{ if not (eq .Lang $.Site.Language.Lang) }}
-              <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <line x1="3.6" y1="9" x2="20.4" y2="9" />
-                <line x1="3.6" y1="15" x2="20.4" y2="15" />
-                <path d="M11.5 3a17 17 0 0 0 0 18" />
-                <path d="M12.5 3a17 17 0 0 1 0 18" />
-              </svg>
-              <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
-            {{ end }}
-          {{ end }}
-        </li>
-      {{ end }}
-    {{ end }}
+        </div>
+        {{ end }}
 
-    {{ if .Site.Params.darkModeToggle }}
-      <li class="grid place-items-center">
-        <span class="toggle-dark-mode inline-block cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="3" />
-            <line x1="12" y1="5" x2="12" y2="5.01" />
-            <line x1="17" y1="7" x2="17" y2="7.01" />
-            <line x1="19" y1="12" x2="19" y2="12.01" />
-            <line x1="17" y1="17" x2="17" y2="17.01" />
-            <line x1="12" y1="19" x2="12" y2="19.01" />
-            <line x1="7" y1="17" x2="7" y2="17.01" />
-            <line x1="5" y1="12" x2="5" y2="12.01" />
-            <line x1="7" y1="7" x2="7" y2="7.01" />
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
+          <div id="theme-icon">
+            <script>
+              // Check theme on page load
+              document.addEventListener('DOMContentLoaded', function() {
+                const themeIcon = document.getElementById('theme-icon');
+                if (document.documentElement.classList.contains('dark')) {
+                  themeIcon.innerHTML = `<svg class="matahari w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"/></svg>`;
+                } else {
+                  themeIcon.innerHTML = `<svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>`;
+                }
+              });
+            </script>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="lg:hidden transition-all duration-300 ease-in-out transform origin-top" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {{ range .Site.Menus.main }}
+      <div class="mobile-dropdown">
+        {{ if .HasChildren }}
+        <button class="w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md flex items-center justify-between text-sm transition-colors duration-200">
+          {{ .Name }}
+          <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
-        </span>
-      </li>
-    {{ end }}
-  </ul>
+        </button>
+        <div class="hidden pl-4 space-y-1 transition-all duration-300 ease-in-out">
+          {{ range .Children }}
+          <button onclick="handleMenuClick('{{ .URL }}')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">{{ .Name }}</button>
+          {{ end }}
+        </div>
+        {{ else }}
+        <button onclick="handleMenuClick('{{ .URL }}')" class="block w-full text-left px-3 py-2 text-white hover:bg-green-700 dark:hover:bg-gray-700 rounded-md text-sm transition-colors duration-200">
+          {{ .Name }}
+        </button>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</nav>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+    hamburgerIcon.classList.toggle('active');
+  });
+
+  // Mobile dropdowns
+  let openDropdown = null;
+  document.querySelectorAll('.mobile-dropdown > button').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dropdown = button.nextElementSibling;
       
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
-
-      // Handle resize events smoothly with debounce
-      let resizeTimeout;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-          if (window.innerWidth >= 768) {
-            mobileMenu.classList.remove('hidden');
-          }
-        }, 250);
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-          if (window.innerWidth < 768) {
-            mobileMenu.classList.add('hidden');
-          }
+      if (openDropdown && openDropdown !== dropdown) {
+        openDropdown.classList.add('hidden');
+        openDropdown.previousElementSibling.classList.remove('arrow-down');
+      }
+      
+      button.classList.toggle('arrow-down');
+      if (dropdown) {
+        dropdown.classList.toggle('hidden');
+        if (!dropdown.classList.contains('hidden')) {
+          openDropdown = dropdown;
+        } else {
+          openDropdown = null;
         }
-      });
+      }
     });
-  </script>
+  });
 
-</header>
+  function handleMenuClick(url) {
+    if (url.startsWith('http')) {
+      window.open(url, '_blank');
+    } else {
+      window.location.href = url;
+    }
+  }
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeIconMobile = document.getElementById('theme-icon-mobile');
+  const html = document.documentElement;
+  
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    html.classList.add('dark');
+    navbar.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+    navbar.classList.remove('dark');
+  }
+
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+      
+    if (document.documentElement.classList.contains('dark')) {
+      const sunIcon = '<svg class="matahari w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"/></svg>';
+      themeIcon.innerHTML = sunIcon;
+      themeIconMobile.innerHTML = sunIcon;
+      navbar.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      const moonIcon = '<svg class="bulan w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="background: transparent;"><path fill-rule="evenodd" d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z" clip-rule="evenodd"/></svg>';
+      themeIcon.innerHTML = moonIcon;
+      themeIconMobile.innerHTML = moonIcon;
+      navbar.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  themeToggle.addEventListener('click', toggleTheme);
+  themeToggleMobile.addEventListener('click', toggleTheme);
+</script>

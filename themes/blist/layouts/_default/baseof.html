@@ -493,7 +493,12 @@
     </div>
     {{- partial "header.html" . -}}
     {{ partial "layout/socialMedia.html" . }}
-    <main class="flex-1 main-content overflow-x-hidden" style="background-color:white; min-height: 61vh;">
+    <main class="flex-1 main-content overflow-x-hidden " style=" min-height: 61vh;">
+      <style>
+        .dark .main-content {
+          background-color: black !important;
+        }
+      </style>
       {{- block "main" . }}{{- end }}
     </main>
     <div style="overflow-x: hidden;">
