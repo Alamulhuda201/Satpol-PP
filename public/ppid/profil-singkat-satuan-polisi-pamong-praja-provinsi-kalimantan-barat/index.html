@@ -1555,7 +1555,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
           background-color: black !important;
         }
       </style>
-<div class="main-container">
+<div class="main-container ">
   
   <aside class="sidebar">
     <ul class="sidebar-menu">
@@ -1567,10 +1567,10 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
   </aside>
 
   
-  <div class="content">
+  <div >
     
     <div class="container" id="profil">
-      <h1 class="title">Profil Singkat Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</h1>
+      <h1 class="title text-center">Profil Singkat Satuan Polisi Pamong Praja Provinsi Kalimantan Barat</h1>
       <div class="description">
         <p>Pejabat Pengelola Informasi dan Dokumentasi Daerah (PPID) pada Satuan Polisi Pamong Praja Provinsi Kalimantan Barat dibentuk tahun 2020 berdasarkan Keputusan Gubernur Kalimantan Barat Nomor 7/DISKOMINFO/2020 tentang Pembentukan Pengelola Layanan Informasi dan Dokumentasi Di Lingkungan Pemerintah Provinsi Kalimantan Barat.</p>
 <p>Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Polisi Pamong Praja Provinsi Kalimantan Barat. PPID adalah pejabat yang bertanggung jawab di bidang penyimpanan, pendokumentasian, penyediaan, dan/atau pelayanan informasi di Badan Publik.</p>
@@ -1582,7 +1582,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     
     <div class="container" id="tugas">
       <h2 class="section-title">Tugas PPID:</h2>
-      <ul class="task-list">
+      <ol class="task-list">
         
         <li>Merencanakan, Melaksanakan, Mengkoordinasikan, dan Mengendalikan Mengumpulkan bahan informasi, Mengklasifikasikan informasi, Mendokumentasikan informasi</li>
         
@@ -1596,13 +1596,13 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
         
         <li>Melaksanakan advokasi pengaduan dan penyelesaian sengketa informasi Publik</li>
         
-      </ul>
+      </ol>
     </div>
 
     
     <div class="container" id="fungsi">
       <h2 class="section-title">Fungsi PPID:</h2>
-      <ul class="function-list">
+      <ol class="function-list">
         
         <li>Pembinaan</li>
         
@@ -1612,7 +1612,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
         
         <li>Pelayanan Informasi</li>
         
-      </ul>
+      </ol>
     </div>
   </div>
 </div>
@@ -1626,10 +1626,12 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
 
   .main-container {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 50px auto;
     padding: 20px;
     gap: 30px;
+    background: #F2F2F2;
+    margin-top: 150px;
   }
 
   .sidebar {
@@ -1637,16 +1639,17 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     position: sticky;
     top: 20px;
     height: fit-content;
-    background: #F7FAFC;
+    background: #F6F6F6;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     
+    border: 1px solid #D3D3D3;
     transition: all 0.3s ease;
   }
 
   .sidebar:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #D3D3D3;
   }
 
   .sidebar-menu {
@@ -1662,7 +1665,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
   .menu-link {
     display: block;
     text-decoration: none;
-    color: #2C5282;
+    color: #03A055;
     font-weight: 600;
     padding: 10px 15px;
     border-radius: 8px;
@@ -1679,35 +1682,29 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     bottom: 0;
     height: 2px;
     width: 0;
-    background: #4299E1;
+    background: #03A055;
     transition: width 0.3s ease;
   }
 
-  .menu-link:hover {
-    color: #4299E1;
-    background: rgba(66, 153, 225, 0.1);
-    padding-left: 20px;
-  }
+   
 
   .menu-link:hover:before {
     width: 100%;
   }
 
-  .content {
-    width: 75%;
-  }
+   
 
   .container {
-    background: #FFFFFF;
+    background: #F6F6F6;
     padding: 30px;
     margin-bottom: 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border:1px solid #D3D3D3 ;
     scroll-margin-top: 80px;  
   }
 
   .title {
-    color: #2C5282;
+    color: #03A055;
     font-size: 2em;
     margin-bottom: 20px;
   }
@@ -1716,27 +1713,20 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     color: #2D3748;
     font-size: 1.5em;
     margin: 30px 0 15px;
-    border-bottom: 2px solid #4299E1;
+    border-bottom: 2px solid #03A055;
     padding-bottom: 8px;
   }
 
   .task-list, .function-list {
-    list-style: none;
-    padding: 0;
+    list-style-type: decimal;
+    padding-left: 25px;
     margin: 0;
   }
 
   .task-list li, .function-list li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 10px;
     margin-bottom: 12px;
-  }
-
-  .task-list li:before, .function-list li:before {
-    content: "•";
-    color: #4299E1;
-    position: absolute;
-    left: 0;
   }
 
   section {
