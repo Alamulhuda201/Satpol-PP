@@ -1,10 +1,33 @@
 {{ define "main" }}
-<div class="main-container mt-32">
+<h1 class="text-center text-4xl font-bold text-custom-green mt-32 mb-10 tracking-wide">RENJA MONEV</h1>
+<div class="main-container">
   <!-- Sidebar -->
   <aside class="sidebar">
     <ul class="sidebar-menu">
-      <li><a href="#" class="menu-link" data-target="renja2024">RENJA 2024</a></li>
-      <li><a href="#" class="menu-link" data-target="sop">DAFTAR SOP RENJA MONEV</a></li>
+      <li>
+        <a href="#" class="menu-link" data-target="renja2024">RENJA 2024</a>
+      </li>
+      <li>
+        <a href="#" class="menu-link has-submenu">SOP RENJA MONEV</a>
+        <ul class="submenu">
+          <li><a href="#" class="submenu-link" data-target="sop-rencana">SOP Penyusunan Rencana Kerja</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-rka">SOP Penyusunan RKA</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-monev">SOP Monev Kinerja</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-data">SOP Pengumpulan Data</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-perbaikan">SOP Perbaikan Data</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-lakip">SOP PENYUSUNAN LAKIP</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-ekinerja">SOP E-KINERJA</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-dpa-penyempurnaan">SOP PENYUSUNAN DPA PENYEMPURNAAN</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-manajemen-resiko">SOP PENYUSUNAN MANAJEMEN RESIKO</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-pelaporan-monev">SOP PELAKSANAAN DAN PELAPORAN MONEV</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-dpa-murni">SOP PENYUSUNAN DPA MURNI</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-rencana-strategis">SOP PENYUSUNAN RENCANA STRATEGIS</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-revisi-kegiatan-dan-anggaran">SOP PENYUSUNAN REVISI KEGIATAN DAN ANGGARAN</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-rka-perubahan-anggaran">SOP RKA PERUBAHAN ANGGARAN</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-tindak-lanjut-hasil-pemerikasaan">SOP TINDAK LANJUT HASIL PEMERIKSAAN</a></li>
+          <li><a href="#" class="submenu-link" data-target="sop-rka">SOP PENYUSUNAN RKA</a></li>
+        </ul>
+      </li>
       <li><a href="#" class="menu-link" data-target="renstra">RENSTRA 2024-2026</a></li>
       <li><a href="#" class="menu-link" data-target="iku">IKU SATPOL PP 2024-2026</a></li>
       <li><a href="#" class="menu-link" data-target="lakip">LAKIP SATPOL PP</a></li>
@@ -12,16 +35,23 @@
       <li><a href="#" class="menu-link" data-target="pohon">POHON KINERJA</a></li>
       <li><a href="#" class="menu-link" data-target="cascading">CASCADING 2024-2026</a></li>
       <li><a href="#" class="menu-link" data-target="sakip">LAPORAN SAKIP 2024</a></li>
-      <li><a href="#" class="menu-link" data-target="rka2023">RKA DAN DPA 2023</a></li>
-      <li><a href="#" class="menu-link" data-target="rka2024">RKA DAN DPA 2024</a></li>
+      <li>
+        <a href="#" class="menu-link has-submenu">RKA DAN DPA</a>
+        <ul class="submenu">
+          <li><a href="#" class="submenu-link" data-target="rka2023">RKA DAN DPA 2023</a></li>
+          <li><a href="#" class="submenu-link" data-target="rka2024">RKA DAN DPA 2024</a></li>
+        </ul>
+      </li>
     </ul>
   </aside>
 
   <!-- Content Placeholder -->
   <div class="content">
-    <div id="content-placeholder">
-      <h2>Selamat Datang</h2>
-      <p>Silakan pilih menu dari sidebar untuk melihat konten.</p>
+    <div id="content-placeholder" class="animate-fade-in">
+      <div class="welcome-message">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Selamat Datang</h2>
+        <p class="text-lg text-gray-600">Silakan pilih menu dari sidebar untuk melihat konten.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -30,80 +60,362 @@
 <style>
   .main-container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    gap: 20px;
+    margin-top: 72px;
+    gap: 30px;
   }
+  
   .sidebar {
-    width: 25%;
-    background: #F9F9F9;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 
+                0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 72px;
+    height: fit-content;
+    transition: all 0.3s ease;
   }
+
+  .sidebar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
   .sidebar-menu {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
+
   .sidebar-menu li {
-    margin: 10px 0;
+    margin: 12px 0;
+    transition: all 0.3s ease;
   }
+
   .menu-link {
+    display: block;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: #2d3748;
+    font-weight: 600;
     cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
   }
+
   .menu-link:hover {
-    color: #007BFF;
+    color: #03a055;
+    background: rgba(3, 160, 85, 0.1);
+    border-color: rgba(3, 160, 85, 0.2);
+    transform: translateX(5px);
   }
+
+  .menu-link.active {
+    background: #03a055;
+    color: white;
+    box-shadow: 0 2px 4px rgba(3, 160, 85, 0.2);
+  }
+
+  .has-submenu::after {
+    content: '▼';
+    float: right;
+    font-size: 12px;
+    margin-top: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  .has-submenu.active::after {
+    transform: rotate(180deg);
+  }
+
+  .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  .submenu.active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .submenu-link {
+    display: block;
+    padding: 10px 16px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+  }
+
+  .submenu-link:hover {
+    color: #03a055;
+    background: rgba(3, 160, 85, 0.08);
+    transform: translateX(5px);
+  }
+
   .content {
     flex: 1;
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    min-height: 600px;
+    transition: all 0.3s ease;
+  }
+
+  .content:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .welcome-message {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 1024px) {
+    .main-container {
+      padding: 15px;
+      gap: 20px;
+    }
+    
+    .sidebar {
+      width: 32%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      position: static;
+      margin-bottom: 20px;
+    }
+    
+    .content {
+      padding: 25px;
+    }
   }
 </style>
 
 <!-- JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll(".menu-link");
+    const links = document.querySelectorAll(".menu-link, .submenu-link");
     const contentPlaceholder = document.getElementById("content-placeholder");
+    const dropdownMenus = document.querySelectorAll(".has-submenu");
 
+    // Dropdown functionality with animation
+    dropdownMenus.forEach(menu => {
+      menu.addEventListener("click", function(e) {
+        e.preventDefault();
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle("active");
+        this.classList.toggle("active");
+      });
+    });
     const contentMap = {
-      renja2024: `
-        <h2>RENJA 2024</h2>
-        <iframe src="https://drive.google.com/file/d/1OkzkMwqUDdphA8zQUGuslNlSKD0JzOdw/preview" width="100%" height="500"></iframe>
+      "sop-rencana": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan Rencana Kerja</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
       `,
-      sop: `
-        <h2>DAFTAR SOP RENJA MONEV</h2>
-        <ul>
-          <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan Rencana Kerja</a></li>
-          <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Penyusunan RKA Penyempurnaan</a></li>
-          <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Monev Kinerja</a></li>
-          <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Pengumpulan Data Kinerja</a></li>
-          <li><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">SOP Perbaikan Data Kinerja</a></li>
-        </ul>
+      "sop-rka": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan RKA</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
       `,
-      renstra: `
-        <h2>RENSTRA 2024-2026</h2>
-        <iframe src="https://drive.google.com/file/d/1KJv9vJCiO0zuad_013JH-GGwybGqHy5V/preview" width="100%" height="500"></iframe>
+      "sop-monev": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Monev Kinerja</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
       `,
-      iku: `
-        <h2>IKU SATPOL PP 2024-2026</h2>
-        <p>Konten IKU SATPOL PP akan ditampilkan di sini.</p>
+      "sop-data": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Pengumpulan Data</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
       `,
-      // Add more mappings for other menu items...
+      "sop-perbaikan": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Perbaikan Data</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-lakip": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan LAKIP</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-ekinerja": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP E-Kinerja</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-dpa-penyempurnaan": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan DPA Penyempurnaan</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-manajemen-resiko": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan Manajemen Resiko</h2>
+        <div class="iframe-container">
+          <iframe src="/file/yQbQLoDsLRsT0VeSj55D.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-pelaporan-monev": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Pelaksanaan dan Pelaporan Monev</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-dpa-murni": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan DPA Murni</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-rencana-strategis": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan Rencana Strategis</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-revisi-kegiatan-dan-anggaran": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Penyusunan Revisi Kegiatan dan Anggaran</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-rka-perubahan-anggaran": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP RKA Perubahan Anggaran</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sop-tindak-lanjut-hasil-pemerikasaan": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">SOP Tindak Lanjut Hasil Pemeriksaan</h2>
+        <div class="iframe-container">
+          <iframe src="/file/iYfcoNnwpdsTnzt5vBkx.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "renja2024": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">RENJA 2024</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1OkzkMwqUDdphA8zQUGuslNlSKD0JzOdw/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "renstra": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">RENSTRA 2024-2026</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1KJv9vJCiO0zuad_013JH-GGwybGqHy5V/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "iku": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">IKU SATPOL PP 2024-2026</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1OEQBo5BOg_gamgRZxFoVlrMpRiqBHITJ/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "lakip": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">LAKIP SATPOL PP</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1Rk1rlZwYDFgCqKwPjY5x-iiCbla-9CoO/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "perjakin": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">PERJAKIN SATPOL PP</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/142ZBflhB-0x76hYe9fmgs70jgzJV5XtV/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "pohon": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">POHON KINERJA</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1wrVuhbVEjvQGzLJtQscaGaD8MCJ1zv_n/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "cascading": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">CASCADING 2024-2026</h2>
+        <div class="iframe-container">
+          <iframe src="https://drive.google.com/file/d/1x6jcQI65umF7m_KiFgNjyrACuhaFaoDY/preview" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "sakip": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">LAPORAN SAKIP 2024</h2>
+        <div class="iframe-container">
+          <iframe src="/file/Xi7GoqoUe65UKANFSZVd.pdf" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+        </div>
+      `,
+      "rka2023": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">RKA DAN DPA 2023</h2>
+         <div class="error-message bg-red-50 p-8 rounded-lg text-center">
+            <i class="fas fa-exclamation-circle text-red-500 text-4xl mb-4"></i>
+            <p class="text-red-600 text-lg">Maaf, konten tidak tersedia saat ini.</p>
+        </div>
+      `,
+      "rka2024": `
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">RKA DAN DPA 2024</h2>
+        <div class="error-message bg-red-50 p-8 rounded-lg text-center">
+            <i class="fas fa-exclamation-circle text-red-500 text-4xl mb-4"></i>
+            <p class="text-red-600 text-lg">Maaf, konten tidak tersedia saat ini.</p>
+        </div>
+      `
     };
 
     links.forEach(link => {
       link.addEventListener("click", function (e) {
+        if (this.classList.contains('has-submenu')) return;
+        
         e.preventDefault();
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        
         const target = this.getAttribute("data-target");
-        contentPlaceholder.innerHTML = contentMap[target] || "<p>Konten tidak tersedia.</p>";
+        contentPlaceholder.innerHTML = contentMap[target] || `
+          <div class="error-message bg-red-50 p-8 rounded-lg text-center">
+            <i class="fas fa-exclamation-circle text-red-500 text-4xl mb-4"></i>
+            <p class="text-red-600 text-lg">Maaf, konten tidak tersedia saat ini.</p>
+          </div>
+        `;
+        
+        contentPlaceholder.classList.add('animate-fade-in');
+        
+        if (window.innerWidth <= 768) {
+          contentPlaceholder.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   });
