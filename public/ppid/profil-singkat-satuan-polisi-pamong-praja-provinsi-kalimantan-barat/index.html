@@ -1562,7 +1562,7 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
       <li><a href="#profil" class="menu-link" data-scroll>Profil Singkat</a></li>
       <li><a href="#tugas" class="menu-link" data-scroll>Tugas PPID</a></li>
       <li><a href="#fungsi" class="menu-link" data-scroll>Fungsi PPID</a></li>
-      <li><a href="/images/VYKPajD2B8tvSx9Hdlfw.png" target="_blank" class="menu-link">Struktur PPID Satpol PP Prov. Kalbar</a></li>
+      <li><a href="#" class="menu-link struktur-link" onclick="openImageModal('\/images\/VYKPajD2B8tvSx9Hdlfw.png')">Struktur PPID Satpol PP Prov. Kalbar</a></li>
     </ul>
   </aside>
 
@@ -1614,6 +1614,18 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
         
       </ol>
     </div>
+  </div>
+</div>
+
+
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center">
+  <div class="relative max-w-[90vw] max-h-[90vh]">
+    <img id="modalImage" src="" alt="Struktur PPID" class="max-h-[90vh] max-w-[90vw] object-contain">
+    <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -1686,21 +1698,48 @@ Personalia PPID Satpol PP Prov. Kalbar terdiri dari ASN di lingkungan Satuan Pol
     transition: width 0.3s ease;
   }
 
-   
+  .struktur-link {
+    position: relative;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+
+  .struktur-link:hover {
+    transform: scale(1.05);
+    background: #03A055;
+    color: white;
+    box-shadow: 0 5px 15px rgba(3, 160, 85, 0.3);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(3, 160, 85, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(3, 160, 85, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(3, 160, 85, 0);
+    }
+  }
+
+  @keyframes openFile {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2) rotate(5deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0) rotate(15deg);
+      opacity: 0;
+    }
+  }
 
   .menu-link:hover:before {
     width: 100%;
-  }
-
-   
-
-  .container {
-    background: #F6F6F6;
-    padding: 30px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    border:1px solid #D3D3D3 ;
-    scroll-margin-top: 80px;  
   }
 
   .title {
@@ -1756,6 +1795,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+function openImageModal(src) {
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  modalImage.src = src;
+  modal.classList.remove('hidden');
+
+  
+  let scale = 1;
+  let isDragging = false;
+  let startX, startY, translateX = 0, translateY = 0;
+
+  modalImage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const delta = e.deltaY * -0.01;
+    scale = Math.min(Math.max(0.5, scale + delta), 4);
+    modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  });
+
+  modalImage.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+  });
+
+  modalImage.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      modalImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+  });
+
+  modalImage.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  modalImage.addEventListener('dblclick', () => {
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    modalImage.style.transform = 'translate(0px, 0px) scale(1)';
+  });
+}
+
+function closeImageModal() {
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  modal.classList.add('hidden');
+  modalImage.style.transform = 'translate(0px, 0px) scale(1)';
+}
+
+
+document.getElementById('imageModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('imageModal')) {
+    closeImageModal();
+  }
+});
 </script>
 
     </main>
@@ -1766,81 +1863,104 @@ document.addEventListener('DOMContentLoaded', function() {
         body {
           font-family: 'Poppins', sans-serif;
         }
-      </style><footer class="p-4 bg-green-700 text-white">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      </style><footer class="relative bg-gradient-to-r from-green-600 to-green-800 dark:from-gray-800 dark:to-gray-900 text-white py-16">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4 md:px-8">
     
-    <div class="text-center md:text-center">
-      <h1 class="font-bold text-3xl mt-10 mb-10 text-white  ">
-        SATUAN POLISI PAMONG PRAJA PROVINSI <br />
-        KALIMANTAN BARAT
+    <div class="text-center md:text-left space-y-6">
+      <h1 class="font-extrabold text-3xl md:text-4xl lg:text-5xl text-white dark:text-gray-100 leading-tight">
+        SATUAN POLISI PAMONG PRAJA <br />
+        PROVINSI KALIMANTAN BARAT
       </h1>
-      <p class="text-lg text-white">
+      <p class="text-base md:text-lg opacity-80 dark:text-gray-300">
         Web Resmi Polisi Pamong Praja <br />
-        Provinsi Kalimantan Barat
+        Provinsi Kalimantan Barat. Kami melayani dengan sepenuh hati untuk masyarakat Kalimantan Barat.
       </p>
+      <div class="mt-6">
+        <a href="https://maps.app.goo.gl/GecPkRfkJ2n4n3Ei7" target="_blank" class="text-base md:text-lg text-green-300 hover:text-green-500 dark:text-green-400 dark:hover:text-green-300">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          Lihat Lokasi Kami di Google Maps
+        </a>
+      </div>
     </div>
 
     
-    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-64 w-px bg-black mt-0"></div>
-
-    
-    <div class="space-y-3 mt-10 text-lg">
-      <div class="flex items-center">
-        <i class="fas fa-phone-alt text-white"></i>
-        <a href="tel:081225197681" class="ml-2 hover:underline">
+    <div class="space-y-6 text-base md:text-lg mx-4 md:ml-20">
+      <div class="flex justify-center md:justify-start items-center">
+        <i class="fas fa-phone-alt text-white dark:text-gray-200 text-xl"></i>
+        <a href="tel:081225197681" class="ml-3 hover:underline text-green-300 dark:text-green-400">
           081225197681
         </a>
       </div>
-      <div class="flex items-start">
-        <i class="fas fa-map-marker-alt text-white mt-1"></i>
-        <a
-          href="https://goo.gl/maps/YOUR-MAPS-LINK"
-          target="_blank"
-          class="ml-2 hover:underline"
-        >
-          Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal
-          Ahmad Yani Pontianak, Kalimantan Barat 78124
-        </a>
-      </div>
-      <div class="flex items-center">
-        <i class="fas fa-envelope text-white"></i>
-        <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-2 hover:underline">
+      <div class="flex justify-center md:justify-start items-center">
+        <i class="fas fa-envelope text-white dark:text-gray-200 text-xl"></i>
+        <a href="mailto:satpolpp@kalbarprov.go.id" class="ml-3 hover:underline text-green-300 dark:text-green-400">
           satpolpp@kalbarprov.go.id
         </a>
       </div>
-      <div class="flex items-center">
-        <i class="fas fa-sitemap text-white"></i>
-        <a href="//localhost:1313/sitemap" class="ml-2 hover:underline">
+      <div class="flex justify-center md:justify-start items-center">
+        <i class="fas fa-sitemap text-white dark:text-gray-200 text-xl"></i>
+        <a href="//localhost:1313/sitemap" class="ml-3 hover:underline text-green-300 dark:text-green-400">
           Sitemap
         </a>
+      </div>
+      <div class="flex justify-center md:justify-start items-center">
+        <i class="fas fa-map-marker-alt mr-2 text-white dark:text-gray-200 text-xl"></i>
+        <a href="https://maps.app.goo.gl/GecPkRfkJ2n4n3Ei7" target="_blank" class="ml-3 hover:underline text-green-300 dark:text-green-400 text-sm md:text-base">
+          Komplek Kantor Gubernur Provinsi Kalimantan Barat Jalan Jenderal Ahmad Yani Pontianak, Kalimantan Barat 78124
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="space-y-6 text-base md:text-lg">
+      <div class="mt-4 flex justify-center space-x-4 md:space-x-6">
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+          <i class="fab fa-facebook text-white text-xl md:text-2xl"></i>
+        </a>
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+          <i class="fab fa-twitter text-white text-xl md:text-2xl"></i>
+        </a>
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+          <i class="fab fa-instagram text-white text-xl md:text-2xl"></i>
+        </a>
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+          <i class="fab fa-youtube text-white text-xl md:text-2xl"></i>
+        </a>
+      </div>
+      
+      <div class="bg-gray-800 dark:bg-gray-900 p-4 md:p-6 rounded-md text-center mx-4 md:mx-0">
+        <h2 class="text-lg md:text-xl font-semibold text-white dark:text-gray-100 mb-4">Apa Kata Pengguna Kami?</h2>
+        <p class="text-base md:text-lg text-white dark:text-gray-300 opacity-80">
+          "Pelayanan yang cepat dan tanggap dari Satpol PP Provinsi Kalimantan Barat sangat membantu kami. Terima kasih atas dedikasinya!"
+        </p>
+        <p class="mt-4 text-green-300 dark:text-green-400">- Andi, Warga Pontianak</p>
       </div>
     </div>
   </div>
 
   
-  <div class="mt-4 flex justify-end space-x-4 mr-96">
-    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
-      <i class="fab fa-facebook text-white text-xl"></i>
-    </a>
-    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
-      <i class="fab fa-twitter text-white text-xl"></i>
-    </a>
-    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
-      <i class="fab fa-instagram text-white text-xl"></i>
-    </a>
-    <a href="#" class="p-2 bg-custom-green rounded-full hover:bg-green-500">
-      <i class="fab fa-youtube text-white text-xl"></i>
-    </a>
+  <div class="mt-8 md:mt-12 relative px-4 md:px-0">
+    <iframe
+      class="w-full h-56 md:h-72 lg:h-96 rounded-md shadow-xl"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8159981422623!2d109.3499445758978!3d-0.06181743551546978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d5967b0f177eb%3A0xe40678efbde492d5!2sDinas%20Komunikasi%20Dan%20Informatika%20Provinsi%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1733817110418!5m2!1sid!2sid"
+      frameborder="0" 
+      style="border:0;"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0"
+    ></iframe>
+    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black dark:from-gray-900 text-white py-2 text-center opacity-80">
+      <p class="text-xs md:text-sm">Lokasi Kami: Dinas Komunikasi dan Informatika Provinsi Kalimantan Barat, Pontianak.</p>
+    </div>
   </div>
 
   
-  <div class="mt-4 text-center border-t border-custom-green pt-2">
-    <p class="text-lg">
+  <div class="mt-6 md:mt-8 text-center border-t border-green-500 dark:border-gray-700 pt-4 px-4 md:px-0">
+    <p class="text-base md:text-lg opacity-80 dark:text-gray-300">
       &copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.
     </p>
   </div>
 </footer>
-
 
 <div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
   <div class="container max-w-3xl mx-auto p-12">
@@ -1885,11 +2005,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const darkmode = document.querySelector('.toggle-dark-mode');
   function toggleDarkMode() {
     if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('darkmode', 'light')
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('darkmode', 'light');
     } else {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('darkmode', 'dark')
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('darkmode', 'dark');
     }
   }
   if (darkmode) {
