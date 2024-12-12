@@ -355,7 +355,7 @@ weight = 9
 identifier = "keuangan dan aset"
 name = "Keuangan Dan Aset"
 parent = "dokumen"
-url = "/keuangan-dan-aset/laporan-keuangan"
+url = "/keuangan-dan-aset/"
 weight = 2
 
 [[languages.id.menu.main]]
