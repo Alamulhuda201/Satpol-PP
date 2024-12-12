@@ -177,14 +177,14 @@ weight = 1
 identifier = "renja monev"
 name = "Renja Monev"
 parent = "dokumen"
-url = "/renja-monev/renja-monev"
+url = "/renja-monev"
 weight = 1
 
 [[languages.id.menu.main]]
 identifier = "aparatur"
 name = "Aparatur"
 parent = "dokumen"
-url = "/umum-aparatur/aparatur/"
+url = "/aparatur"
 weight = 3
 
 [[languages.id.menu.main]]
@@ -327,7 +327,7 @@ weight = 4
 identifier = "lhkpn"
 name = "LHKPN"
 parent = "dokumen"
-url = "/lhkpn/persentase-wajib-pelaporan-harta-kekayaan-penyelenggara-negara"
+url = "/lhkpn"
 weight = 8
 
 [[languages.id.menu.main]]

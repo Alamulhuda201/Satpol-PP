@@ -18,6 +18,21 @@
       </div>
     </div>
   </div>
+  {{ else }}
+  <!-- Tampilkan placeholder jika tidak ada thumbnail -->
+  <div class="relative">
+    <div class="w-full h-72 bg-gray-200 flex items-center justify-center">
+      <span class="text-gray-400">Tidak ada gambar</span>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+      <div class="flex items-center justify-between">
+        <p class="text-white text-xs font-bold w-72 uppercase">{{ .Params.title }}</p>
+        <span class="text-gray-300 text-xs">
+          {{ partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "short") }}
+        </span>
+      </div>
+    </div>
+  </div>
   {{ end }}
   </a>
   {{ if not (or (or .Site.Params.hideOtherLanguages .Params.hideOtherLanguages) false) }}
@@ -36,7 +51,7 @@
 <style>
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ubah ukuran minimal kolom */
   gap: 1.5rem;
   padding: 1.5rem;
 }
