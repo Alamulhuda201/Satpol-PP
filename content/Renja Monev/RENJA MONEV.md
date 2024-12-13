@@ -1,8 +1,9 @@
 ---
+
 title: "RENJA MONEV"
 date: 2024-12-09
-layout: "renja-monev"
-summary: "Dokumen terkait RENJA MONEV, SOP, dan dokumen penting lainnya."
+# layout: "renja-monev"
+# summary: "Dokumen terkait RENJA MONEV, SOP, dan dokumen penting lainnya."
 sections:
   renja2024:
     title: "RENJA 2024"
