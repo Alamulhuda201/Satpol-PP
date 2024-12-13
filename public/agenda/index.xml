@@ -29,5 +29,19 @@
       <guid>//localhost:1313/agenda/apel-senin-pagi/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Rapat Evaluasi</title>
+      <link>//localhost:1313/agenda/rapat-evaluasi/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/agenda/rapat-evaluasi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rapat Kamis Siang</title>
+      <link>//localhost:1313/agenda/rapat-kamis-siang/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/agenda/rapat-kamis-siang/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
