@@ -1,9 +1,9 @@
 ---
 author: satpolpp@kalbarprov.go.id
-title: "DAFTAR SOP KEUANGAN DAN ASET"
+# title: "DAFTAR SOP KEUANGAN DAN ASET"
 date: 2024-09-09 04:09:35
 ---
-<ol>
+<!-- <ol>
 <ol>
 <li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf" title="SOP sekretariat 36-47 Keuangan dan Aset_rotated.pdf">36. SOP BUKU KAS UMUM (BKU)</a></li>
 <li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">37. SOP PAJAK</a></li>
@@ -31,4 +31,4 @@ date: 2024-09-09 04:09:35
 </ol>
 </ol>
 
-<p></p>
+<p></p> -->

@@ -1,7 +1,6 @@
 ---
 title: "Keuangan Dan Aset"
 date: 2024-08-21
-<<<<<<< HEAD
 # layout: "keuangan-dan-aset"
 # summary: "Dokumen terkait Daftar Aset Badan Publik Tahun 2023"
 
@@ -122,27 +121,3 @@ sections:
 
 
 
-=======
-layout: "keuangan-dan-aset"
-summary: "Dokumen terkait Daftar Aset Badan Publik Tahun 2023"
-assets:
-  - title: "DAFTAR BARANG ASET PERALATAN MESIN"
-    category: "Peralatan Mesin"
-    link: "/file/AFITtmZfYfSmYRrBoVWr.pdf"
-  - title: "LAPORAN DAFTAR BARANG TANAH"
-    category: "Tanah"
-    link: "/file/2Mucs5RAp0RIa8VFCooq.pdf"
-  - title: "LAPORAN DAFTAR BARANG ASET GEDUNG DAN BANGUNAN"
-    category: "Gedung dan Bangunan"
-    link: "/file/lN9nC9jKrMXTw4012yM0.pdf"
-  - title: "LAPORAN DAFTAR BARANG ASET JALAN, JARINGAN DAN IRIGASI"
-    category: "Jalan, Jaringan dan Irigasi"
-    link: "/file/euh8R0dOYxkfSJ1atsAy.pdf"
-  - title: "LAPORAN DAFTAR BARANG ASET TIDAK BERWUJUD"
-    category: "Tidak Berwujud"
-    link: "/file/Qam18KFYcAIvVHGR5QdQ.pdf"
-  - title: "LAPORAN DAFTAR BARANG ASET TETAP LAINNYA"
-    category: "Aset Tetap Lainnya"
-    link: "/file/GepKuLxKmQXDGdTMzD4E.pdf"
----
->>>>>>> 3afb1806a12d2ee03fcccaa3a26c20a3250ad3cd

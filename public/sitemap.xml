@@ -20,11 +20,23 @@
     <loc>//localhost:1313/agenda/apel-senin-pagi/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/agenda/rapat-evaluasi/</loc>
+    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/agenda/rapat-kamis-siang/</loc>
+    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/bidang-pembinaan-masyarakat/</loc>
     <lastmod>2024-11-07T08:40:29+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/bidang-pembinaan-masyarakat/laporan-kegiatan-bidang-pembinaan-mayarakat/</loc>
     <lastmod>2024-11-07T08:40:29+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/keuangan-dan-aset/</loc>
+    <lastmod>2024-11-07T03:00:31+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/keuangan-dan-aset/realisasi-fisik/</loc>
+    <lastmod>2024-11-07T03:00:31+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/flyers/</loc>
     <lastmod>2024-10-28T03:50:17+00:00</lastmod>
@@ -58,9 +70,6 @@
   </url><url>
     <loc>//localhost:1313/aparatur/aparatur/</loc>
     <lastmod>2024-09-26T04:02:34+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/keuangan-dan-aset/</loc>
-    <lastmod>2024-09-24T04:16:47+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/keuangan-dan-aset/laporan-keuangan/</loc>
     <lastmod>2024-09-24T04:16:47+00:00</lastmod>
@@ -127,6 +136,9 @@
   </url><url>
     <loc>//localhost:1313/bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah/daftar-sop-bidang-penegakan-peraturan-daerah-dan-peraturan-kepala-daerah/</loc>
     <lastmod>2024-09-09T07:03:47+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/keuangan-dan-aset/daftar-sop-keuangan-dan-aset/</loc>
+    <lastmod>2024-09-09T04:09:35+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/umum--aparatur/daftar-sop-umum-dan-aparatur/</loc>
     <lastmod>2024-09-09T03:22:08+00:00</lastmod>
@@ -343,10 +355,6 @@
   </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/keuangan-dan-aset/daftar-sop-keuangan-dan-aset/</loc>
-  </url><url>
-    <loc>//localhost:1313/keuangan-dan-aset/realisasi-fisik/</loc>
   </url><url>
     <loc>//localhost:1313/vidio/tahukah-kamu-fungsi-trotoar/</loc>
   </url><url>
