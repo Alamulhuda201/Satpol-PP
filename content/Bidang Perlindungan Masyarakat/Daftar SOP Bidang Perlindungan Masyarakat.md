@@ -2,6 +2,7 @@
 author: satpolpp@kalbarprov.go.id
 title: "Daftar SOP Bidang Perlindungan Masyarakat"
 date: 2024-09-09 07:56:53
+
 sections:
   daftar-sop-bidang-perlindungan-masyarakat:
     title: "Daftar SOP Bidang Perlindungan Masyarakat"

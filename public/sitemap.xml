@@ -200,6 +200,9 @@
     <loc>//localhost:1313/keuangan-dan-aset/daftar-aset-badan-publik-tahun-2023/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/keuangan-dan-aset/keuangan-dan-aset/</loc>
+    <lastmod>2024-08-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/formulir-ppid/</loc>
     <lastmod>2024-08-20T08:47:54+00:00</lastmod>
   </url><url>
@@ -212,10 +215,10 @@
     <loc>//localhost:1313/jalur-evakuasi/jalur-evakuasi/</loc>
     <lastmod>2024-08-20T04:18:01+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/jadwal-pelayanan-informasi-publik/</loc>
+    <loc>//localhost:1313/tata-cara/</loc>
     <lastmod>2024-08-20T03:53:29+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/jadwal-pelayanan-informasi-publik/tata-cara/</loc>
+    <loc>//localhost:1313/tata-cara/tata-cara/</loc>
     <lastmod>2024-08-20T03:53:29+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/permohonan-online-ppid/permohonan-online-ppid/</loc>
@@ -366,12 +369,12 @@
   </url><url>
     <loc>//localhost:1313/galeri/galerikegiatan/</loc>
   </url><url>
+    <loc>//localhost:1313/jadwal-pelayanan-informasi-publik/</loc>
+  </url><url>
     <loc>//localhost:1313/link-terkait/</loc>
   </url><url>
     <loc>//localhost:1313/permohonan-online/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
-  </url><url>
-    <loc>//localhost:1313/tata-cara/</loc>
   </url>
 </urlset>

@@ -1,32 +1,52 @@
 <div class="w-full md:w-1/2 p-6">
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-    {{ $sections := .Params.sections }}
-    {{ range $key, $section := $sections }}
     <div class="p-6">
       <div class="flex items-center">
         <div class="ml-2">
           <p class="text-gray-600 dark:text-gray-400 text-sm">
-            <a href="{{ $section.url }}" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">
-              {{ $section.title }}
-            </a>
+            {{ .Date.Format "January 2, 2006" }}
           </p>
         </div>
       </div>
       <div class="mt-2">
-        {{ if $section.items }}
-        <ul>
-          {{ range $section.items }}
-          <li>
-            <a href="{{ .url }}" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">
-              {{ .number }}. {{ .title }}
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-      
+        <a href="{{ .RelPermalink }}" class="text-2xl font-semibold text-gray-900 dark:text-white hover:text-blue-600">
+          {{ .Title }}
+        </a>
+       
+      </div>
+      <div class="mt-4">
+        <!-- Mengakses elemen di sections -->
+        {{ $sopList := index .Params.sections "daftar-sop-bidang penegakan-peraturan-daerah-dan-peraturan-kepala-daerah" }}
+        {{ range $sopList.items }}
+        <div class="mb-4">
+          <a href="{{ .url }}" class="text-lg font-medium text-blue-600 hover:underline">
+            {{ .number }}. {{ .title }}
+          </a>
+        </div>
         {{ end }}
+
+        <div class="w-full md:w-1/2 p-6">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Daftar SOP Umum dan Aparatur</h2>
+              {{ with (index .Params.sections "daftar-sop-umum-dan-aparatur").items }}
+              <ul class="mt-4 space-y-2">
+                {{ range . }}
+                <li>
+                  <a href="{{ .url }}" class="text-blue-600 hover:underline">
+                    {{ .number }}. {{ .title }}
+                  </a>
+                </li>
+                {{ end }}
+              </ul>
+              {{ else }}
+              <p class="text-gray-600 dark:text-gray-400">Tidak ada daftar SOP yang tersedia.</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
-    {{ end }}
   </div>
 </div>

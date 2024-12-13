@@ -36,5 +36,12 @@
       <guid>//localhost:1313/keuangan-dan-aset/daftar-aset-badan-publik-tahun-2023/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Keuangan Dan Aset</title>
+      <link>//localhost:1313/keuangan-dan-aset/keuangan-dan-aset/</link>
+      <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/keuangan-dan-aset/keuangan-dan-aset/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

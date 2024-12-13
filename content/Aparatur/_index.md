@@ -1,5 +1,5 @@
 ---
 author: AWDI
 title: Aparatur
-type: article
+type: page
 ---

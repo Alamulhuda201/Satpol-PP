@@ -258,7 +258,7 @@ weight = 4
 identifier = "laporan ppid"
 name = "Laporan PPID"
 parent = "ppid"
-url = "/laporan-ppid/laporan-ppid"
+url = "/laporan-ppid"
 weight = 7
 
 [[languages.id.menu.main]]
@@ -292,21 +292,21 @@ weight = 4
 identifier = "daftar informasi"
 name = "Daftar Informasi"
 parent = "ppid"
-url = "/daftar-informasi-publik/daftar-informasi"
+url = "/daftar-informasi-publik"
 weight = 5
 
 [[languages.id.menu.main]]
 identifier = "sop ppid"
 name = "SOP PPID"
 parent = "ppid"
-url = "/sop-ppid/sop-pelayanan-publik"
+url = "/sop-ppid"
 weight = 3
 
 [[languages.id.menu.main]]
 identifier = "formulir ppid"
 name = "Formulir PPID"
 parent = "ppid"
-url = "/formulir-ppid/formulir-ppid"
+url = "/formulir-ppid"
 weight = 8
 
 [[languages.id.menu.main]]
@@ -320,7 +320,7 @@ weight = 5
 identifier = "tata cara"
 name = "Tata Cara"
 parent = "ppid"
-url = "/jadwal-pelayanan-informasi-publik/tata-cara"
+url = "/tata-cara"
 weight = 4
 
 [[languages.id.menu.main]]
@@ -334,7 +334,7 @@ weight = 8
 identifier = "permohonan online"
 name = "Permohonan Online"
 parent = "ppid"
-url = "/permohonan-online-ppid/permohonan-online-ppid"
+url = "/permohonan-online-ppid"
 weight = 6
 
 [[languages.id.menu.main]]
@@ -348,7 +348,7 @@ weight = 5
 identifier = "jumlah permohonan informasi"
 name = "Jumlah Permohonan Informasi"
 parent = "ppid"
-url = "/jumlah-permohonan-informasi/jumlah-permohonan-informasi"
+url = "/jumlah-permohonan-informasi"
 weight = 9
 
 [[languages.id.menu.main]]
@@ -411,14 +411,14 @@ weight = 7
 identifier = "regulasi ppid"
 name = "Regulasi PPID"
 parent = "ppid"
-url = "/regulasi-ppid/regulasi-ppid"
+url = "/regulasi-ppid"
 weight = 10
 
 [[languages.id.menu.main]]
 identifier = "formulir ppid utama"
 name = "Formulir PPID Utama"
 parent = "ppid"
-url = "/permohonan-online-ppid/form-ppid-utama"
+url = "/permohonan-online-ppid"
 weight = 2
 
 [[languages.id.menu.main]]

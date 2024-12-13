@@ -2,6 +2,7 @@
 author: satpolpp@kalbarprov.go.id
 title: "Daftar SOP Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah"
 date: 2024-09-09 07:03:47
+
 sections:
     daftar-sop-bidang penegakan-peraturan-daerah-dan-peraturan-kepala-daerah:
         title: "Daftar Sop Bidang Penegakan Peraturan Daerah Dan Peraturan Kepala Daerah"
@@ -30,5 +31,4 @@ sections:
               number: 80
               title: "SOP Operasi Penegakan Peraturan Daerah dan Peraturan Kepala Daerah"
               url: /file/ZLBMsYNHhWGZfIQpOhob.pdf
-
 ---

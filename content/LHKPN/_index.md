@@ -1,5 +1,5 @@
 ---
 author: AWDI
 title: LHKPN
-type: article
+type: page
 ---
