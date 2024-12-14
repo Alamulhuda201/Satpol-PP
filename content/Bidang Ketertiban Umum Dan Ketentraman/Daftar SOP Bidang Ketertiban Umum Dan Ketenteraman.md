@@ -2,34 +2,17 @@
 author: satpolpp@kalbarprov.go.id
 title: "Daftar SOP Bidang Ketertiban Umum Dan Ketenteraman"
 date: 2024-09-09 07:40:13
-
-sections:
-    daftar-sop-bidang-ketertiban-umum-dan-ketentraman:
-        title: "Daftar SOP Bidang Ketertiban Umum dan Ketentrama"
-        items: 
-            - id: "sop-penjagaan-lokasi-kunjungan-kerja-pejabat-pemerintah-daerah"
-              number: 85
-              title: "SOP Penjagaan Lokasi Kunjungan Kerja Pejabat Pemerintah Daerah"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-            - id: "sop-penjagaan-rumah-dinas-jab-pemda"
-              number: 86
-              title: "SOP Penjagaan Rumah Dinas Jab.Pemda"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-            - id: "sop-penjagaan-sekitar-ruang-kerja-pejabat-pemerintah-daerah"
-              number: 87
-              title: "SOP Penjagaan Sekitar Ruang Kerja Pejabat Pemerintah Daerah"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-            - id: "sop-penjagaan-tempat-kedatangan-dan-tujuan-tamu-delegasi-vip-dan-vvip"
-              number: 88
-              title: "SOP Penjagaan Tempat Kedatangan Dan Tujuan Tamu Delegasi VIP Dan VVIP"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-            - id: "sop-penjagaan-gedung-dan-asset-penting"
-              number: 89
-              title: "SOP Penjagaan Gedung Dan Asset Penting"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-            - id: "sop-penjagaan-upacara-dan-acara-penting"
-              number: 90
-              title: "SOP Penjagaan Upacara Dan Acara Penting"
-              url: /file/XOvkraLoLYNIUKfWBe9S.pdf
-
 ---
+<details>
+<summary>Daftar SOP Bidang Ketertiban Umum dan Ketentraman</summary>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">85. SOP Penjagaan Lokasi Kunjungan Kerja Pejabat Pemerintah Daerah</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">86. SOP Penjagaan Rumah Dinas Jab.Pemda</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">87. SOP Penjagaan Sekitar Ruang Kerja Pejabat Pemerintah Daerah</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">88. SOP Penjagaan Tempat Kedatangan Dan Tujuan Tamu Delegasi VIP Dan VVIP</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">89. SOP Penjagaan Gedung Dan Asset Penting</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">90. SOP Penjagaan Upacara Dan Acara Penting</a></p>
+
+</details>
+
+
+

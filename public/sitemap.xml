@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/renja-monev/</loc>
-    <lastmod>2024-12-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/renja-monev/renja-monev/</loc>
-    <lastmod>2024-12-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/agenda/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -119,7 +113,7 @@
     <loc>//localhost:1313/bidang-perlindungan-masyarakat/</loc>
     <lastmod>2024-09-09T07:56:53+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/bidang-perlindungan-masyarakat/daftar-sop-bidang-perlindungan-masyarakat/</loc>
+    <loc>//localhost:1313/bidang-perlindungan-masyarakat/bidang-perlindungan-masyarakat/</loc>
     <lastmod>2024-09-09T07:56:53+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/bidang-ketertiban-umum-dan-ketentraman/</loc>
@@ -197,10 +191,10 @@
     <loc>//localhost:1313/pelita-perda/rekapitulasi-ketentuan-pelanggaran-dan-sanksi-perda-prov-kalbar/</loc>
     <lastmod>2024-08-22T02:45:14+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/keuangan-dan-aset/daftar-aset-badan-publik-tahun-2023/</loc>
+    <loc>//localhost:1313/keuangan-dan-aset/keuangan-dan-aset/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/keuangan-dan-aset/keuangan-dan-aset/</loc>
+    <loc>//localhost:1313/keuangan-dan-aset/daftar-aset-badan-publik-tahun-2023/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/formulir-ppid/</loc>
@@ -359,6 +353,8 @@
     <loc>//localhost:1313/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/renja-monev/renja-monev/</loc>
+  </url><url>
     <loc>//localhost:1313/vidio/tahukah-kamu-fungsi-trotoar/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
@@ -374,6 +370,8 @@
     <loc>//localhost:1313/link-terkait/</loc>
   </url><url>
     <loc>//localhost:1313/permohonan-online/</loc>
+  </url><url>
+    <loc>//localhost:1313/renja-monev/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>

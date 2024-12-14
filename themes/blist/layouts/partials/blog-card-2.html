@@ -1,7 +1,7 @@
 <div class="w-full md:w-1/2 p-6"></div>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
     {{ if .Params.image }}
-    <a href="{{ .RelPermalink }}">
+    <!-- <a href="{{ .RelPermalink }}"> -->
       <img class="w-full h-48 object-cover" src="{{ .Params.image }}" alt="{{ .Title }}">
     </a>
     {{ end }}
@@ -19,7 +19,7 @@
         </a>
         <p class="mt-2 text-gray-600 dark:text-gray-400">
           {{ if .Description }}
-            {{ .Description | truncate 120 }}
+            {{ .Description | truncate 120 "..." false}}
           {{ else }}
             {{ .Summary | truncate 120 }}
           {{ end }}

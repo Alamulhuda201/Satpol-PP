@@ -1,5 +1,10 @@
-<div class="w-full md:w-1/2 p-6">
+<div class="w-full md:w-1/2 p-6"></div>
   <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+    {{ if .Params.image }}
+    <a href="{{ .RelPermalink }}">
+      <img class="w-full h-48 object-cover" src="{{ .Params.image }}" alt="{{ .Title }}">
+    </a>
+    {{ end }}
     <div class="p-6">
       <div class="flex items-center">
         <div class="ml-2">
@@ -12,40 +17,35 @@
         <a href="{{ .RelPermalink }}" class="text-2xl font-semibold text-gray-900 dark:text-white hover:text-blue-600">
           {{ .Title }}
         </a>
-       
-      </div>
-      <div class="mt-4">
-        <!-- Mengakses elemen di sections -->
-        {{ $sopList := index .Params.sections "daftar-sop-bidang penegakan-peraturan-daerah-dan-peraturan-kepala-daerah" }}
-        {{ range $sopList.items }}
-        <div class="mb-4">
-          <a href="{{ .url }}" class="text-lg font-medium text-blue-600 hover:underline">
-            {{ .number }}. {{ .title }}
-          </a>
-        </div>
-        {{ end }}
-
-        <div class="w-full md:w-1/2 p-6">
-          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-            <div class="p-6">
-              <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Daftar SOP Umum dan Aparatur</h2>
-              {{ with (index .Params.sections "daftar-sop-umum-dan-aparatur").items }}
-              <ul class="mt-4 space-y-2">
-                {{ range . }}
-                <li>
-                  <a href="{{ .url }}" class="text-blue-600 hover:underline">
-                    {{ .number }}. {{ .title }}
-                  </a>
-                </li>
-                {{ end }}
-              </ul>
-              {{ else }}
-              <p class="text-gray-600 dark:text-gray-400">Tidak ada daftar SOP yang tersedia.</p>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">
+          {{ range $key, $value := .Params.sections }}
+            <div>
+              <a href="{{ $value.url }}" class="text-blue-600 hover:text-blue-800">
+                {{ $value.title }}
+              </a>
+              <br />
+              
+              {{ if $value.items }}
+                <ul>
+                  {{ range $item := $value.items }}
+                    <li>
+                      <a href="{{ $item.url }}" class="text-blue-600 hover:text-blue-800">
+                        {{ $item.number }}. {{ $item.title }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
               {{ end }}
             </div>
-          </div>
-        </div>
-        
+          {{ end }}
+        </p>
+      </div>
+      <div class="mt-4">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2">
+          #{{ . }}
+        </a>
+        {{ end }}
       </div>
     </div>
   </div>
