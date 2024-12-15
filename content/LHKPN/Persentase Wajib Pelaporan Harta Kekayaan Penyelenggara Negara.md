@@ -8,9 +8,6 @@ date: 2024-08-15 02:21:50
 #         url: /file/H1Sj8vM3XZPBfDbOYTPd.pdf
 ---
 
-<details>
-<summary>Persentase Wajib Pelaporan Harta Kekayaan Penyelenggara Negara Di Lingkungan Satuan Polisi Pamong Praja Provinsi Kalimantan Barat (Jenis Laporan Periodik 2023)</summary>
-<iframe src="/file/H1Sj8vM3XZPBfDbOYTPd.pdf" width="100%" height="600"></iframe>
-</details>
+<p><a href="/file/H1Sj8vM3XZPBfDbOYTPd.pdf" target="_blank">Persentase Wajib Pelaporan Harta Kekayaan Penyelenggara Negara Di Lingkungan Satuan Polisi Pamong Praja Provinsi Kalimantan Barat (Jenis Laporan Periodik 2023)</a></p>
 
 

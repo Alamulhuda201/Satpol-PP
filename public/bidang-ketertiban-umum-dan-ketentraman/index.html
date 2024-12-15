@@ -598,7 +598,6 @@
         }
       }
     </style>
-    <span id="loadmodaldisabilitas"></span>
 
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
@@ -1555,36 +1554,97 @@
     
 
       
-        <div class="w-full md:w-1/2 p-6"></div>
-  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-    
-    <div class="p-6">
-      <div class="flex items-center">
-        <div class="ml-2">
-          <p class="text-gray-600 dark:text-gray-400 text-sm">
-            September 9, 2024
-          </p>
+        <div class="flex border-2 border-gray-200 flex-row bg-gray-100 rounded-xl shadow-md hover:shadow-xl transition duration-300 max-w-screen-xl w-screen">
+  <div class="w-1/2 p-6 flex flex-col">
+    <div class="flex-1 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+      <div class="flex flex-wrap no-underline">
+        <div class="w-full px-8 py-6 border-b border-gray-100">
+          <h2 class="font-bold text-3xl text-gray-800 hover:text-blue-600 transition duration-300 mb-2">
+            Daftar SOP Bidang Ketertiban Umum Dan Ketenteraman
+          </h2>
+          <div class="text-gray-500 text-sm flex items-center">
+            <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            09 September 2024
+          </div>
+        </div>
+        <div class="w-full px-8 py-6 text-gray-600 text-base leading-relaxed space-y-4 hover:text-gray-800 transition-colors duration-200" id="content-container">
+          <details>
+<summary>Daftar SOP Bidang Ketertiban Umum dan Ketentraman</summary>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">85. SOP Penjagaan Lokasi Kunjungan Kerja Pejabat Pemerintah Daerah</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">86. SOP Penjagaan Rumah Dinas Jab.Pemda</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">87. SOP Penjagaan Sekitar Ruang Kerja Pejabat Pemerintah Daerah</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">88. SOP Penjagaan Tempat Kedatangan Dan Tujuan Tamu Delegasi VIP Dan VVIP</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">89. SOP Penjagaan Gedung Dan Asset Penting</a></p>
+<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">90. SOP Penjagaan Upacara Dan Acara Penting</a></p>
+</details>
+
         </div>
       </div>
-      <div class="mt-2">
-        <a href="/bidang-ketertiban-umum-dan-ketentraman/daftar-sop-bidang-ketertiban-umum-dan-ketenteraman/" class="text-2xl font-semibold text-gray-900 dark:text-white hover:text-blue-600">
-          Daftar SOP Bidang Ketertiban Umum Dan Ketenteraman
-        </a>
-        <p class="mt-2 text-gray-600 dark:text-gray-400">
-          
-            <details>
-<summary>Daftar SOP Bidang Ketertiban Umum dan Ketentraman</summary>
-<p><a href=" /file/XOvkraLoLYNIUKfWBe9S.pdf" target="_blank">85. SOP Penjagaan Lokasi Kunjungan Kerja Pejabat Pemerintah Daerah …</a></p></details>
-          
-        </p>
-      </div>
-      <div class="mt-4">
-        
+    </div>
+  </div>
+
+  <div class="w-1/2 p-6">
+    <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-blue-400 transition">
+        <div class="flex items-center mb-4">
+          <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <h3 class="text-gray-800 font-bold text-lg">File Dokumen</h3>
+        </div>
+        <div class="text-gray-600">
+          <div class="h-96 rounded-lg overflow-hidden" id="pdf-container">
+            <iframe id="pdf-viewer" src="" width="100%" height="100%" class="border-0"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contentContainer = document.getElementById('content-container');
+  const pdfViewer = document.getElementById('pdf-viewer');
+  
+  contentContainer.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const pdfUrl = e.target.getAttribute('href');
+      
+      
+      pdfViewer.classList.add('opacity-50');
+      setTimeout(() => pdfViewer.classList.remove('opacity-50'), 1000);
+      
+      if (pdfUrl.includes('drive.google.com')) {
+        const fileId = pdfUrl.match(/\/d\/(.*?)\/view/)[1];
+        const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+        pdfViewer.setAttribute('src', embedUrl);
+      }
+      else if (pdfUrl.includes('satpolpp.kalbarprov.go.id')) {
+        window.open(pdfUrl, '_blank');
+      }
+      else if (pdfUrl.endsWith('.pdf') || pdfUrl.includes('/file/')) {
+        pdfViewer.setAttribute('src', pdfUrl);
+      }
+      else {
+        const encodedUrl = encodeURIComponent(pdfUrl.startsWith('http') ? pdfUrl : window.location.origin + pdfUrl);
+        const googleDocsViewer = `https://docs.google.com/viewer?url=${encodedUrl}&embedded=true`;
+        pdfViewer.setAttribute('src', googleDocsViewer);
+      }
+      
+      
+      const allLinks = contentContainer.getElementsByTagName('A');
+      for(let link of allLinks) {
+        link.classList.remove('text-blue-600', 'font-bold');
+      }
+      e.target.classList.add('text-blue-600', 'font-bold');
+    }
+  });
+});
+</script>
 
       
     

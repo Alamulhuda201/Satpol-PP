@@ -223,11 +223,11 @@ date: 2024-09-26 04:02:34
 
 <details>
   <summary>Daftar SOP Kelembagaan</summary>
-  <iframe src="/file/SW3PR6IHy8hOfHooAjTG.pdf" width="100%" height="500"></iframe>
+  <p><a href="/file/SW3PR6IHy8hOfHooAjTG.pdf" target="_blank">Daftar SOP Kelembagaan</a></p>
 </details>
+
 <details>
   <summary>Daftar SOP Umum dan Aparatur</summary>
-
   <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">1. SOP IJIN TUGAS BELAJAR</a></p>
   <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">2. SOP PENERBITAN SURAT KETERANGAN</a></p>
   <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">3. SOP PENGUSULAN KENAIKAN GAJI BERKALA</a></p>
@@ -263,13 +263,10 @@ date: 2024-09-26 04:02:34
   <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">33. SOP PENANGANAN KOMPLAIN SARAN</a></p>
   <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">34. SOP PENANGANAN KOMPLAIN KRITIK</a></p>
   <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">35. SOP PENANGANAN KOMPLAIN PENGHARGAAN</a></p>
-  
 </details>
-
 
 <details>
   <summary>Daftar SOP Kelembagaan Baru</summary>
-  
   <p><a href="/file/rekap-golongan-ruang" target="_blank">1. REKAPITULASI PNS BERDASARKAN GOLONGAN RUANG</a></p>
   <p><a href="/file/rekap-golongan-dan-jenis-kelamin" target="_blank">2. REKAPITULASI PNS BERDASARKAN GOLONGAN DAN JENIS KELAMIN</a></p>
   <p><a href="/file/rekap-agama-dan-jenis-kelamin" target="_blank">3. REKAPITULASI PNS BERDASARKAN AGAMA DAN JENIS KELAMIN</a></p>
@@ -285,57 +282,42 @@ date: 2024-09-26 04:02:34
   <p><a href="/file/bezeting-pegawai" target="_blank">13. BEZETING PEGAWAI DETAIL PER JABATAN BERDASARKAN ESELON, GOLONGAN DAN PENDIDIKAN</a></p>
 </details>
 
-
 <details>
   <summary>LHKPN</summary>
- <iframe src="/file/H1Sj8vM3XZPBfDbOYTPd.pdf" width="100%" height="600"></iframe>
+  <p><a href="/file/H1Sj8vM3XZPBfDbOYTPd.pdf" target="_blank">LHKPN</a></p>
 </details>
 
 <details>
   <summary>Persentase Pendidikan PNS</summary>
- <iframe src="/file/uN6ynSoKl7A9xcyWmJ7N.pdf" width="100%" height="600"></iframe>
+  <p><a href="/file/uN6ynSoKl7A9xcyWmJ7N.pdf" target="_blank">Persentase Pendidikan PNS</a></p>
 </details>
 
 <details>
   <summary>Persentase Pendidikan Banpol</summary>
- <iframe src="/file/AEQR6yLXJ2nSxKyYK1kG.pdf" width="100%" height="600"></iframe>
+  <p><a href="/file/AEQR6yLXJ2nSxKyYK1kG.pdf" target="_blank">Persentase Pendidikan Banpol</a></p>
 </details>
 
 <details>
   <summary>Grafik Pegawai</summary>
- <iframe src="" width="100%" height="600"></iframe>
+  <p><a href="#" target="_blank">Grafik Pegawai</a></p>
 </details>
 
 <details>
   <summary>Daftar Urut Kepangkatan</summary>
- <iframe src="" width="100%" height="600"></iframe>
+  <p><a href="#" target="_blank">Daftar Urut Kepangkatan</a></p>
 </details>
+
 <details>
   <summary>Kenaikan Pangkat</summary>
- <iframe src="" width="100%" height="600"></iframe>
+  <p><a href="#" target="_blank">Kenaikan Pangkat</a></p>
 </details>
 
 <details>
   <summary>Kenaikan Berkala</summary>
- <iframe src="" width="100%" height="600"></iframe>
+  <p><a href="#" target="_blank">Kenaikan Berkala</a></p>
 </details>
 
 <details>
   <summary>Peta Jabatan</summary>
- <iframe src="" width="100%" height="600"></iframe>
+  <p><a href="#" target="_blank">Peta Jabatan</a></p>
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-i

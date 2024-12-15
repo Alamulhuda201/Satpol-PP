@@ -1,117 +1,60 @@
 ---
-# title: "Keuangan Dan Aset"
+title: "Keuangan Dan Aset"
 date: 2024-08-21
-# layout: "keuangan-dan-aset"
-
-
-# sections:
-#     daftar-sop-keuangan-dan-aset:
-#         title: "Daftar SOP Keuangan Dan Aset"
-#         items:
-#             - id: "daftar-aset-badan-publik-tahun-2023"
-#               number: 36
-#               title: "SOP BUKU KAS UMUM (BKU)"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf" 
-#             - id: "sop-pajak"
-#               number: 37
-#               title: "SOP PAJAK"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengeluaran-barang-inventaris"
-#               number: 38
-#               title: "SOP PENGELUARAN BARANG INVENTARIS"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penyusunan-calk"
-#               number: 39
-#               title: "SOP PENYUSUNAN CALK"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-gu"
-#               number: 40
-#               title: "SOP GU"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penyusunan-laporan-realisasi-anggaran"
-#               number: 41
-#               title: "SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-permintaan-gaji"
-#               number: 42
-#               title: "SOP PERMINTAAN GAJI"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pencairan-anggaran"
-#               number: 43
-#               title: "SOP PENCAIRAN ANGGARAN"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pencairan-dana-kegiatan"
-#               number: 44
-#               title: "SOP PENCAIRAN DANA KEGIATAN"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengajuan-spm-gaji"
-#               number: 45
-#               title: "SOP PENGAJUAN SPM GAJI"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pencairan-up"
-#               number: 46
-#               title: "SOP PENCAIRAN UP"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penerimaan-dan-pengeluaran-barang-inventaris"
-#               number: 47
-#               title: "SOP PENERIMAAN DAN PENGELUARAN BARANG INVENTARIS"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penerimaan-barang-inventaris"
-#               number: 48
-#               title: "SOP PENERIMAAN BARANG INVENTARIS"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengadaan-pemeliharaan-barang"
-#               number: 49
-#               title: "SOP PENGADAAN PEMELIHARAAN BARANG"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengajuan-dana-up"
-#               number: 50
-#               title: "SOP PENGADUAN DANA UP"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penghapusan-barang"
-#               number: 51
-#               title: "SOP PENGHAPUSAN BARANG"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengurusan-barang"
-#               number: 52
-#               title: "SOP PENGURUSAN BARANG"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-penyusunan-laporan-keuangan-akhir-tahun"
-#               number: 54
-#               title: "SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR TAHUN"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pelaksanaan-verifikasi-spj"
-#               number: 55
-#               title: "SOP PELAKSANAAN VERIFIKASI SPJ"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-identitas-rkbmd"
-#               number: 56
-#               title: "SOP IDENTITAS RKBMD"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengajuan-usulan-lp2p"
-#               number: 57
-#               title: "SOP PENGAJUAN USULAN LP2P"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "sop-pengajuan-permintaan-gu"
-#               number: 58
-#               title: "SOP PENGAJUAN PERMINTAAN GU"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#     laporan-keuangan-tahun-2023:
-#         title: "LAPORAN KEUANGAN TAHUN 2023"
-#         url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#     realisasi-fisik-tahun-2024:
-#         title: "REALISASI FISIK TAHUN 2024"
-#         items:
-#             - id: "realisasi-fisik-tw-I-tahun-2024"
-#               title: "REALISASI FISIK TW I TAHUN 2024"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "realisasi-fisik-tw-II-tahun-2024"
-#               title: "REALISASI FISIK TW II TAHUN 2024"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "realisasi-fisik-tw-iii-tahun-2024"
-#               title: "REALISASI FISIK TW III TAHUN 2024"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
-#             - id: "realisasi-fisik-periode-desember-2024"
-#               title: "REALISASI FISIK PERIODE DESEMBER 2024"
-#               url: "/file/6QaJqViHc7u7fgpuVPTr.pdf"
 ---
+
+
+
+
+<p><a href="https://satpolpp.kalbarprov.go.id/file/DiEW3mrGQNDvlV0BHzXs.pdf">Laporan Keuangan Tahun 2023</a></p>
+
+
+<details>
+<summary>Daftar Aset Badan Publik Tahun 2023</summary>
+<p><a href="/file/AFITtmZfYfSmYRrBoVWr.pdf">Daftar Barang Aset Peralatan Publik</a></p>
+<p><a href="/file/2Mucs5RAp0RIa8VFCooq.pdf">Daftar Barang Tanah</a></p>
+<p><a href="/file/lN9nC9jKrMXTw4012yM0.pdf">Laporan Dafatar Barang Aset Gedung dan Bangunan</a></p>
+<p><a href="/file/euh8R0dOYxkfSJ1atsAy.pdf">Laporan Daftar Barang Aset Jalan, Jaringan dan Irigasi</a></p>
+<p><a href="/file/Qam18KFYcAIvVHGR5QdQ.pdf">Laporan Daftar Barang Aset Tidak Berwujud</a></p>
+<p><a href="/file/GepKuLxKmQXDGdTMzD4E.pdf">Laporan Daftar Barang Aset Tetap Lainnya</a></p>
+</details>
+
+
+<details>
+<summary>DAFTAR SOP KEUANGAN DAN ASET</summary>
+<ol>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf" title="SOP sekretariat 36-47 Keuangan dan Aset_rotated.pdf">36. SOP BUKU KAS UMUM (BKU)</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">37. SOP PAJAK</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">38. SOP PENGELUARAN BARANG INVENTARIS</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">39. SOP PENYUSUNAN CALK</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">40. SOP GU</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">41. SOP PENYUSUNAN LAPORAN REALISASI ANGGARAN</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">42. SOP PERMINTAAN GAJI</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">43.SOP PENCAIRAN ANGGARAN</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">44. SOP PENCAIRAN DANA KEGIATAN</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">45. SOP PENGAJUAN SPM GAJI</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">46. SOP PENCAIRAN UP</a></li>
+<li><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">47. SOP PENER DAN PENG BARANG INVENTARIS</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">48. SOP PENERIMAAN BARANG INVENTARIS</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">49. SOP PENGADAAN PEMELIHARAAN BARANG</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">50. SOP PENGAJUAN DANA UP</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">51. SOP PENGHAPUSAN BARANG</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">52. SOP PENGURUSAN BARANG</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">54. SOP PENYUSUNAN LAPORAN KEUANGAN AKHIR</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">55. SOP PELAKSANAAN VERIFIKASI SPJ</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">56. SOP IDENTITAS RKBMD</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">56. SOP PENYAMPAIAN RKBMD</a></li>
+<li><a href=".https:/awdi.kalbarprov.go.id/storage/satpolpp.kalbarprov.go.id/file/8fwLBhStZTcRuTs3r9NQ.pdf">57 SOP PENGAJUAN USULAN LP2P</a></li>
+<li><a href="/file/8fwLBhStZTcRuTs3r9NQ.pdf">58. SOP PENGAJUAN PERMINTAAN GU</a></li>
+</ol>
+</details>
+
+
+<details>
+<summary>REALISASI FISIK TAHUN 2024</summary>
+<p><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">REALISASI FISIK TW I TAHUN 2024</a></p>
+<p><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">REALISASI FISIK TW II TAHUN 2024</a></p>
+<p><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">REALISASI FISIK TW III TAHUN 2024</a></p>
+<p><a href="/file/6QaJqViHc7u7fgpuVPTr.pdf">REALISASI FISIK PERIODE DESEMBER 2024</a></p>
+</details>
+

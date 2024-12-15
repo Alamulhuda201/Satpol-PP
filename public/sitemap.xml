@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/renja-monev/</loc>
+    <lastmod>2024-12-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/renja-monev/renja-monev/</loc>
+    <lastmod>2024-12-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/agenda/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -353,8 +359,6 @@
     <loc>//localhost:1313/</loc>
     <lastmod>2021-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/renja-monev/renja-monev/</loc>
-  </url><url>
     <loc>//localhost:1313/vidio/tahukah-kamu-fungsi-trotoar/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
@@ -370,8 +374,6 @@
     <loc>//localhost:1313/link-terkait/</loc>
   </url><url>
     <loc>//localhost:1313/permohonan-online/</loc>
-  </url><url>
-    <loc>//localhost:1313/renja-monev/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>
