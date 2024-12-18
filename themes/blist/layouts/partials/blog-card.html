@@ -1,49 +1,77 @@
-<div class="w-full md:w-1/2 p-6"></div>
-  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+<div class="container p-6 px-auto lg:grid-cols-3 ">
+  <div class="dark:bg-gray-800 rounded-lg overflow-hidden max-w-sm">
     {{ if .Params.image }}
     <a href="{{ .RelPermalink }}">
-      <img class="w-full h-48 object-cover" src="{{ .Params.image }}" alt="{{ .Title }}">
+      <img class="w-50 h-48 object-cover" src="{{ .Params.image }}" alt="{{ .Title }}">
     </a>
     {{ end }}
     <div class="p-6">
-      <div class="flex items-center">
-        <div class="ml-2">
-          <p class="text-gray-600 dark:text-gray-400 text-sm">
-            {{ .Date.Format "January 2, 2006" }}
-          </p>
-        </div>
+      <!-- Tambahkan Icon menggunakan Params.logo -->
+      {{ if .Params.logo }}
+      <div class="flex justify-center items-center mb-2">
+        <img src="{{ .Params.logo }}" alt="Logo" class="w-40 h-40 mr-2">
       </div>
-      <div class="mt-2">
-        <a href="{{ .RelPermalink }}" class="text-2xl font-semibold text-gray-900 dark:text-white hover:text-blue-600">
-          {{ .Title }}
+      <!-- Garis Horizontal -->
+      <hr class="border-t-2 border-gray-300 dark:border-gray-600 my-2 mt-10">
+      {{ end }}
+
+      <!-- Title -->
+      <div class="text-center mt-8">
+        <!-- <a href="{{ .RelPermalink }}" class="text-1xl font-semibold text-gray-900 dark:text-white hover:text-custom-green"> -->
+        {{ .Title }}
         </a>
         <p class="mt-2 text-gray-600 dark:text-gray-400">
           {{ range $key, $value := .Params.sections }}
-            <div>
-              <a href="{{ $value.url }}" class="text-blue-600 hover:text-blue-800">
-                {{ $value.title }}
-              </a>
-              <br />
-              
-              {{ if $value.items }}
-                <ul>
-                  {{ range $item := $value.items }}
-                    <li>
-                      <a href="{{ $item.url }}" class="text-blue-600 hover:text-blue-800">
-                        {{ $item.number }}. {{ $item.title }}
-                      </a>
-                    </li>
-                  {{ end }}
-                </ul>
+          <div>
+            <a href="{{ $value.url }}" class="text-blue-600 hover:text-blue-800">
+              {{ $value.title }}
+            </a>
+            <br />
+            {{ if $value.items }}
+            <ul>
+              {{ range $item := $value.items }}
+              <li>
+                <a href="{{ $item.url }}" class="text-custom-green hover:text-blue-800">
+                  {{ $item.number }}. {{ $item.title }}
+                </a>
+              </li>
               {{ end }}
-            </div>
+            </ul>
+            {{ end }}
+          </div>
           {{ end }}
         </p>
       </div>
+
+      <!-- Tags -->
       <div class="mt-4">
         {{ range .Params.tags }}
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2">
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}"
+          class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2">
           #{{ . }}
+        </a>
+        {{ end }}
+      </div>
+
+      <!-- Tombol Detail -->
+      <div class="mt-6 text-center justify-between">
+        {{ if eq .Params.logo "/PELITA-PERDA/logo/ketentuan.png" }}
+        <a href="{{ .RelPermalink }}" style="background-color: #4caf50; color: white; font-weight: bold; padding: 8px 16px; border-radius: 4px; text-decoration: none;" 
+          onmouseover="this.style.backgroundColor='#388e3c'" 
+          onmouseout="this.style.backgroundColor='#4caf50'">
+          Detail
+        </a>
+        {{ else if eq .Params.logo "/PELITA-PERDA/logo/perda.png" }}
+        <a href="{{ .RelPermalink }}" style="background-color: #F4EC2E; color: white; font-weight: bold; padding: 8px 16px; border-radius: 4px; text-decoration: none;" 
+          onmouseover="this.style.backgroundColor='#e0a800'" 
+          onmouseout="this.style.backgroundColor='#ffc107'">
+          Detail
+        </a>
+        {{ else }}
+        <a href="{{ .RelPermalink }}" style="background-color: #D8252D; color: white; font-weight: bold; padding: 8px 16px; border-radius: 4px; text-decoration: none;" 
+          onmouseover="this.style.backgroundColor='#388e3c'" 
+          onmouseout="this.style.backgroundColor='#4caf50'">
+          Detail
         </a>
         {{ end }}
       </div>

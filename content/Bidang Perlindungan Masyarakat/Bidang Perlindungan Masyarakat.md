@@ -35,18 +35,18 @@ date: 2024-09-09 07:56:53
 <details>
 <summary>Daftar SOP Bidang Perlindungan Masyarakat</summary>
 
-   <p><a href="/file/tMT4iFLQw6YRcns0b9OO.pdf" target="_blank">91. SOP PELAKSANAAN KEGIATAN MONEV, PENGENDALIAN, DAN OPERASI SATUAN PERLINDUNGAN M</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/tMT4iFLQw6YRcns0b9OO.pdf" target="_blank">91. SOP PELAKSANAAN KEGIATAN MONEV, PENGENDALIAN, DAN OPERASI SATUAN PERLINDUNGAN M</a></p>
  
-   <p><a href="/file/szYHwUjLPWhPqODa0T11.pdf" target="_blank">92. SOP PENYUSUNAN DATA BASE SATUAN PERLINDUNGAN MASYARAKAT</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/szYHwUjLPWhPqODa0T11.pdf" target="_blank">92. SOP PENYUSUNAN DATA BASE SATUAN PERLINDUNGAN MASYARAKAT</a></p>
 
 
-   <p><a href="/file/tMT4iFLQw6YRcns0b9OO.pdf" target="_blank">93. SOP PENANGANAN TANGGAP DARURAT SATUAN PERLINDUNGAN MASYARAKAT</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/tMT4iFLQw6YRcns0b9OO.pdf" target="_blank">93. SOP PENANGANAN TANGGAP DARURAT SATUAN PERLINDUNGAN MASYARAKAT</a></p>
 
-   <p><a href="/file/szYHwUjLPWhPqODa0T11.pdf" target="_blank">94. SOP PELAKSANAAN KEGIATAN BIMTEK PEMELIHARAAN TRAMTIBMAS SATUAN PERLINDUNGAN MASYARAKAT</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/szYHwUjLPWhPqODa0T11.pdf" target="_blank">94. SOP PELAKSANAAN KEGIATAN BIMTEK PEMELIHARAAN TRAMTIBMAS SATUAN PERLINDUNGAN MASYARAKAT</a></p>
 
-   <p><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">95. SOP IN HOUSE TRAINING KESIAPSIAGAAN SATUAN PERLINDUNGAN MASYARAKAT</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">95. SOP IN HOUSE TRAINING KESIAPSIAGAAN SATUAN PERLINDUNGAN MASYARAKAT</a></p>
 
-   <p><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">96. SOP PELAKSANAAN KEGIATAN PEMBEKALAN SATUAN PERLINDUNGAN MASYARAKAT</a></p>
+   <p style="margin-bottom: 0.3rem;"><a href="/file/yQbQLoDsLRsT0VeSj55D.pdf">96. SOP PELAKSANAAN KEGIATAN PEMBEKALAN SATUAN PERLINDUNGAN MASYARAKAT</a></p>
 
 </details>
 

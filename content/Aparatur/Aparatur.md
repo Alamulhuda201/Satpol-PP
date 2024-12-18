@@ -221,103 +221,101 @@ date: 2024-09-26 04:02:34
 
 ---
 
-<details>
-  <summary>Daftar SOP Kelembagaan</summary>
   <p><a href="/file/SW3PR6IHy8hOfHooAjTG.pdf" target="_blank">Daftar SOP Kelembagaan</a></p>
-</details>
+
 
 <details>
   <summary>Daftar SOP Umum dan Aparatur</summary>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">1. SOP IJIN TUGAS BELAJAR</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">2. SOP PENERBITAN SURAT KETERANGAN</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">3. SOP PENGUSULAN KENAIKAN GAJI BERKALA</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">4. SOP PENERBITAN SURAT PERINTAH TUGAS</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">5. SOP CUTI PNS</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">6. SOP FASILITASI NARASUMBER</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">7. SOP PELAYANAN KONSULTASI</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">8. SOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBAR</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">9. SOP PELAYANAN TAMU</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">10. SOP PELAYANAN USULAN TASPEN</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">11. SOP PEMBINAAN PNS</a></p>
-  <p><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">12. SOP PENANGANAN RUMAH TANGGA KANTOR</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">13. SOP PENERBITAN PENGAJUAN ANGKA KREDIT</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">14. SOP PENGAGENDAAN SURAT</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">15. SOP PENANGANAN SURAT MASUK</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">16. SOP PENANGANAN SURAT KELUAR</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">17. SOP PENANGANAN TELEPON DAN FAX</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">18. SOP PENANGANAN EMAIL</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">19. SOP PENANGANAN PENGADUAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">20. SOP PENANGANAN KELUHAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">21. SOP PENANGANAN SARAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">22. SOP PENANGANAN KRITIK</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">23. SOP PENANGANAN PENGHARGAAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">24. SOP PENANGANAN KOMPLAIN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">25. SOP PENANGANAN KOMPLAIN INTERNET</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">26. SOP PENANGANAN KOMPLAIN SOSIAL MEDIA</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">27. SOP PENANGANAN KOMPLAIN TELEPON</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">28. SOP PENANGANAN KOMPLAIN EMAIL</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">29. SOP PENANGANAN KOMPLAIN SURAT</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">30. SOP PENANGANAN KOMPLAIN FAX</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">31. SOP PENANGANAN KOMPLAIN PENGADUAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">32. SOP PENANGANAN KOMPLAIN KELUHAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">33. SOP PENANGANAN KOMPLAIN SARAN</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">34. SOP PENANGANAN KOMPLAIN KRITIK</a></p>
-  <p><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">35. SOP PENANGANAN KOMPLAIN PENGHARGAAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">1. SOP IJIN TUGAS BELAJAR</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">2. SOP PENERBITAN SURAT KETERANGAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">3. SOP PENGUSULAN KENAIKAN GAJI BERKALA</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">4. SOP PENERBITAN SURAT PERINTAH TUGAS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">5. SOP CUTI PNS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">6. SOP FASILITASI NARASUMBER</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">7. SOP PELAYANAN KONSULTASI</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">8. SOP PENGAJUAN MUTASI KELUAR DARI PEMPROV KALBAR</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">9. SOP PELAYANAN TAMU</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">10. SOP PELAYANAN USULAN TASPEN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">11. SOP PEMBINAAN PNS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/KS0DIdpIviDiu6gF1lOa.pdf" target="_blank">12. SOP PENANGANAN RUMAH TANGGA KANTOR</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">13. SOP PENERBITAN PENGAJUAN ANGKA KREDIT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">14. SOP PENGAGENDAAN SURAT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">15. SOP PENGAJUAN PENSIUN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">16. SOP PENGAMANAN KANTOR</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">17. SOP PENGUMPULAN SKP</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">18. SOP PENGUSULAN DIKLAT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">19. SOP PENGUSULAN KENAIKAN PANGKAT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">20. SOP PENGUSULAN PERUBAHAN JFT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">21. SOP PENGUSULAN PERBH STATUS CPNS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">22. SOP PENJATUHAN HUKUMAN DISIPLIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">23. SOP PENYEWAAN TEMPAT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">24. SOP PENYUSUNAN BUKU DUK</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">25. SOP PERSIAPAN PELAKSANAAN RAPAT</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">26. SOP REKAP KINERJA PNS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">27. SOP PENGUSULAN SLKS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">28. SOP PENGURUSAN SURAT KELUAR</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">29. SOP PENGURUSAN SURAT MASUK</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">30. SOP USULAN ASN TELADAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">31. SOP PENERBITAN SK KEPALA PD</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">32. SOP PENGUSULAN UJIAN DINAS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">33. SOP PENGHAPUSAN ARSIP</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">34. SOP PEMINJAMAN KENDARAAN DINAS</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/Wqs2aPmZ37GXg1euzp4P.pdf" target="_blank">35. SOP PERMINTAAN PENOMORAN SURAT</a></p>
 </details>
 
 <details>
-  <summary>Daftar SOP Kelembagaan Baru</summary>
-  <p><a href="/file/rekap-golongan-ruang" target="_blank">1. REKAPITULASI PNS BERDASARKAN GOLONGAN RUANG</a></p>
-  <p><a href="/file/rekap-golongan-dan-jenis-kelamin" target="_blank">2. REKAPITULASI PNS BERDASARKAN GOLONGAN DAN JENIS KELAMIN</a></p>
-  <p><a href="/file/rekap-agama-dan-jenis-kelamin" target="_blank">3. REKAPITULASI PNS BERDASARKAN AGAMA DAN JENIS KELAMIN</a></p>
-  <p><a href="/file/rekap-jenis-jabatan-dan-jenis-kelamin" target="_blank">4. REKAPITULASI PNS BERDASARKAN JENIS JABATAN DAN JENIS KELAMIN</a></p>
-  <p><a href="/file/rekap-tingkat-pendidikan-dan-jenis-kelamin" target="_blank">5. REKAPITULASI PNS BERDASARKAN TINGKAT PENDIDIKAN DAN JENIS KELAMIN</a></p>
-  <p><a href="/file/rekap-eselon-dan-jenis-kelamin" target="_blank">6. REKAPITULASI PNS BERDASARKAN ESELON DAN JENIS KELAMIN</a></p>
-  <p><a href="/file/rekap-jumlah-jabatan-fungsional" target="_blank">7. REKAPITULASI JUMLAH JABATAN FUNGSIONAL</a></p>
-  <p><a href="/file/rekap-jumlah-tingkatan-jabatan-fungsional" target="_blank">8. REKAPITULASI JUMLAH TINGKATAN JABATAN FUNGSIONAL</a></p>
-  <p><a href="/file/rekap-jenis-jabatan" target="_blank">9. REKAPITULASI PNS BERDASARKAN JENIS JABATAN</a></p>
-  <p><a href="/file/rekap-tingkat-pendidikan" target="_blank">10. REKAPITULASI PNS BERDASARKAN TINGKAT PENDIDIKAN</a></p>
-  <p><a href="/file/rekap-usia" target="_blank">11. REKAPITULASI PNS BERDASARKAN USIA</a></p>
-  <p><a href="/file/rekap-masa-kerja" target="_blank">12. REKAPITULASI PNS BERDASARKAN MASA KERJA KESELURUHAN</a></p>
-  <p><a href="/file/bezeting-pegawai" target="_blank">13. BEZETING PEGAWAI DETAIL PER JABATAN BERDASARKAN ESELON, GOLONGAN DAN PENDIDIKAN</a></p>
+  <summary>REKAPITULASI PNS</summary>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-golongan-ruang" target="_blank">1. REKAPITULASI PNS BERDASARKAN GOLONGAN RUANG</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-golongan-dan-jenis-kelamin" target="_blank">2. REKAPITULASI PNS BERDASARKAN GOLONGAN DAN JENIS KELAMIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-agama-dan-jenis-kelamin" target="_blank">3. REKAPITULASI PNS BERDASARKAN AGAMA DAN JENIS KELAMIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-jenis-jabatan-dan-jenis-kelamin" target="_blank">4. REKAPITULASI PNS BERDASARKAN JENIS JABATAN DAN JENIS KELAMIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-tingkat-pendidikan-dan-jenis-kelamin" target="_blank">5. REKAPITULASI PNS BERDASARKAN TINGKAT PENDIDIKAN DAN JENIS KELAMIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-eselon-dan-jenis-kelamin" target="_blank">6. REKAPITULASI PNS BERDASARKAN ESELON DAN JENIS KELAMIN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-jumlah-jabatan-fungsional" target="_blank">7. REKAPITULASI JUMLAH JABATAN FUNGSIONAL</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-jumlah-tingkatan-jabatan-fungsional" target="_blank">8. REKAPITULASI JUMLAH TINGKATAN JABATAN FUNGSIONAL</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-jenis-jabatan" target="_blank">9. REKAPITULASI PNS BERDASARKAN JENIS JABATAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-tingkat-pendidikan" target="_blank">10. REKAPITULASI PNS BERDASARKAN TINGKAT PENDIDIKAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-usia" target="_blank">11. REKAPITULASI PNS BERDASARKAN USIA</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/rekap-masa-kerja" target="_blank">12. REKAPITULASI PNS BERDASARKAN MASA KERJA KESELURUHAN</a></p>
+  <p style="margin-bottom: 0.3rem;"><a href="/file/bezeting-pegawai" target="_blank">13. BEZETING PEGAWAI DETAIL PER JABATAN BERDASARKAN ESELON, GOLONGAN DAN PENDIDIKAN</a></p>
 </details>
 
-<details>
-  <summary>LHKPN</summary>
+<!-- <details>
+  <summary>LHKPN</summary> -->
   <p><a href="/file/H1Sj8vM3XZPBfDbOYTPd.pdf" target="_blank">LHKPN</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Persentase Pendidikan PNS</summary>
+<!-- <details>
+  <summary>Persentase Pendidikan PNS</summary> -->
   <p><a href="/file/uN6ynSoKl7A9xcyWmJ7N.pdf" target="_blank">Persentase Pendidikan PNS</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Persentase Pendidikan Banpol</summary>
+<!-- <details>
+  <summary>Persentase Pendidikan Banpol</summary> -->
   <p><a href="/file/AEQR6yLXJ2nSxKyYK1kG.pdf" target="_blank">Persentase Pendidikan Banpol</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Grafik Pegawai</summary>
+<!-- <details>
+  <summary>Grafik Pegawai</summary> -->
   <p><a href="#" target="_blank">Grafik Pegawai</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Daftar Urut Kepangkatan</summary>
+<!-- <details>
+  <summary>Daftar Urut Kepangkatan</summary> -->
   <p><a href="#" target="_blank">Daftar Urut Kepangkatan</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Kenaikan Pangkat</summary>
+<!-- <details>
+  <summary>Kenaikan Pangkat</summary> -->
   <p><a href="#" target="_blank">Kenaikan Pangkat</a></p>
-</details>
+<!-- </details> -->
 
-<details>
-  <summary>Kenaikan Berkala</summary>
+<!-- <details>
+  <summary>Kenaikan Berkala</summary> -->
   <p><a href="#" target="_blank">Kenaikan Berkala</a></p>
-</details>
-
+<!-- </details> -->
+<!-- 
 <details>
-  <summary>Peta Jabatan</summary>
+  <summary>Peta Jabatan</summary> -->
   <p><a href="#" target="_blank">Peta Jabatan</a></p>
-</details>
+<!-- </details> -->

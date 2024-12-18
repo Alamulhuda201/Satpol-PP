@@ -265,7 +265,7 @@ weight = 7
 identifier = "standar pelayanan"
 name = "Standar Pelayanan"
 parent = "pelayanan"
-url = "/standar-layanan/standar-pelayanan"
+url = "/standar-layanan/"
 weight = 2
 
 [[languages.id.menu.main]]
@@ -285,7 +285,7 @@ weight = 4
 identifier = "kontak pengaduan"
 name = "Kontak Pengaduan"
 parent = "pelayanan"
-url = "/Layanan%20Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png"
+url = "/Layanan-Pengaduan/thumbnails/compressed_vNsR9LpUbNnhN0MERwI2o8NfLq6pQl1Bvd1byeAU.png"
 weight = 4
 
 [[languages.id.menu.main]]
