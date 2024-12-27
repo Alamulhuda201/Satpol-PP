@@ -11,7 +11,7 @@ date: 2024-08-20 03:53:29
 
 <p><a href="/file/SzCwIt149IcvjP0vDvzm.pdf">Tata Cara Pengajuan Keberatan dan proses Penyelesaian Sengketa Informasi Publik</a></p>
 
-<p><a href="https://satpolpp.kalbarprov.go.id/file/DxYh9Ziwfi7iZaHqItW5.pdf">Tata Cara Pengaduan Pelanggaran Oleh Pejabat OPD Satpol PP Prov. Kalbar</a></p>
+<p><a href="file/DxYh9Ziwfi7iZaHqItW5.pdf">Tata Cara Pengaduan Pelanggaran Oleh Pejabat OPD Satpol PP Prov. Kalbar</a></p>
 
 <p><a href="https://www.lapor.go.id/">Sarana Pengaduan Pelanggaran (Span Lapor)</a></p>
 

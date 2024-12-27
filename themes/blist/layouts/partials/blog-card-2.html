@@ -1,20 +1,20 @@
-<div class="flex border-2 border-gray-200 flex-row bg-gray-100 dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition duration-300 max-w-screen-xl w-screen">
+<div class="flex flex-col md:flex-row border-2 border-gray-200 bg-gray-100 dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl transition duration-300 max-w-screen-xl w-screen">
   <!-- Kontainer Konten -->
-  <div class="w-1/2 p-6 flex flex-col">
+  <div class="w-full md:w-1/2 p-4 md:p-6 flex flex-col">
     <div class="flex-1 bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
       <div class="flex flex-wrap">
-        <div class="w-full px-8 py-6 border-b border-gray-100">
-          <h2 class="font-bold text-3xl text-gray-800 dark:text-white hover:text-custom-green transition duration-300 mb-2">
+        <div class="w-full px-4 md:px-8 py-4 md:py-6 border-b border-gray-100">
+          <h2 class="font-bold text-xl md:text-3xl text-gray-800 dark:text-white hover:text-custom-green transition duration-300 mb-2">
             {{ .Title }}
           </h2>
-          <div class="text-gray-500 dark:text-white text-sm flex items-center">
-            <svg class="w-5 h-5 mr-2 text-custom-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="text-gray-500 dark:text-gray-300 text-xs md:text-sm flex items-center">
+            <svg class="w-4 h-4 md:w-5 md:h-5 mr-2 text-custom-green" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            {{ .Date.Format "02 January 2006" }}
+            <span>{{ .Date.Format "02 January 2006" }}</span>
           </div>
         </div>
-        <div class="w-full px-8 py-6 text-base leading-relaxed space-y-5 transition-colors duration-200 dark:text-white" id="content-container">
+        <div class="w-full px-4 md:px-8 py-4 md:py-6 text-sm md:text-base leading-relaxed space-y-4 md:space-y-5 transition-colors duration-200 dark:text-gray-300" id="content-container">
           {{ .Content | safeHTML }}
         </div>
       </div>
@@ -22,18 +22,18 @@
   </div>
 
   <!-- Kontainer File Dokumen -->
-  <div class="w-1/2 p-6">
-    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition p-6">
-      <div class="border-2 border-gray-200 rounded-lg p-4 hover:border-custom-green transition">
-        <div class="flex items-center mb-4">
-          <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="w-full md:w-1/2 p-4 md:p-6">
+    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-sm hover:shadow-md transition p-4 md:p-6">
+      <div class="border-2 border-gray-200 rounded-lg p-3 md:p-4 hover:border-custom-green transition">
+        <div class="flex items-center mb-3 md:mb-4">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-blue-500 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          <h3 class="text-gray-800 dark:text-white font-bold text-lg">File Dokumen</h3>
+          <h3 class="text-gray-800 dark:text-white font-bold text-base md:text-lg">File Dokumen</h3>
         </div>
-        <div class="text-gray-600">
-          <div class="h-96 rounded-lg overflow-hidden" id="pdf-container">
-            <iframe id="pdf-viewer" src="" width="100%" height="100%" class="border-0"></iframe>
+        <div class="text-gray-600 dark:text-gray-300">
+          <div class="h-64 md:h-96 rounded-lg overflow-hidden" id="pdf-container">
+            <iframe id="pdf-viewer" src="" width="100%" height="100%" class="border-0" aria-label="PDF Viewer"></iframe>
           </div>
         </div>
       </div>
@@ -42,46 +42,54 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function () {
   const contentContainer = document.getElementById('content-container');
   const pdfViewer = document.getElementById('pdf-viewer');
-  
-  contentContainer.addEventListener('click', function(e) {
+
+  contentContainer.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') {
       e.preventDefault();
-      const pdfUrl = e.target.getAttribute('href');
-      
+      const fileUrl = e.target.getAttribute('href');
+
       // Tambahkan efek loading
       pdfViewer.classList.add('opacity-50');
       setTimeout(() => pdfViewer.classList.remove('opacity-50'), 1000);
 
-      // Cek jika link adalah Google Drive
-      if (pdfUrl.includes('drive.google.com')) {
-        const fileId = pdfUrl.match(/\/d\/(.*?)\/view/)[1];
-        const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-        pdfViewer.setAttribute('src', embedUrl);
+      try {
+        if (fileUrl.includes('docs.google.com/forms') || fileUrl.includes('forms.gle')) {
+          // Google Form akan tetap terbuka di tab baru
+          window.open(fileUrl, '_blank');
+        } else if (fileUrl.endsWith('.pdf')) {
+          // File PDF langsung ditampilkan di iframe
+          pdfViewer.setAttribute('src', fileUrl);
+        } else if (fileUrl.includes('drive.google.com/file/d')) {
+          // File dari Google Drive
+          const fileId = fileUrl.match(/\/d\/(.*?)\/view/)[1];
+          pdfViewer.setAttribute('src', `https://drive.google.com/file/d/${fileId}/preview`);
+        } else {
+          // File lain ditampilkan di iframe menggunakan Google Docs Viewer
+          const encodedUrl = encodeURIComponent(fileUrl.startsWith('http') ? fileUrl : window.location.origin + fileUrl);
+          pdfViewer.setAttribute('src', `https://docs.google.com/viewer?url=${encodedUrl}&embedded=true`);
+        }
+
+        // Tambahkan highlight pada link yang diklik
+        const allLinks = contentContainer.getElementsByTagName('A');
+        Array.from(allLinks).forEach(link => link.classList.remove('text-custom-green', 'font-bold'));
+        e.target.classList.add('text-custom-green', 'font-bold');
+
+        // Scroll ke pdf viewer di mobile dengan offset
+        if (window.innerWidth < 768) {
+          const pdfContainer = document.getElementById('pdf-container');
+          const offset = -150; // Offset negatif untuk scroll lebih ke atas
+          const topPosition = pdfContainer.getBoundingClientRect().top + window.pageYOffset + offset;
+          window.scrollTo({
+            top: topPosition,
+            behavior: 'smooth'
+          });
+        }
+      } catch (error) {
+        console.error('Error loading document:', error); 
       }
-      // Cek jika link adalah Google Form - buka di tab baru
-      else if (pdfUrl.includes('docs.google.com/forms') || pdfUrl.includes('forms.gle')) {
-        window.open(pdfUrl, '_blank'); // Membuka link Google Form di tab baru
-      }
-      // Cek jika file PDF langsung
-      else if (pdfUrl.endsWith('.pdf') || pdfUrl.includes('/file/')) {
-        pdfViewer.setAttribute('src', pdfUrl);
-      }
-      // Link lainnya (misalnya untuk URL umum)
-      else {
-        const encodedUrl = encodeURIComponent(pdfUrl.startsWith('http') ? pdfUrl : window.location.origin + pdfUrl);
-        const googleDocsViewer = `https://docs.google.com/viewer?url=${encodedUrl}&embedded=true`;
-        pdfViewer.setAttribute('src', googleDocsViewer);
-      }
-      
-      // Tambahkan highlight pada link yang diklik
-      const allLinks = contentContainer.getElementsByTagName('A');
-      for (let link of allLinks) {
-        link.classList.remove('text-custom-green', 'font-bold');
-      }
-      e.target.classList.add('text-custom-green', 'font-bold');
     }
   });
 });

@@ -21,6 +21,7 @@ module.exports = {
         colors: {
           'custom-green': '#03a055',
           'custom-yellow': '#f4ec2e',
+          'custom-putih': '#FFFAF0',
         },
 
         backgroundColor: theme => ({

@@ -6,7 +6,7 @@ date: 2024-08-21
 
 
 
-<p><a href="https://satpolpp.kalbarprov.go.id/file/DiEW3mrGQNDvlV0BHzXs.pdf">Laporan Keuangan Tahun 2023</a></p>
+<p><a href="file/DiEW3mrGQNDvlV0BHzXs.pdf">Laporan Keuangan Tahun 2023</a></p>
 
 
 <details>

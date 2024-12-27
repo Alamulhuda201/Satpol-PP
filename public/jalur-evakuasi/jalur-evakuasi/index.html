@@ -135,7 +135,7 @@
     }
 
     .mycheckbox {
-      font-size: 12px;
+      font-size: 15px;
       color: #000;
       font-weight: 500
     }
@@ -162,7 +162,7 @@
       content: attr(data-on);
       cursor: pointer;
       position: absolute;
-      font-size: 12px;
+      font-size: 15px;
       font-weight: 700;
       top: 2px;
       right: 25px;
@@ -248,11 +248,11 @@
     }
 
     .toolbar-disabilitas .open-toolbar {
-      background: #00aa48
+      background: #03a055;
     }
 
     .toolbar-disabilitas .groupcontenttoolbar {
-      transform: translateX(-180px);
+      transform: translateX(-225px);
       transition: transform .6s
     }
 
@@ -268,8 +268,8 @@
       height: max-content;
       border: 1px solid #000;
       box-shadow: 0 10px 10px rgb(0 0 0 / .2);
-      background-color: #fff;
-      width: 180px;
+      background-color: #ffffff;
+      width: 225px;
       word-break: break-all;
       overflow: hidden
     }
@@ -282,7 +282,7 @@
     }
 
     .titletools {
-      font-size: 13px !important;
+      font-size: 20px !important;
       font-weight: 700;
       margin-bottom: 10px;
       padding-left: 5px;
@@ -299,7 +299,7 @@
 
     .subtitletools,
     .subtitletoolsactive {
-      font-size: 12px !important;
+      font-size: 15px !important;
       margin-bottom: 5px;
       cursor: pointer;
       left: 0;
@@ -326,7 +326,7 @@
       background-color: #000;
       color: #fff;
       font-weight: 700;
-      font-size: 12;
+      font-size: 15;
       max-width: 100%;
       padding-top: 5px;
       padding-left: 10px;
@@ -356,7 +356,7 @@
         left: 0;
         z-index: 999;
         height: 1px;
-        width: -180px;
+        width: -225px;
         text-align: center;
         background: 0 0 !important
       }
@@ -364,246 +364,7 @@
   </style>
   <span id="loadmodaldisabilitas"></span>
 
-  <body class="dark:text-black">
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=przYp5x6"></script>
-    <style type="text/css">
-      .greyscaleall {
-        filter: grayscale(100%)
-      }
-
-      .btn-container {
-        margin-bottom: 10px;
-        text-align: center
-      }
-
-      .mycheckbox {
-        font-size: 12px;
-        color: #000;
-        font-weight: 500
-      }
-
-      .btn-color-mode-switch {
-        display: inline-block;
-        margin: 0;
-        position: relative
-      }
-
-      .btn-color-mode-switch>label.btn-color-mode-switch-inner {
-        margin: 0;
-        width: 170px;
-        height: 26px;
-        background: #e0e0e0;
-        border-radius: 26px;
-        overflow: hidden;
-        position: relative;
-        transition: .3s;
-        display: block
-      }
-
-      .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
-        content: attr(data-on);
-        cursor: pointer;
-        position: absolute;
-        font-size: 12px;
-        font-weight: 700;
-        top: 2px;
-        right: 25px;
-        margin-bottom: 5px
-      }
-
-      .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
-        content: attr(data-off);
-        cursor: pointer;
-        width: 85px;
-        height: 22px;
-        font-size: 12px;
-        background: #fff;
-        border-radius: 26px;
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        font-weight: 700;
-        text-align: center;
-        transition: .3s;
-        box-shadow: 0 0 6px -2px #111;
-        padding: 2px 0;
-        margin-bottom: 10px
-      }
-
-      .btn-color-mode-switch input[type=checkbox] {
-        cursor: pointer;
-        width: 70px;
-        height: 25px;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        padding: 2px 0;
-        margin: 0
-      }
-
-      .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner {
-        background: #e0e0e0;
-        color: #000;
-        font-weight: 700;
-        font-size: 12px
-      }
-
-      .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:after {
-        content: attr(data-on);
-        left: 83px;
-        background: #fff;
-        font-weight: 700;
-        font-size: 12px
-      }
-
-      .btn-color-mode-switch input[type=checkbox]:checked+label.btn-color-mode-switch-inner:before {
-        content: attr(data-off);
-        right: auto;
-        left: 15px;
-        color: #000;
-        font-weight: 700;
-        font-size: 12px
-      }
-
-      .btn-color-mode-switch input[type=checkbox]:checked~.alert {
-        display: block
-      }
-
-      .toolbar-disabilitas {
-        position: fixed;
-        top: 35%;
-        left: 0;
-        z-index: 999;
-        height: 1px;
-        width: -180px;
-        text-align: center;
-        background: 0 0 !important
-      }
-
-      .open-toolbar {
-        margin-top: 10%;
-        padding: 8px 5px 3px;
-        height: 50px;
-        border: none;
-        width: 50px
-      }
-
-      .toolbar-disabilitas .open-toolbar {
-        background: #00aa48
-      }
-
-      .toolbar-disabilitas .groupcontenttoolbar {
-        transform: translateX(-180px);
-        transition: transform .6s
-      }
-
-      .toolbar-disabilitas.show-toolbar .groupcontenttoolbar {
-        transform: translateX(0)
-      }
-
-      .contenttoolbar_disabilitas {
-        margin-top: 10%;
-        padding-top: 15px;
-        display: flex;
-        flex-direction: column;
-        height: max-content;
-        border: 1px solid #000;
-        box-shadow: 0 10px 10px rgb(0 0 0 / .2);
-        background-color: #fff;
-        width: 180px;
-        word-break: break-all;
-        overflow: hidden
-      }
-
-      .groupcontenttoolbar {
-        display: flex;
-        flex-direction: row;
-        height: 1px;
-        background-color: transparent !important
-      }
-
-      .titletools {
-        font-size: 13px !important;
-        font-weight: 700;
-        margin-bottom: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
-        color: #000
-      }
-
-      .bodytools {
-        left: 0;
-        height: max-content;
-        width: 100%;
-        margin-bottom: 10px
-      }
-
-      .subtitletools,
-      .subtitletoolsactive {
-        font-size: 12px !important;
-        margin-bottom: 5px;
-        cursor: pointer;
-        left: 0;
-        text-align: left;
-        padding-left: 10px
-      }
-
-      .subtitletools {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000
-      }
-
-      .subtitletoolsactive {
-        background-color: #000 !important;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        color: #fff;
-        font-weight: 700
-      }
-
-      .subtitletools:active,
-      .subtitletools:focus,
-      .subtitletools:hover {
-        background-color: #000;
-        color: #fff;
-        font-weight: 700;
-        font-size: 12;
-        max-width: 100%;
-        padding-top: 5px;
-        padding-left: 10px;
-        padding-bottom: 5px
-      }
-
-      .flexrowdata {
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        width: auto
-      }
-
-      body .uwy.userway_p1 .userway_buttons_wrapper {
-        top: 11%;
-        left: calc(100vw - 30px);
-      }
-
-      body .uwy.userway_p7 .userway_buttons_wrapper {
-        top: 11%;
-        left: 15px;
-      }
-
-      @media only screen and (max-width:900px) {
-        .toolbar-disabilitas {
-          top: 60%;
-          left: 0;
-          z-index: 999;
-          height: 1px;
-          width: -180px;
-          text-align: center;
-          background: 0 0 !important
-        }
-      }
-    </style>
+  
 
     
     <div id="loading-screen" class="fixed inset-0 bg-white opacity-100 z-50 flex justify-center items-center">
@@ -636,7 +397,7 @@
   }
 
   #navbar {
-    background-color: rgb(22 101 52) !important;  
+    background-color: #03a055 !important;  
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     height: 96px;
   }
@@ -858,7 +619,8 @@
       <div class="logo-container">
         <a href="//localhost:1313/" class="flex items-center">
           
-          <img src='//localhost:1313/kalbar-logo.png' alt="Situs Resmi Satuan Polisi Pamong Praja Provinsi Kalimantan Barat" class="h-28 w-12" />
+          <img src='//localhost:1313/kalbar-logo.png' alt="Logo Kalbar" class="h-28 w-12" />
+
           
           <span class="ml-4 text-md font-medium text-white hover:text-yellow-300 dark:hover:text-yellow-400 dark:text-yellow-500 leading-tight transition-colors duration-300">
             Situs Resmi Satuan Polisi Pamong<br/>
@@ -1085,7 +847,7 @@
         
 
         
-        <button id="theme-toggle" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300">
+        <button id="theme-toggle" class="theme-toggle p-2 text-white hover:text-yellow-400 transition-all duration-300" aria-label="Toggle theme">
           <div id="theme-icon">
             <script>
               
@@ -1605,7 +1367,7 @@
         body {
           font-family: 'Poppins', sans-serif;
         }
-      </style><footer class="relative bg-gradient-to-r from-green-600 to-green-800 dark:from-gray-800 dark:to-gray-900 text-white py-16">
+      </style><footer class="relative bg-gradient-to-r from-custom-green to-green-800 dark:from-gray-800 dark:to-gray-900 text-white py-16">
   <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4 md:px-8">
     
     <div class="text-center md:text-left space-y-6">
@@ -1656,16 +1418,28 @@
     
     <div class="space-y-6 text-base md:text-lg">
       <div class="mt-4 flex justify-center space-x-4 md:space-x-6">
-        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110" 
+        aria-label="Tautan ke halaman tertentu" 
+        title="Tautan ke halaman tertentu">
+        <span class="sr-only">Tautan ke halaman tertentu</span>
           <i class="fab fa-facebook text-white text-xl md:text-2xl"></i>
         </a>
-        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110" 
+        aria-label="Tautan ke halaman tertentu" 
+        title="Tautan ke halaman tertentu">
+        <span class="sr-only">Tautan ke halaman tertentu</span>
           <i class="fab fa-twitter text-white text-xl md:text-2xl"></i>
         </a>
-        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110" 
+        aria-label="Tautan ke halaman tertentu" 
+        title="Tautan ke halaman tertentu">
+        <span class="sr-only">Tautan ke halaman tertentu</span>
           <i class="fab fa-instagram text-white text-xl md:text-2xl"></i>
         </a>
-        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110">
+        <a href="#" class="p-3 md:p-4 bg-green-600 dark:bg-gray-700 hover:bg-green-700 dark:hover:bg-gray-600 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-110" 
+        aria-label="Tautan ke halaman tertentu" 
+        title="Tautan ke halaman tertentu">
+        <span class="sr-only">Tautan ke halaman tertentu</span>
           <i class="fab fa-youtube text-white text-xl md:text-2xl"></i>
         </a>
       </div>
@@ -1683,21 +1457,25 @@
   
   <div class="mt-8 md:mt-12 relative px-4 md:px-0">
     <iframe
-      class="w-full h-56 md:h-72 lg:h-96 rounded-md shadow-xl"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8159981422623!2d109.3499445758978!3d-0.06181743551546978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d5967b0f177eb%3A0xe40678efbde492d5!2sDinas%20Komunikasi%20Dan%20Informatika%20Provinsi%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1733817110418!5m2!1sid!2sid"
-      frameborder="0" 
-      style="border:0;"
-      allowfullscreen=""
-      aria-hidden="false"
-      tabindex="0"
-    ></iframe>
+    class="w-full h-56 md:h-72 lg:h-96 rounded-md shadow-xl"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8159981422623!2d109.3499445758978!3d-0.06181743551546978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d5967b0f177eb%3A0xe40678efbde492d5!2sDinas%20Komunikasi%20Dan%20Informatika%20Provinsi%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1733817110418!5m2!1sid!2sid"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    title="Peta Dinas Komunikasi dan Informatika Kalimantan Barat"
+    aria-hidden="false"
+    tabindex="0">
+  </iframe>
+  
     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black dark:from-gray-900 text-white py-2 text-center opacity-80">
       <p class="text-xs md:text-sm">Lokasi Kami: Dinas Komunikasi dan Informatika Provinsi Kalimantan Barat, Pontianak.</p>
     </div>
   </div>
 
   
-  <div class="mt-6 md:mt-8 text-center border-t border-green-500 dark:border-gray-700 pt-4 px-4 md:px-0">
+  <div class="mt-6 md:mt-8 text-center border-t border-green-900 dark:border-gray-700 pt-4 px-4 md:px-0">
     <p class="text-base md:text-lg opacity-80 dark:text-gray-300">
       &copy; 2024 Satpol PP Provinsi Kalimantan Barat. All Rights Reserved.
     </p>

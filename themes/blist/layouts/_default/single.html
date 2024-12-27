@@ -97,12 +97,22 @@
     <div class="main-container">
       <!-- Sidebar -->
       <aside class="sidebar mt-5">
-        <ul class="sidebar-menu">
-          <li><a href="#profil" class="menu-link" data-scroll>Profil Singkat</a></li>
-          <li><a href="#tugas" class="menu-link" data-scroll>Tugas Satpol PP</a></li>
-          <li><a href="#fungsi" class="menu-link" data-scroll>Fungsi Satpol PP</a></li>
-          <li><a href="#struktur" class="menu-link" data-scroll>Struktur Organisasi</a></li>
-        </ul>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.href.includes('/tentang-satpol-pp/profil-satpol-pp-prov.-kalbar/')) {
+              const sidebarMenu = `
+                <ul class="sidebar-menu">
+                  <li><a href="#profil" class="menu-link" data-scroll>Profil Singkat</a></li>
+                  <li><a href="#tugas" class="menu-link" data-scroll>Tugas Satpol PP</a></li>
+                  <li><a href="#fungsi" class="menu-link" data-scroll>Fungsi Satpol PP</a></li>
+                  <li><a href="#struktur" class="menu-link" data-scroll>Wewenang</a></li>
+                </ul>
+              `;
+              document.querySelector('.sidebar-menu').innerHTML = sidebarMenu;
+            }
+          });
+        </script>
+        <ul class="sidebar-menu"></ul>
       </aside>
 
       <!-- Main Content -->
@@ -114,33 +124,36 @@
           </div>
         </div>
 
-        <div class="container" id="tugas">
-          <h2 class="section-title">Tugas Satpol PP:</h2>
-          <ul class="task-list">
-            {{ range .Params.tugas }}
-            <li>{{ . }}</li>
+        {{ if eq .RelPermalink "/tentang-satpol-pp/profil-satpol-pp-prov.-kalbar/" }}
+          <div class="container" id="tugas">
+            <h2 class="section-title">Tugas Satpol PP:</h2>
+            {{ with .Site.GetPage "/Tentang Satpol PP/Tugas.md" }}
+              <div class="task-content">
+                {{ .Content }}
+              </div>
             {{ end }}
-          </ul>
-        </div>
+          </div>
 
-        <div class="container" id="fungsi">
-          <h2 class="section-title">Fungsi Satpol PP:</h2>
-          <ul class="function-list">
-            {{ range .Params.fungsi }}
-            <li>{{ . }}</li>
+          <div class="container" id="fungsi">
+            <h2 class="section-title">Fungsi Satpol PP:</h2>
+            {{ with .Site.GetPage "/Tentang Satpol PP/Fungsi.md" }}
+              <div class="task-content">
+                {{ .Content }}
+              </div>
             {{ end }}
-          </ul>
-        </div>
+          </div>
 
-        <div class="container" id="struktur">
-          <h2 class="section-title">Struktur Organisasi:</h2>
-          {{ if .Params.struktur_image }}
-          <img src="{{ .Params.struktur_image }}" alt="Struktur Organisasi" class="w-full">
-          {{ end }}
-        </div>
+          <div class="container" id="struktur">
+            <h2 class="section-title">Wewenang:</h2>
+            {{ with .Site.GetPage "/Tentang Satpol PP/Wewenang.md" }}
+            <div class="task-content">
+              {{ .Content }}
+            </div>
+            {{ end }}
+          </div>
+        {{ end }}
       </div>
     </div>
-
     <style>
       html {
         scroll-behavior: smooth;
@@ -224,7 +237,7 @@
         color: #03A055;
         font-size: 1.5em;
         margin: 30px 0 15px;
-        border-bottom: 2px solid #4299E1;
+        border-bottom: 1px solid #03A055;
         padding-bottom: 8px;
       }
 
@@ -274,40 +287,39 @@
 
     {{ else }}
     <!-- Tampilan Default untuk Non-Berita -->
-    <div class="main-container ">
+    <div class="main-container  ">
       <!-- Sidebar -->
      
 
       <!-- Content -->
-      <div class="content">
-        <div id="content-placeholder">
-          
-            <article class="prose lg:prose-lg w-full my-8">
-              <h1 class="text-2xl font-bold mb-4">{{ .Title }}</h1>
-              {{ if .Params.pdf }}
-                <iframe src="{{ .Params.pdf }}" width="100%" height="600"></iframe>
-              {{ else }}
-                {{ .Content }}
-              {{ end }}
-            </article>
-          </div>
+      <!-- <div class="content  "> -->
+        <div id="content-placeholder" class="flex items-center justify-center min-h-screen bg-gray-100">
+          <article class="prose lg:prose-lg w-full my-8 text-center">
+            <h1 class="text-2xl font-bold mb-4">{{ .Title }}</h1>
+            {{ if .Params.pdf }}
+              <iframe src="{{ .Params.pdf }}" width="100%" height="600"></iframe>
+            {{ else }}
+              {{ .Content }}
+            {{ end }}
+          </article>
         </div>
-      </div>
-
+        
       <!-- Container Kosong di Kanan -->
       <!-- <div class="right-container"> -->
         
       </div>
     </div>
 
-    <style>
+    <!-- <style>
       .main-container {
-        display: flex;
+        /* display: flex; */
         max-width: 900px;
         margin: 0 auto;
         padding: 20px;
         gap: 30px;
-      }
+      } -->
+
+    
 
       
     </style>

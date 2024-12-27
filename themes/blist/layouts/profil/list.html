@@ -210,49 +210,77 @@
     {{ end }}
 </div>
 
-  <div class="container mx-auto" id="tentang-satpol-pp">
-    <!-- Tentang Satpol PP Section -->
-    <div class="mb-8">
-      {{ $section := .Site.GetPage "Tentang Satpol PP" }}
-      {{ if $section }}
-      <div class="max-w-7xl mx-auto px-4">
-          <div class="text-left mt-32 flex items-center justify-start mb-10">
-            <h1 class="text-2xl font-bold text-green-600 whitespace-nowrap">{{ $section.Title }}</h1>
-            <span class="h-1 bg-green-600 ml-4 flex-grow"></span>
-          </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {{ range $section.Pages }}
-          <div class="rounded-b-lg rounded-t-sm shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative" style="background-color: #f5f5f5;">
-            <div class="p-6">
-              {{ if .Params.thumbnail }}
-              <div class="h-40 mb-4">
-                <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="w-full h-full object-cover rounded-lg">
-              </div>
-              {{ else }}
-              <div class="h-44 flex items-center justify-center bg-green-50 rounded-lg mb-4">
-                <i class="fas fa-file-alt text-5xl text-green-600"></i>
-              </div>
-              {{ end }}
-              <div class="flex space-x-4 mb-10">
-                <a href="{{ .RelPermalink }}" class="group flex items-center px-4 py-2 bg-white border-2 border-green-600 rounded-lg transition-colors duration-200 hover:bg-green-600">
-                  <i class="fa-solid fa-eye text-green-600 group-hover:text-white mr-2"></i>
-                  <span class="text-green-600 group-hover:text-white font-medium">Lihat</span>
-                </a>
-                <button class="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200">
-                  <ion-icon name="cloud-download-outline" class="mr-2"></ion-icon>
-                  <span class="font-medium">Unduh</span>
-                </button>
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 bg-green-600 text-white p-3 text-center">
-                <h3 class="text-lg font-semibold">{{ .Title }}</h3>
-              </div>
+<div class="container mx-auto" id="tentang-satpol-pp">
+  <!-- Tentang Satpol PP Section -->
+  <div class="mb-8">
+    {{ $section := .Site.GetPage "Tentang Satpol PP" }}
+    {{ if $section }}
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-left mt-32 flex items-center justify-start mb-10">
+        <h1 class="text-2xl font-bold text-green-600 whitespace-nowrap">{{ $section.Title }}</h1>
+        <span class="h-1 bg-green-600 ml-4 flex-grow"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Box 1: Profil Satpol PP Prov. Kalbar -->
+        {{ range $section.Pages }}
+        {{ if eq .Title "Profil Satpol PP Prov. Kalbar" }}
+        <div class="rounded-b-lg rounded-t-sm shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative" style="background-color: #f5f5f5;">
+          <div class="p-6">
+            {{ if .Params.thumbnail }}
+            <div class="h-40 mb-4">
+              <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="w-full h-full object-cover rounded-lg">
+            </div>
+            {{ else }}
+            <div class="h-44 flex items-center justify-center bg-green-50 rounded-lg mb-4">
+              <i class="fas fa-file-alt text-5xl text-green-600"></i>
+            </div>
+            {{ end }}
+            <div class="flex space-x-4 mb-10">
+              <a href="{{ .RelPermalink }}" class="group flex items-center px-4 py-2 bg-white border-2 border-green-600 rounded-lg transition-colors duration-200 hover:bg-green-600">
+                <i class="fa-solid fa-eye text-green-600 group-hover:text-white mr-2"></i>
+                <span class="text-green-600 group-hover:text-white font-medium">Lihat</span>
+              </a>
+              
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-green-600 text-white p-3 text-center">
+              <h3 class="text-lg font-semibold">{{ .Title }}</h3>
             </div>
           </div>
-          {{ end }}
         </div>
+        {{ end }}
+        <!-- Box 2: Sejarah Singkat Satuan Polisi Pamong Praja Indonesia -->
+        {{ if eq .Title "Sejarah Singkat Satuan Polisi Pamong Praja Indonesia" }}
+        <div class="rounded-b-lg rounded-t-sm shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden relative" style="background-color: #f5f5f5;">
+          <div class="p-6">
+            {{ if .Params.thumbnail }}
+            <div class="h-40 mb-4">
+              <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" class="w-full h-full object-cover rounded-lg">
+            </div>
+            {{ else }}
+            <div class="h-44 flex items-center justify-center bg-green-50 rounded-lg mb-4">
+              <i class="fas fa-file-alt text-5xl text-green-600"></i>
+            </div>
+            {{ end }}
+            <div class="flex space-x-4 mb-10">
+              <a href="{{ .RelPermalink }}" class="group flex items-center px-4 py-2 bg-white border-2 border-green-600 rounded-lg transition-colors duration-200 hover:bg-green-600">
+                <i class="fa-solid fa-eye text-green-600 group-hover:text-white mr-2"></i>
+                <span class="text-green-600 group-hover:text-white font-medium">Lihat</span>
+              </a>
+              
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-green-600 text-white p-3 text-center">
+              <h3 class="text-lg font-semibold">{{ .Title }}</h3>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
       </div>
-      {{ end }}
     </div>
+    {{ end }}
+  </div>
+</div>
+
 
  <!-- Visi dan Misi Section -->
  <div class="container mx-auto mb-8" id="visi-dan-misi">

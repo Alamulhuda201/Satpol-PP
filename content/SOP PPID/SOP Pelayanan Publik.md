@@ -7,7 +7,7 @@ date: 2024-09-04 02:43:27
 
 <p><a href="/file/j01dlMtDNNeI35otrKBg.pdf">SOP Pengumuman Informasi Publik</a></p>
 
-<p><a href="https://satpolpp.kalbarprov.go.id/file/5W43ev35nbUV3kOAZAll.pdf">SOP Pendokumentasian Informasi Publik</a></p>
+<p><a href="file/5W43ev35nbUV3kOAZAll.pdf">SOP Pendokumentasian Informasi Publik</a></p>
 
 <p><a href="/file/DxYh9Ziwfi7iZaHqItW5.pdf">SOP Penyalahgunaan Wewenang</a></p>
 

@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 mt-10 relative z-10">
         <!-- Section Berita (2/3 lebar) -->
         <div class="col-span-2">
-            <h2 class="text-center font-bold text-2xl bg-green-600 text-white py-2 rounded-t-lg">BERITA</h2>
+            <h2 class="text-center font-bold text-2xl bg-custom-green text-white py-2 rounded-t-lg">BERITA</h2>
             <div class="relative bg-gray-300   shadow-md  p-4">
                 <!-- Swiper Container dengan tinggi tetap -->
                 <swiper-container class="mySwiper" navigation="true" loop="true" style="height: 555px;">
@@ -16,9 +16,9 @@
                             <h3 class="absolute bottom-12 left-0 text-white font-bold text-lg p-2 rounded">{{ .Title }}</h3>
                             <!-- Tombol Berita Lainnya -->
                             <div class="absolute bottom-4 left-4 flex justify-left">
-                                <a href="/berita" class="bg-white text-green-600 py-2 px-4 rounded-lg text-sm flex items-center border border-2 border-green-600 hover:bg-green-700 hover:text-white transition duration-300">
+                                <a href="/berita" class="bg-white text-green-900 py-2 px-4 rounded-lg text-sm flex items-center border-2 border-green-800 hover:bg-green-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-700 transition duration-300">
                                     <!-- Ikon External Link -->
-                                    <svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg class="h-5 w-5 text-green-600 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                                     </svg>
                                     Berita Lainnya
@@ -33,7 +33,7 @@
         </div>
        <!-- Section Tautan Aplikasi (Full width di mobile, 1/3 di desktop) -->
        <div class="col-span-1 h-[600px] md:h-full">
-        <div class="bg-gradient-to-r from-green-800 to-custom-green rounded-t-lg p-3 md:p-2">
+        <div class=" bg-custom-green rounded-t-lg p-3 md:p-2">
             <h2 class="text-center font-bold text-xl md:text-lg text-white">TAUTAN APLIKASI</h2>
         </div>
         
@@ -59,12 +59,12 @@
     
                 <!-- Navigation Buttons -->
                 <div class="absolute left-0 right-0 flex justify-between px-2 md:px-1" style="top: 50%; transform: translateY(-50%); z-index: 20;">
-                    <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg">
+                    <button id="prevButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg" aria-label="Previous">
                         <svg class="w-6 h-6 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
                     </button>
-                    <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg">
+                    <button id="nextButton" class="bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transform transition-transform duration-300 hover:scale-110 shadow-lg" aria-label="Next">
                         <svg class="w-6 h-6 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
